@@ -11,16 +11,7 @@
 </head>
 <body>
     <header>
-        <?php
-        //Llamada al menú de navegación
-        include '../barra_menu.php';
-        $menu = new menuPrincipal();
-        $menu ->barraMenu();
-        //Instrucciones para ver errores en navegador
-        ini_set('display_errors', 1);
-        ini_set('display_startup_errors', 1);
-        error_reporting(E_ALL);
-        ?>
+        
     </header>
     <!-- Separación del menu con el resto de la página-->
     <div style="clear:both;"></div>

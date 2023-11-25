@@ -1,5 +1,5 @@
 /* diseño caja de texto */
-input[type=text], input[type=number]{
+input[type=text], input[type=password]{
     width: 100%;
     padding: 12px 15px;
     margin: 5px 0;
@@ -27,15 +27,26 @@ input[type=text], input[type=number]{
   }
 
    /* Color fondo formulario */
-  div {
+  /* div {
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 10px;
     width: 60%;
-  }
+  } */
 
    /* Diseño de tabla */
    th {
     background-color: #2e518b;
     color: white;
   }
+
+  .login-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 60%;
+    margin: 0 auto; /* Esto centra el contenedor horizontalmente */
+    margin-top: calc((100vh - 100px) / 2); /* Esto centra el contenedor verticalmente, ajusta el valor según sea necesario */
+}

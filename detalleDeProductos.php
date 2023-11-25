@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/icon.png">
 
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/templatemo.css">
@@ -34,9 +34,9 @@ https://remasa.com/tm-559-zay-shop
             <div class="w-100 d-flex justify-content-between">
                 <div>
                     <i class="fa fa-envelope mx-2"></i>
-                    <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:info@company.com">donmike8910@hotmail.com</a>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:info@company.com">remasamg@hotmail.com</a>
                     <i class="fa fa-phone mx-2"></i>
-                    <a class="navbar-sm-brand text-light text-decoration-none" href="tel:010-020-0340">33 36 00 15 49</a>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="tel:010-020-0340">33 36 00 15 49 / 33 36 00 15 70</a>
                 </div>
                 <div>
                     <a class="text-light" href="https://fb.com/templatemo" target="_blank" rel="sponsored"><i class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
@@ -104,7 +104,7 @@ https://remasa.com/tm-559-zay-shop
 
         </div>
     </nav>
-    <!-- Close Header -->
+    <!-- Header -->
 
     <!-- Modal -->
     <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -125,7 +125,7 @@ https://remasa.com/tm-559-zay-shop
 
 
 
-    <!-- Open Content -->
+    <!-- Contentenido -->
     <section class="bg-light">
         <div class="container pb-5">
             <div class="row">
@@ -134,20 +134,20 @@ https://remasa.com/tm-559-zay-shop
                         <img class="card-img img-fluid" src="assets/img/product_single_10.jpg" alt="Card image cap" id="product-detail">
                     </div>
                     <div class="row">
-                        <!--Start Controls-->
+                        <!-- Controles-->
                         <div class="col-1 align-self-center">
                             <a href="#multi-item-example" role="button" data-bs-slide="prev">
                                 <i class="text-dark fas fa-chevron-left"></i>
                                 <span class="sr-only">Previous</span>
                             </a>
                         </div>
-                        <!--End Controls-->
-                        <!--Start Carousel Wrapper-->
+                        <!-- Controles-->
+                        <!--Carrusel Wrapper-->
                         <div id="multi-item-example" class="col-10 carousel slide carousel-multi-item" data-bs-ride="carousel">
-                            <!--Start Slides-->
+                            <!-- Slides-->
                             <div class="carousel-inner product-links-wap" role="listbox">
 
-                                <!--First slide-->
+                                <!--Primer slide-->
                                 <div class="carousel-item active">
                                     <div class="row">
                                         <div class="col-4">
@@ -167,9 +167,9 @@ https://remasa.com/tm-559-zay-shop
                                         </div>
                                     </div>
                                 </div>
-                                <!--/.First slide-->
+                                <!--Primer slide-->
 
-                                <!--Second slide-->
+                                <!--Segundo slide-->
                                 <div class="carousel-item">
                                     <div class="row">
                                         <div class="col-4">
@@ -189,9 +189,9 @@ https://remasa.com/tm-559-zay-shop
                                         </div>
                                     </div>
                                 </div>
-                                <!--/.Second slide-->
+                                <!--Segundo slide-->
 
-                                <!--Third slide-->
+                                <!--Tercer slide-->
                                 <div class="carousel-item">
                                     <div class="row">
                                         <div class="col-4">
@@ -211,22 +211,22 @@ https://remasa.com/tm-559-zay-shop
                                         </div>
                                     </div>
                                 </div>
-                                <!--/.Third slide-->
+                                <!--Tercer slide-->
                             </div>
-                            <!--End Slides-->
+                            <!--Slides-->
                         </div>
-                        <!--End Carousel Wrapper-->
-                        <!--Start Controls-->
+                        <!--Carrusel Wrapper-->
+                        <!--Controles-->
                         <div class="col-1 align-self-center">
                             <a href="#multi-item-example" role="button" data-bs-slide="next">
                                 <i class="text-dark fas fa-chevron-right"></i>
                                 <span class="sr-only">Next</span>
                             </a>
                         </div>
-                        <!--End Controls-->
+                        <!-- Controles-->
                     </div>
                 </div>
-                <!-- col end -->
+                <!-- col -->
                 <div class="col-lg-7 mt-5">
                     <div class="card">
                         <div class="card-body">
@@ -313,16 +313,16 @@ https://remasa.com/tm-559-zay-shop
             </div>
         </div>
     </section>
-    <!-- Close Content -->
+    <!-- Contenido -->
 
-    <!-- Start Article -->
+    <!-- Articulo -->
     <section class="py-5">
         <div class="container">
             <div class="row text-left p-2 pb-3">
                 <h4>Related Products</h4>
             </div>
 
-            <!--Start Carousel Wrapper-->
+            <!--Carrusel-->
             <div id="carousel-related-product">
 
                 <div class="p-2 pb-3">
@@ -786,34 +786,34 @@ https://remasa.com/tm-559-zay-shop
 
         </div>
     </section>
-    <!-- End Article -->
+    <!-- Articulo -->
 
 
-    <!-- Start Footer -->
-    <footer class="bg-dark" id="tempaltemo_footer">
+    <!-- Footer -->
+    <footer id="tempaltemo_footer" style="background-color: #1A2B50;">
         <div class="container">
             <div class="row">
 
                 <div class="col-md-4 pt-5">
-                    <h2 class="h2 text-success border-bottom pb-3 border-light logo">Zay Shop</h2>
+                    <h2 class="h2 text-success border-bottom pb-3 border-light logo">REMASA WEB</h2>
                     <ul class="list-unstyled text-light footer-link-list">
                         <li>
                             <i class="fas fa-map-marker-alt fa-fw"></i>
-                            123 Consectetur at ligula 10660
+                            Carretera a Los Altos No. 1776 San Pedrito, Tlaquepaque, Jalisco.
                         </li>
                         <li>
                             <i class="fa fa-phone fa-fw"></i>
-                            <a class="text-decoration-none" href="tel:010-020-0340">010-020-0340</a>
+                            <a class="text-decoration-none" href="tel:010-020-0340">33 36 00 15 49 / 33 36 00 15 70</a>
                         </li>
                         <li>
                             <i class="fa fa-envelope fa-fw"></i>
-                            <a class="text-decoration-none" href="mailto:info@company.com">info@company.com</a>
+                            <a class="text-decoration-none" href="mailto:info@company.com">remasamg@hotmail.com</a>
                         </li>
                     </ul>
                 </div>
 
                 <div class="col-md-4 pt-5">
-                    <h2 class="h2 text-light border-bottom pb-3 border-light">Products</h2>
+                    <h2 class="h2 text-light border-bottom pb-3 border-light">Productos</h2>
                     <ul class="list-unstyled text-light footer-link-list">
                         <li><a class="text-decoration-none" href="#">Luxury</a></li>
                         <li><a class="text-decoration-none" href="#">Sport Wear</a></li>
@@ -826,19 +826,17 @@ https://remasa.com/tm-559-zay-shop
                 </div>
 
                 <div class="col-md-4 pt-5">
-                    <h2 class="h2 text-light border-bottom pb-3 border-light">Further Info</h2>
+                    <h2 class="h2 text-light border-bottom pb-3 border-light">Acceso rápido</h2>
                     <ul class="list-unstyled text-light footer-link-list">
                         <li><a class="text-decoration-none" href="#">Inicio</a></li>
                         <li><a class="text-decoration-none" href="#">Acerca de nosotros</a></li>
-                        <li><a class="text-decoration-none" href="#">Shop Locations</a></li>
-                        <li><a class="text-decoration-none" href="#">FAQs</a></li>
                         <li><a class="text-decoration-none" href="#">Contáctanos</a></li>
                     </ul>
                 </div>
 
             </div>
 
-            <div class="row text-light mb-4">
+            <div class="row text-light mb-4" style="background-color: #1A2B50;">
                 <div class="col-12 mb-3">
                     <div class="w-100 my-3 border-top border-light"></div>
                 </div>
@@ -858,23 +856,16 @@ https://remasa.com/tm-559-zay-shop
                         </li>
                     </ul>
                 </div>
-                <div class="col-auto">
-                    <label class="sr-only" for="subscribeEmail">Email address</label>
-                    <div class="input-group mb-2">
-                        <input type="text" class="form-control bg-dark border-light" id="subscribeEmail" placeholder="Email address">
-                        <div class="input-group-text btn-success text-light">Subscribe</div>
-                    </div>
-                </div>
             </div>
         </div>
 
-        <div class="w-100 bg-black py-3">
+        <div style="background-color: #058F71;">
             <div class="container">
                 <div class="row pt-2">
                     <div class="col-12">
                         <p class="text-left text-light">
-                            Copyright &copy; 2021 Company Name 
-                            | Designed by <a rel="sponsored" href="https://templatemo.com" target="_blank">TemplateMo</a>
+                            Copyright &copy; 2023 REMASA 
+                            | Desarrollado por: <a rel="sponsored" target="_blank">Software Solutions</a>
                         </p>
                     </div>
                 </div>
@@ -882,17 +873,17 @@ https://remasa.com/tm-559-zay-shop
         </div>
 
     </footer>
-    <!-- End Footer -->
+    <!-- Footer -->
 
-    <!-- Start Script -->
+    <!-- Script -->
     <script src="assets/js/jquery-1.11.0.min.js"></script>
     <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/templatemo.js"></script>
     <script src="assets/js/custom.js"></script>
-    <!-- End Script -->
+    <!--Script -->
 
-    <!-- Start Slider Script -->
+    <!-- Slider Script -->
     <script src="assets/js/slick.min.js"></script>
     <script>
         $('#carousel-related-product').slick({
@@ -925,7 +916,7 @@ https://remasa.com/tm-559-zay-shop
             ]
         });
     </script>
-    <!-- End Slider Script -->
+    <!-- Slider script -->
 
 </body>
 

@@ -5,7 +5,7 @@
     <?php
         include 'Controlador/seguridadLogin.php';
     ?>
-    <title>Zay Shop eCommerce HTML CSS Template</title>
+    <title>REMASA - Principal</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -16,21 +16,21 @@
     <link rel="stylesheet" href="assets/css/templatemo.css">
     <link rel="stylesheet" href="assets/css/custom.css">
 
-    <!-- Load fonts style after rendering the layout styles -->
+    <!-- Cargar fuentes -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
     <link rel="stylesheet" href="assets/css/fontawesome.min.css">
 </head>
 
 <body>
-    <!-- Start Top Nav -->
-    <nav class="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block" id="templatemo_nav_top">
+    <!-- Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light d-none d-lg-block" id="templatemo_nav_top" style="background-color: #20386B;">
         <div class="container text-light">
             <div class="w-100 d-flex justify-content-between">
                 <div>
                     <i class="fa fa-envelope mx-2"></i>
-                    <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:info@company.com">info@company.com</a>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:info@company.com">remasamg@hotmail.com</a>
                     <i class="fa fa-phone mx-2"></i>
-                    <a class="navbar-sm-brand text-light text-decoration-none" href="tel:010-020-0340">010-020-0340</a>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="tel:010-020-0340">33 36 00 15 49 / 33 36 00 15 70</a>
                 </div>
                 <div>
                     <a class="text-light" href="https://fb.com/templatemo" target="_blank" rel="sponsored"><i class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
@@ -41,7 +41,7 @@
             </div>
         </div>
     </nav>
-    <!-- Close Top Nav -->
+    <!--Navegación -->
 
 
     <!-- Header -->
@@ -54,7 +54,7 @@
     <!-- Header -->
 
 
-    <!-- Start Banner Hero -->
+    <!-- Banner -->
     <div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
         <ol class="carousel-indicators">
             <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="0" class="active"></li>
@@ -130,10 +130,10 @@
             <i class="fas fa-chevron-right"></i>
         </a>
     </div>
-    <!-- End Banner Hero -->
+    <!-- Banner -->
 
 
-    <!-- Start Categories of The Month -->
+    <!-- Categorias -->
     <section class="container py-5">
         <div class="row text-center pt-3">
             <div class="col-lg-6 m-auto">
@@ -162,10 +162,10 @@
             </div>
         </div>
     </section>
-    <!-- End Categories of The Month -->
+    <!-- Categorias -->
 
 
-    <!-- Start Featured Product -->
+    <!-- Productos -->
     <section class="bg-light">
         <div class="container py-5">
             <div class="row text-center py-3">
@@ -253,34 +253,34 @@
             </div>
         </div>
     </section>
-    <!-- End Featured Product -->
+    <!-- Productos -->
 
 
-    <!-- Start Footer -->
-    <footer class="bg-dark" id="tempaltemo_footer">
+    <!-- Footer -->
+    <footer id="tempaltemo_footer" style="background-color: #1A2B50;">
         <div class="container">
             <div class="row">
 
                 <div class="col-md-4 pt-5">
-                    <h2 class="h2 text-success border-bottom pb-3 border-light logo">Zay Shop</h2>
+                    <h2 class="h2 text-success border-bottom pb-3 border-light logo">REMASA WEB</h2>
                     <ul class="list-unstyled text-light footer-link-list">
                         <li>
                             <i class="fas fa-map-marker-alt fa-fw"></i>
-                            123 Consectetur at ligula 10660
+                            Carretera a Los Altos No. 1776 San Pedrito, Tlaquepaque, Jalisco.
                         </li>
                         <li>
                             <i class="fa fa-phone fa-fw"></i>
-                            <a class="text-decoration-none" href="tel:010-020-0340">010-020-0340</a>
+                            <a class="text-decoration-none" href="tel:010-020-0340">33 36 00 15 49 / 33 36 00 15 70</a>
                         </li>
                         <li>
                             <i class="fa fa-envelope fa-fw"></i>
-                            <a class="text-decoration-none" href="mailto:info@company.com">info@company.com</a>
+                            <a class="text-decoration-none" href="mailto:info@company.com">remasamg@hotmail.com</a>
                         </li>
                     </ul>
                 </div>
 
                 <div class="col-md-4 pt-5">
-                    <h2 class="h2 text-light border-bottom pb-3 border-light">Products</h2>
+                    <h2 class="h2 text-light border-bottom pb-3 border-light">Productos</h2>
                     <ul class="list-unstyled text-light footer-link-list">
                         <li><a class="text-decoration-none" href="#">Luxury</a></li>
                         <li><a class="text-decoration-none" href="#">Sport Wear</a></li>
@@ -293,19 +293,17 @@
                 </div>
 
                 <div class="col-md-4 pt-5">
-                    <h2 class="h2 text-light border-bottom pb-3 border-light">Further Info</h2>
+                    <h2 class="h2 text-light border-bottom pb-3 border-light">Acceso rápido</h2>
                     <ul class="list-unstyled text-light footer-link-list">
                         <li><a class="text-decoration-none" href="#">Inicio</a></li>
                         <li><a class="text-decoration-none" href="#">Acerca de nosotros</a></li>
-                        <li><a class="text-decoration-none" href="#">Shop Locations</a></li>
-                        <li><a class="text-decoration-none" href="#">FAQs</a></li>
                         <li><a class="text-decoration-none" href="#">Contáctanos</a></li>
                     </ul>
                 </div>
 
             </div>
 
-            <div class="row text-light mb-4">
+            <div class="row text-light mb-4" style="background-color: #1A2B50;">
                 <div class="col-12 mb-3">
                     <div class="w-100 my-3 border-top border-light"></div>
                 </div>
@@ -325,23 +323,16 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col-auto">
-                    <label class="sr-only" for="subscribeEmail">Email address</label>
-                    <div class="input-group mb-2">
-                        <input type="text" class="form-control bg-dark border-light" id="subscribeEmail" placeholder="Email address">
-                        <div class="input-group-text btn-success text-light">Subscribe</div>
-                    </div>
-                </div>
             </div>
         </div>
 
-        <div class="w-100 bg-black py-3">
+        <div style="background-color: #058F71;">
             <div class="container">
                 <div class="row pt-2">
                     <div class="col-12">
                         <p class="text-left text-light">
-                            Copyright &copy; 2021 Company Name 
-                            | Designed by <a rel="sponsored" href="https://templatemo.com" target="_blank">TemplateMo</a>
+                            Copyright &copy; 2023 REMASA 
+                            | Desarrolado por: <a rel="sponsored" target="_blank">Software Solutions</a>
                         </p>
                     </div>
                 </div>
@@ -349,15 +340,15 @@
         </div>
 
     </footer>
-    <!-- End Footer -->
+    <!-- Footer -->
 
-    <!-- Start Script -->
+    <!-- Script -->
     <script src="assets/js/jquery-1.11.0.min.js"></script>
     <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/templatemo.js"></script>
     <script src="assets/js/custom.js"></script>
-    <!-- End Script -->
+    <!-- Script -->
 </body>
 
 </html>

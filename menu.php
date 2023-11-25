@@ -18,16 +18,16 @@ class menu {
                         <div class="flex-fill">
                             <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="index.php">Home</a>
+                                    <a class="nav-link" href="index.php">Inicio</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="about.php">About</a>
+                                    <a class="nav-link" href="acercaDeNosotros.php">Acerca de nosotros</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="shop.php">Shop</a>
+                                    <a class="nav-link" href="tienda.php">Tienda</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="contact.php">Contact</a>
+                                    <a class="nav-link" href="contactanos.php">Contáctanos</a>
                                 </li>
                             </ul>
                         </div>

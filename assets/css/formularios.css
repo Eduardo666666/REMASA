@@ -1,5 +1,18 @@
+
+html{
+  font-family: 'Myriad Pro', sans-serif;
+  background-image: url('../img/FondoLogin.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin: 0; /* Elimina el margen predeterminado del body */
+  padding: 0; /* Elimina el relleno predeterminado del body */
+  width: 100vw; /* Establece el ancho al 100% del ancho de la ventana */
+  height: 100vh; /* Establece la altura al 100% de la altura de la ventana */
+}
+
 /* diseño caja de texto */
-input[type=text], input[type=number]{
+input[type=text], input[type=password]{
     width: 100%;
     padding: 12px 15px;
     margin: 5px 0;
@@ -26,16 +39,17 @@ input[type=text], input[type=number]{
     background-color: #4c88e8;
   }
 
-   /* Color fondo formulario */
-  div {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 10px;
-    width: 60%;
+  h2{
+    text-align: center;
   }
 
-   /* Diseño de tabla */
-   th {
-    background-color: #2e518b;
-    color: white;
-  }
+  .login-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* text-align: center; */
+    width: 40%;
+    margin: 0 auto; /* Esto centra el contenedor horizontalmente */
+    margin-top: calc((100vh - 100px) / 2); /* Esto centra el contenedor verticalmente, ajusta el valor según sea necesario */
+}

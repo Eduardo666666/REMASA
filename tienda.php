@@ -71,7 +71,7 @@ https://templatemo.com/tm-559-zay-shop
                             <a class="nav-link" href="tienda.php">Catálogo</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="Contáctanosanos.html">Contáctanosanos</a>
+                            <a class="nav-link" href="Contactanos.php">Contáctanos</a>
                         </li>
                     </ul>
                 </div>

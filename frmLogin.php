@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>REMASA</title>
+        <title>REMASA - Loggin</title>
         <link rel="stylesheet" href="assets/css/formularios.css" type="text/css">
     </head>
     <body>

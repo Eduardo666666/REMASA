@@ -57,7 +57,7 @@ class menuLogin {
 
                 </div>
             </nav>
-    <!-- end Header -->    
+    <!-- Header -->    
         <?php
         }//método
     }//class

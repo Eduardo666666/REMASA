@@ -5,6 +5,7 @@
         <title>REMASA - Loggin</title>
         <link rel="stylesheet" href="assets/css/formularios.css" type="text/css">
     </head>
+    
     <body>
         <!-- Separación del menu con el resto de la pagina-->
         <div style="clear:both;"></div>

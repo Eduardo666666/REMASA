@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-    <title>REMASA - Contáctanosanos</title>
+    <title>REMASA - Contáctanos</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/icon.png">
 
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/templatemo.css">
@@ -28,14 +28,14 @@ https://templatemo.com/tm-559-zay-shop
 
 <body>
     <!--Navegación -->
-    <nav class="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block" id="templatemo_nav_top">
+    <nav class="navbar navbar-expand-lg navbar-light d-none d-lg-block" id="templatemo_nav_top" style="background-color: #20386B;">
         <div class="container text-light">
             <div class="w-100 d-flex justify-content-between">
                 <div>
                     <i class="fa fa-envelope mx-2"></i>
-                    <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:info@company.com">donmike8910@hotmail.com</a>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:info@company.com">remasamg@hotmail.com</a>
                     <i class="fa fa-phone mx-2"></i>
-                    <a class="navbar-sm-brand text-light text-decoration-none" href="tel:010-020-0340">33 36 00 15 49</a>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="tel:010-020-0340">33 36 00 15 49 / 33 36 00 15 70</a>
                 </div>
                 <div>
                     <a class="text-light" href="https://fb.com/templatemo" target="_blank" rel="sponsored"><i class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
@@ -83,35 +83,34 @@ https://templatemo.com/tm-559-zay-shop
             <p>
                 ¿Alguna duda?
                 sigue este link para conectarte a nuestro WhatsApp, te atenderemos a la brevedad.
-            </p><br>
+            </p>
             <p><a href="https://wa.me/3339521166" target="_blank">wa.link/29axhg</a></p>
             </p>
         </div>
     </div>
 
-    <!-- Start Map -->
+    <!-- Mapa -->
     <div id="mapid" style="width: 100%; height: 300px;"></div>
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
-    <script>
-        var mymap = L.map('mapid').setView([-23.013104, -43.394365, 13], 13);
+<script src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY"></script>
+<script>
+    var map;
+    function initMap() {
+        map = new google.maps.Map(document.getElementById('mapid'), {
+            center: {lat: 20.6461, lng: -103.345},
+            zoom: 13
+        });
 
-        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
-            maxZoom: 18,
-            attribution: 'Zay Telmplte | Template Design by <a href="https://templatemo.com/">Templatemo</a> | Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
-                '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-                'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-            id: 'mapbox/streets-v11',
-            tileSize: 512,
-            zoomOffset: -1
-        }).addTo(mymap);
-
-        L.marker([-23.013104, -43.394365, 13]).addTo(mymap)
-            .bindPopup("<b>Zay</b> eCommerce Template<br />Location.").openPopup();
-
-        mymap.scrollWheelZoom.disable();
-        mymap.touchZoom.disable();
-    </script>
-    <!--Map -->
+        var marker = new google.maps.Marker({
+            position: {lat: 20.6461, lng: -103.345},
+            map: map,
+            title: 'REMASA ubicación.'
+        });
+    }
+</script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY&callback=initMap">
+</script>
+    <!--Mapa -->
 
     <!-- Contáctanoso -->
     <div class="container py-5">
@@ -147,7 +146,7 @@ https://templatemo.com/tm-559-zay-shop
 
 
     <!--Footer -->
-    <footer class="bg-dark" id="tempaltemo_footer">
+    <footer id="tempaltemo_footer" style="background-color: #1A2B50;">
         <div class="container">
             <div class="row">
 
@@ -160,17 +159,17 @@ https://templatemo.com/tm-559-zay-shop
                         </li>
                         <li>
                             <i class="fa fa-phone fa-fw"></i>
-                            <a class="text-decoration-none" href="tel:010-020-0340">33 36 00 15 49</a>
+                            <a class="text-decoration-none" href="tel:010-020-0340">33 36 00 15 49 / 33 36 00 15 70</a>
                         </li>
                         <li>
                             <i class="fa fa-envelope fa-fw"></i>
-                            <a class="text-decoration-none" href="mailto:info@company.com">donmike8910@hotmail.com</a>
+                            <a class="text-decoration-none" href="mailto:info@company.com">remasamg@hotmail.com</a>
                         </li>
                     </ul>
                 </div>
 
                 <div class="col-md-4 pt-5">
-                    <h2 class="h2 text-light border-bottom pb-3 border-light">Products</h2>
+                    <h2 class="h2 text-light border-bottom pb-3 border-light">Productos</h2>
                     <ul class="list-unstyled text-light footer-link-list">
                         <li><a class="text-decoration-none" href="#">Luxury</a></li>
                         <li><a class="text-decoration-none" href="#">Sport Wear</a></li>
@@ -183,19 +182,17 @@ https://templatemo.com/tm-559-zay-shop
                 </div>
 
                 <div class="col-md-4 pt-5">
-                    <h2 class="h2 text-light border-bottom pb-3 border-light">Further Info</h2>
+                    <h2 class="h2 text-light border-bottom pb-3 border-light">Acceso rápido</h2>
                     <ul class="list-unstyled text-light footer-link-list">
                         <li><a class="text-decoration-none" href="#">Inicio</a></li>
                         <li><a class="text-decoration-none" href="#">Acerca de nosotros</a></li>
-                        <li><a class="text-decoration-none" href="#">Dirección de sucursal</a></li>
-                        <li><a class="text-decoration-none" href="#">FAQs</a></li>
-                        <li><a class="text-decoration-none" href="#">Contáctanoso</a></li>
+                        <li><a class="text-decoration-none" href="#">Contáctanos</a></li>
                     </ul>
                 </div>
 
             </div>
 
-            <div class="row text-light mb-4">
+            <div class="row text-light mb-4" style="background-color: #1A2B50;">
                 <div class="col-12 mb-3">
                     <div class="w-100 my-3 border-top border-light"></div>
                 </div>
@@ -215,23 +212,16 @@ https://templatemo.com/tm-559-zay-shop
                         </li>
                     </ul>
                 </div>
-                <div class="col-auto">
-                    <label class="sr-only" for="subscribeEmail">Email address</label>
-                    <div class="input-group mb-2">
-                        <input type="text" class="form-control bg-dark border-light" id="subscribeEmail" placeholder="Email address">
-                        <div class="input-group-text btn-success text-light">Subscribe</div>
-                    </div>
-                </div>
             </div>
         </div>
 
-        <div class="w-100 bg-black py-3">
+        <div style="background-color: #058F71;">
             <div class="container">
                 <div class="row pt-2">
                     <div class="col-12">
                         <p class="text-left text-light">
                             Copyright &copy; 2023 REMASA
-                            | Designed by <a rel="sponsored" href="https://templatemo.com" target="_blank">TemplateMo</a>
+                            | Desarrollado por: <a rel="sponsored" target="_blank">Software Solutions</a>
                         </p>
                     </div>
                 </div>

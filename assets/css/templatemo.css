@@ -30,57 +30,59 @@ Table of contents
 
 /* Typography */
 body, ul, li, p, a, label, input, div {
-  font-family: 'Roboto', sans-serif;
-  font-size: 18px !important;
-  font-weight: 300 !important;
+  font-family: 'Myriad Pro', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
 }
 .h1 {
-  font-family: 'Roboto', sans-serif;
-  font-size: 48px !important;
-  font-weight: 200 !important;
+  font-family: 'Myriad Pro', sans-serif;
+  font-size: 48p;
+  font-weight: 200;
 }
 .h2 {
-  font-family: 'Roboto', sans-serif;
-  font-size: 30px !important;
+  font-family: 'Myriad Pro', sans-serif;
+  font-size: 30px;
   font-weight: 300;
 }
 .h3 {
-  font-family: 'Roboto', sans-serif;
-  font-size: 22px !important;
+  font-family: 'Myriad Pro', sans-serif;
+  font-size: 22px;
 }
 /* General */
-.logo { font-weight: 500 !important;}
-.text-warning {  color: #ede861 !important;}
-.text-muted { color: #bcbcbc !important;}
-.text-success { color: #59ab6e !important;}
-.text-light { color: #cfd6e1 !important;}
-.bg-dark { background-color: #212934 !important;}
-.bg-light { background-color: #e9eef5 !important;}
-.bg-black { background-color: #1d242d !important;}
-.bg-success { background-color: #59ab6e !important;}
+.logo { font-weight: 500;}
+.text-warning {  color: #ede861;}
+.text-muted { color: #bcbcbc;}
+.text-success { color: #008E72;}
+.text-light { color: #cfd6e1;}
+.bg-dark { background-color: #21386C;}
+.bg-light { background-color: #e9eef5;}
+.bg-black { background-color: #21386C;}
+.bg-success { background-color: #008E72;}
 .btn-success {
-  background-color: #59ab6e !important;
-  border-color: #56ae6c !important;
+  background-color: #008E72;
+  border-color: #008E72;
 }
-.pagination .page-link:hover {color: #000;}
+.pagination .page-link:hover {color: #21386C;}
 .pagination .page-link:hover, .pagination .page-link.active {
-  background-color: #69bb7e;
+  background-color: #008E72;
   color: #fff;
 }
 /* Nav */
-#templatemo_nav_top { min-height: 40px;}
-#templatemo_nav_top * { font-size: .9em !important;}
-#templatemo_main_nav a { color: #212934;}
-#templatemo_main_nav a:hover { color: #69bb7e;}
+#templatemo_nav_top { min-height: 40px; background-color:#21386C;}
+#templatemo_main_nav a { color: #21386C;}
+#templatemo_main_nav a:hover { color: #008E72;}
 #templatemo_main_nav .navbar .nav-icon { margin-right: 20px;}
 
 /* Hero Carousel */
-#template-mo-zay-hero-carousel { background: #efefef !important;}
+#template-mo-zay-hero-carousel { background: #efefef;}
+.carousel-indicators {
+  margin-bottom: 10px; /* Ajusta este valor según sea necesario */
+}
 /* Accordion */
-.templatemo-accordion a { color: #000;}
-.templatemo-accordion a:hover { color: #333d4a;}
+.templatemo-accordion a { color: #21386C;}
+.templatemo-accordion a:hover { color: #008E72;}
 /* Shop */
-.shop-top-menu a:hover { color: #69bb7e !important;}
+.shop-top-menu a:hover { color: #008E72;}
 /* Product */
 .product-wap { box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.10);}
 .product-wap .product-color-dot.color-dot-red { background:#f71515;}
@@ -99,7 +101,7 @@ body, ul, li, p, a, label, input, div {
   opacity: 1;
 }
 .card.product-wap a { color: #000;}
-#carousel-related-product .slick-slide:focus { outline: none !important;}
+#carousel-related-product .slick-slide:focus { outline: none;}
 #carousel-related-product .slick-dots li button:before {
   font-size: 15px;
   margin-top: 20px;
@@ -116,25 +118,21 @@ body, ul, li, p, a, label, input, div {
 }
 /* Carousel Hero */
 #template-mo-zay-hero-carousel .carousel-indicators li {
-  margin-top: -50px;
-  background-color: #59ab6e;
+  margin-top: -60px;
+  background-color: #008E72;
 }
 #template-mo-zay-hero-carousel .carousel-control-next i,
 #template-mo-zay-hero-carousel .carousel-control-prev i {
-  color: #59ab6e !important;
-  font-size: 2.8em !important;
+  color: #21386C;
+  font-size: 2.8em;
 }
-/* Carousel Brand */
-.tempaltemo-carousel .h1 {
-  font-size: .5em !important;
-  color: #000 !important;
-}
+
 /* Services */
 .services-icon-wap {transition: .3s;}
 .services-icon-wap:hover, .services-icon-wap:hover i {color: #fff;}
 .services-icon-wap:hover {background: #69bb7e;}
 /* Contáctanos map */
-.leaflet-control a, .leaflet-control { font-size: 10px !important;}
+.leaflet-control a, .leaflet-control { font-size: 10px ;}
 .form-control { border: 1px solid #e8e8e8;}
 /* Footer */
 #tempaltemo_footer a { color: #dcdde1;}
@@ -153,7 +151,7 @@ body, ul, li, p, a, label, input, div {
   color: #212934;
   transition: .5s;
 }
-#tempaltemo_footer .border-light { border-color: #2d343f !important;}
+#tempaltemo_footer .border-light { border-color: #2d343f t;}
 /*
 // Extra small devices (portrait phones, less than 576px)
 // No media query since this is the default in Bootstrap
@@ -168,7 +166,7 @@ body, ul, li, p, a, label, input, div {
 }
 
 @media (min-width: 576px) {
-  .tempaltemo-carousel .h1 { font-size: 1em !important;}
+  .tempaltemo-carousel .h1 { font-size: 1emt;}
 }
 
 /*// Medium devices (tablets, 768px and up)*/

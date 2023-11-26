@@ -25,7 +25,7 @@ input[type=text], input[type=password]{
   /* diseño botón */
   button[type=submit] {
     width: 100%;
-    background-color: #2e518b;
+    background-color: #21386C;
     color: white;
     padding: 12px 15px;
     margin: 5px 0;
@@ -36,7 +36,7 @@ input[type=text], input[type=password]{
   
   /* Cambio de color en botón */
   button[type=submit]:hover {
-    background-color: #4c88e8;
+    background-color: #008E72;
   }
 
   h2{

@@ -69,6 +69,7 @@
 
 
     <!-- Contenido de la pagina-->
+    <!-- Contenido de la pagina-->
     <div class="container-fluid bg-light py-5">
         <div class="col-md-6 m-auto text-center">
             <h1 class="h1">Contáctanos</h1>
@@ -83,28 +84,28 @@
 
     <!-- Mapa -->
     <div id="mapid" style="width: 100%; height: 300px;"></div>
-<script src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY"></script>
-<script>
-    var map;
-    function initMap() {
-        map = new google.maps.Map(document.getElementById('mapid'), {
-            center: {lat: 20.6461, lng: -103.345},
-            zoom: 13
-        });
+    <script src="https://maps.googleapis.com/maps/api/js?AIzaSyBe6oyst_7TvX1nOshAKW881TGlK2em2Qg"></script>
+    <script>
+        var map;
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('mapid'), {
+                center: {lat: 20.62035, lng: -103.28836},
+                zoom: 13
+            });
 
-        var marker = new google.maps.Marker({
-            position: {lat: 20.6461, lng: -103.345},
-            map: map,
-            title: 'REMASA ubicación.'
-        });
-    }
-</script>
-<script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY&callback=initMap">
-</script>
+            var marker = new google.maps.Marker({
+                position: {lat: 20.62035, lng: -103.28836},
+                map: map,
+                title: 'REMASA ubicación.'
+            });
+        }
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?AIzaSyBe6oyst_7TvX1nOshAKW881TGlK2em2Qg&callback=initMap">
+    </script>
     <!--Mapa -->
 
-    <!-- Contáctanoso -->
+    <!-- Contáctanos -->
     <div class="container py-5">
         <div class="row py-5">
             <form class="col-md-9 m-auto" method="post" role="form">
@@ -128,6 +129,7 @@
                 </div>
                 <div class="row">
                     <div class="col text-end mt-2">
+                        <button type="submit" class="btn btn-success btn-lg px-3">Enviar</button>
                         <button type="submit" class="btn btn-success btn-lg px-3">Enviar</button>
                     </div>
                 </div>

@@ -76,7 +76,7 @@ https://templatemo.com/tm-559-zay-shop
     </div>
 
 
-    <!-- Contenido de la pagina--> -->
+    <!-- Contenido de la pagina-->
     <div class="container-fluid bg-light py-5">
         <div class="col-md-6 m-auto text-center">
             <h1 class="h1">Contáctanos</h1>
@@ -91,25 +91,25 @@ https://templatemo.com/tm-559-zay-shop
 
     <!-- Mapa -->
     <div id="mapid" style="width: 100%; height: 300px;"></div>
-<script src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY"></script>
-<script>
-    var map;
-    function initMap() {
-        map = new google.maps.Map(document.getElementById('mapid'), {
-            center: {lat: 20.6461, lng: -103.345},
-            zoom: 13
-        });
+    <script src="https://maps.googleapis.com/maps/api/js?AIzaSyBe6oyst_7TvX1nOshAKW881TGlK2em2Qg"></script>
+    <script>
+        var map;
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('mapid'), {
+                center: {lat: 20.62035, lng: -103.28836},
+                zoom: 13
+            });
 
-        var marker = new google.maps.Marker({
-            position: {lat: 20.6461, lng: -103.345},
-            map: map,
-            title: 'REMASA ubicación.'
-        });
-    }
-</script>
-<script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY&callback=initMap">
-</script>
+            var marker = new google.maps.Marker({
+                position: {lat: 20.62035, lng: -103.28836},
+                map: map,
+                title: 'REMASA ubicación.'
+            });
+        }
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?AIzaSyBe6oyst_7TvX1nOshAKW881TGlK2em2Qg&callback=initMap">
+    </script>
     <!--Mapa -->
 
     <!-- Contáctanoso -->

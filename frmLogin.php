@@ -5,7 +5,7 @@
         <title>REMASA - Loggin</title>
         <link rel="stylesheet" href="assets/css/formularios.css" type="text/css">
     </head>
-    
+
     <body>
         <!-- Separación del menu con el resto de la pagina-->
         <div style="clear:both;"></div>
@@ -18,11 +18,15 @@
                     <input id="correo" type="text" name="correo" required>
                     <div class="formleyenda"><label>Contraseña:</label></div>
                     <input id="contrasena" type="password" name="contrasena" required>
-                    <div></div>
-                    <div>
-                        <button id="enviarUsr" name="enviarUsr" type="submit">Ingresar</button>
+                    <button id="enviarUsr" name="enviarUsr" type="submit">Ingresar</button>
+                    <div class="login-reg">
+                        <p>No tengo cuenta <a href="frmNuevoUsuario.php">Registrarse</a></p>
+                    </div>    
+                    <div class="regresar">
+                        <p><a href="index.php">Regresar</a></p>
                     </div>
                 </form>
+                
             </div>
             
         </section>

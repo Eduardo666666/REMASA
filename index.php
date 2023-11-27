@@ -119,24 +119,29 @@
             <div class="col-lg-6 m-auto">
                 <h1 class="h1">Categorías</h1>
                 <p>
-                    Busca las piezas por marca de auntobus.
+                    Busca las piezas por marca de autobus.
                 </p>
             </div>
         </div>
         <div class="row">
             <div class="col-12 col-md-4 p-5 mt-3">
-                <a href="#"><img src="./assets/img/category_img_01.jpg" class="rounded-circle img-fluid border"></a>
+                <a href="#"><img src="./assets/img/mercedeslogo.png" class="rounded-circle img-fluid border"></a>
                 <h5 class="text-center mt-3 mb-3">Mercedes-Benz</h5>
                 <p class="text-center"><a class="btn btn-success">Ir a la tienda</a></p>
             </div>
             <div class="col-12 col-md-4 p-5 mt-3">
-                <a href="#"><img src="./assets/img/category_img_02.jpg" class="rounded-circle img-fluid border"></a>
-                <h2 class="h5 text-center mt-3 mb-3">Volvo</h2>
+                <a href="#"><img src="./assets/img/manlogo.png" class="rounded-circle img-fluid border"></a>
+                <h2 class="h5 text-center mt-3 mb-3">MAN</h2>
                 <p class="text-center"><a class="btn btn-success">Ir a la tienda</a></p>
             </div>
             <div class="col-12 col-md-4 p-5 mt-3">
-                <a href="#"><img src="./assets/img/category_img_03.jpg" class="rounded-circle img-fluid border"></a>
-                <h2 class="h5 text-center mt-3 mb-3">MCI</h2>
+                <a href="#"><img src="./assets/img/scanialogo.png" class="rounded-circle img-fluid border"></a>
+                <h2 class="h5 text-center mt-3 mb-3">Scania</h2>
+                <p class="text-center"><a class="btn btn-success">Ir a la tienda</a></p>
+            </div>
+            <div class="col-12 col-md-4 p-5 mt-3">
+                <a href="#"><img src="./assets/img/volvologo.png" class="rounded-circle img-fluid border"></a>
+                <h2 class="h5 text-center mt-3 mb-3">Volvo</h2>
                 <p class="text-center"><a class="btn btn-success">Ir a la tienda</a></p>
             </div>
         </div>
@@ -254,19 +259,6 @@
                             <i class="fa fa-envelope fa-fw"></i>
                             <a class="text-decoration-none" href="mailto:info@company.com">remasamg@hotmail.com</a>
                         </li>
-                    </ul>
-                </div>
-
-                <div class="col-md-4 pt-5">
-                    <h2 class="h2 text-light border-bottom pb-3 border-light">Productos</h2>
-                    <ul class="list-unstyled text-light footer-link-list">
-                        <li><a class="text-decoration-none" href="#">Luxury</a></li>
-                        <li><a class="text-decoration-none" href="#">Sport Wear</a></li>
-                        <li><a class="text-decoration-none" href="#">Men's Shoes</a></li>
-                        <li><a class="text-decoration-none" href="#">Women's Shoes</a></li>
-                        <li><a class="text-decoration-none" href="#">Popular Dress</a></li>
-                        <li><a class="text-decoration-none" href="#">Gym Accessories</a></li>
-                        <li><a class="text-decoration-none" href="#">Sport Shoes</a></li>
                     </ul>
                 </div>
 

@@ -6,47 +6,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/icon2.png">
 
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/templatemo.css">
     <link rel="stylesheet" href="assets/css/custom.css">
 
-    <!--Cargar fuentes -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <!-- Cargar fuentes -->
+    <link rel="stylesheet" href="https://use.typekit.net/nwm6dld.css">
     <link rel="stylesheet" href="assets/css/fontawesome.min.css">
-
-    <!-- estilos map -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
-<!--REMASA WEB
-
-https://templatemo.com/tm-559-zay-shop
-
--->
 </head>
 
 <body>
-    <!--Navegación -->
+    <!-- Navegación -->
     <nav class="navbar navbar-expand-lg navbar-light d-none d-lg-block" id="templatemo_nav_top" style="background-color: #20386B;">
         <div class="container text-light">
             <div class="w-100 d-flex justify-content-between">
                 <div>
-                    <i class="fa fa-envelope mx-2"></i>
-                    <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:info@company.com">remasamg@hotmail.com</a>
+                    <i class="fab fa-whatsapp"></i>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href=""> 33 39 52 11 66</a>
                     <i class="fa fa-phone mx-2"></i>
-                    <a class="navbar-sm-brand text-light text-decoration-none" href="tel:010-020-0340">33 36 00 15 49 / 33 36 00 15 70</a>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="tel:010-020-0340"> 33 36 00 15 49 / 33 36 00 15 70</a>
+                    <i class="fa fa-envelope mx-2"></i>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:info@company.com"> remasamg@hotmail.com</a>
                 </div>
                 <div>
-                    <a class="text-light" href="https://fb.com/templatemo" target="_blank" rel="sponsored"><i class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
-                    <a class="text-light" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram fa-sm fa-fw me-2"></i></a>
-                    <a class="text-light" href="https://twitter.com/" target="_blank"><i class="fab fa-twitter fa-sm fa-fw me-2"></i></a>
-                    <a class="text-light" href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin fa-sm fa-fw"></i></a>
+                    <a class="text-light" href="https://www.facebook.com/p/Refaccionaria-Miguel-De-Autobuses-Sa-De-Cv-100054638641322/" target="_blank" rel="sponsored"><i class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://www.instagram.com/remasa_mx/" target="_blank"><i class="fab fa-instagram fa-sm fa-fw me-2"></i></a>
                 </div>
             </div>
         </div>
     </nav>
-    <!--Navegación-->
+    <!-- Navegación -->
+
 
 
     <!-- Header -->
@@ -76,6 +68,7 @@ https://templatemo.com/tm-559-zay-shop
     </div>
 
 
+    <!-- Contenido de la pagina-->
     <!-- Contenido de la pagina-->
     <div class="container-fluid bg-light py-5">
         <div class="col-md-6 m-auto text-center">
@@ -118,24 +111,25 @@ https://templatemo.com/tm-559-zay-shop
             <form class="col-md-9 m-auto" method="post" role="form">
                 <div class="row">
                     <div class="form-group col-md-6 mb-3">
-                        <label for="inputname">Nombre:</label>
-                        <input type="text" class="form-control mt-1" id="name" name="name" placeholder="Nombre">
+                        <label for="inputname">Nombre</label>
+                        <input type="text" class="form-control mt-1" id="name" name="name" placeholder="">
                     </div>
                     <div class="form-group col-md-6 mb-3">
-                        <label for="inputemail">Correo electrónico:</label>
-                        <input type="email" class="form-control mt-1" id="email" name="email" placeholder="Correo electrónico">
+                        <label for="inputemail">Email</label>
+                        <input type="email" class="form-control mt-1" id="email" name="email" placeholder="">
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label for="inputsubject">Asunto:</label>
-                    <input type="text" class="form-control mt-1" id="subject" name="subject" placeholder="Asunto">
+                    <label for="inputsubject">Asunto</label>
+                    <input type="text" class="form-control mt-1" id="subject" name="subject" placeholder="">
                 </div>
                 <div class="mb-3">
-                    <label for="inputmessage">Mensaje:</label>
-                    <textarea class="form-control mt-1" id="message" name="message" placeholder="Mensaje" rows="8"></textarea>
+                    <label for="inputmessage">Comentario</label>
+                    <textarea class="form-control mt-1" id="message" name="message" placeholder="" rows="8"></textarea>
                 </div>
                 <div class="row">
                     <div class="col text-end mt-2">
+                        <button type="submit" class="btn btn-success btn-lg px-3">Enviar</button>
                         <button type="submit" class="btn btn-success btn-lg px-3">Enviar</button>
                     </div>
                 </div>
@@ -145,18 +139,26 @@ https://templatemo.com/tm-559-zay-shop
     <!--Contáctanos -->
 
 
-    <!--Footer -->
+
+    <!-- Footer -->
     <footer id="tempaltemo_footer" style="background-color: #1A2B50;">
         <div class="container">
             <div class="row">
 
                 <div class="col-md-4 pt-5">
-                    <h2 class="h2 text-success border-bottom pb-3 border-light logo">REMASA WEB</h2>
+                    <h2 class="h2 border-bottom pb-3 border-light logo" style="color: #1BB280;"><b>REMASA</b></h2>
                     <ul class="list-unstyled text-light footer-link-list">
+
                         <li>
                             <i class="fas fa-map-marker-alt fa-fw"></i>
-                            Carretera a los altos no. 1446, San pedrito, Tlaquepaque, Jalisco.
+                            <a class="text-decoration-none" href="https://www.google.com.mx/maps/place/REMASA/@20.620459,-103.2890316,19.38z/data=!4m6!3m5!1s0x8428b36cc0d9c15b:0x59f89a6ff9183a46!8m2!3d20.6203304!4d-103.2883587!16s%2Fg%2F1vljgn9n?entry=ttu"> Carretera a Los Altos No. 1776 <br> San Pedrito, Tlaquepaque, Jalisco.</a>
                         </li>
+
+                        <li>
+                        <i class="fab fa-whatsapp fa-fw"></i>
+                        <a class="text-decoration-none" href="https://wa.me/3339521166"> 33 39 52 11 66</a>
+                        </li>
+
                         <li>
                             <i class="fa fa-phone fa-fw"></i>
                             <a class="text-decoration-none" href="tel:010-020-0340">33 36 00 15 49 / 33 36 00 15 70</a>
@@ -171,22 +173,21 @@ https://templatemo.com/tm-559-zay-shop
                 <div class="col-md-4 pt-5">
                     <h2 class="h2 text-light border-bottom pb-3 border-light">Productos</h2>
                     <ul class="list-unstyled text-light footer-link-list">
-                        <li><a class="text-decoration-none" href="#">Luxury</a></li>
-                        <li><a class="text-decoration-none" href="#">Sport Wear</a></li>
-                        <li><a class="text-decoration-none" href="#">Men's Shoes</a></li>
-                        <li><a class="text-decoration-none" href="#">Women's Shoes</a></li>
-                        <li><a class="text-decoration-none" href="#">Popular Dress</a></li>
-                        <li><a class="text-decoration-none" href="#">Gym Accessories</a></li>
-                        <li><a class="text-decoration-none" href="#">Sport Shoes</a></li>
+                        <li><a class="text-decoration-none" href="#">Suspensión</a></li>
+                        <li><a class="text-decoration-none" href="#">Frenos</a></li>
+                        <li><a class="text-decoration-none" href="#">Dirección</a></li>
+                        <li><a class="text-decoration-none" href="#">Filtración</a></li>
+                        <li><a class="text-decoration-none" href="#">Lubricantes</a></li>
+                        <li><a class="text-decoration-none" href="#">Conecciones</a></li>
                     </ul>
                 </div>
 
                 <div class="col-md-4 pt-5">
                     <h2 class="h2 text-light border-bottom pb-3 border-light">Acceso rápido</h2>
                     <ul class="list-unstyled text-light footer-link-list">
-                        <li><a class="text-decoration-none" href="#">Inicio</a></li>
-                        <li><a class="text-decoration-none" href="#">Acerca de nosotros</a></li>
-                        <li><a class="text-decoration-none" href="#">Contáctanos</a></li>
+                        <li><a class="text-decoration-none" href="index.php">Inicio</a></li>
+                        <li><a class="text-decoration-none" href="acercaDeNosotros.php">Acerca de nosotros</a></li>
+                        <li><a class="text-decoration-none" href="contactanos.php">Contáctanos</a></li>
                     </ul>
                 </div>
 
@@ -198,17 +199,15 @@ https://templatemo.com/tm-559-zay-shop
                 </div>
                 <div class="col-auto me-auto">
                     <ul class="list-inline text-left footer-icons">
-                        <li class="list-inline-item border border-light rounded-circle text-center">
-                            <a class="text-light text-decoration-none" target="_blank" href="http://facebook.com/"><i class="fab fa-facebook-f fa-lg fa-fw"></i></a>
+
+                    <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="https://wa.me/3339521166"><i class="fab fa-whatsapp fa-lg fa-fw"></i></a>
                         </li>
                         <li class="list-inline-item border border-light rounded-circle text-center">
-                            <a class="text-light text-decoration-none" target="_blank" href="https://www.instagram.com/"><i class="fab fa-instagram fa-lg fa-fw"></i></a>
+                            <a class="text-light text-decoration-none" target="_blank" href="https://www.facebook.com/p/Refaccionaria-Miguel-De-Autobuses-Sa-De-Cv-100054638641322/"><i class="fab fa-facebook-f fa-lg fa-fw"></i></a>
                         </li>
                         <li class="list-inline-item border border-light rounded-circle text-center">
-                            <a class="text-light text-decoration-none" target="_blank" href="https://twitter.com/"><i class="fab fa-twitter fa-lg fa-fw"></i></a>
-                        </li>
-                        <li class="list-inline-item border border-light rounded-circle text-center">
-                            <a class="text-light text-decoration-none" target="_blank" href="https://www.linkedin.com/"><i class="fab fa-linkedin fa-lg fa-fw"></i></a>
+                            <a class="text-light text-decoration-none" target="_blank" href="https://www.instagram.com/remasa_mx/"><i class="fab fa-instagram fa-lg fa-fw"></i></a>
                         </li>
                     </ul>
                 </div>

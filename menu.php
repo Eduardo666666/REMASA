@@ -17,21 +17,22 @@ class menu {
                         <div class="flex-fill">
                             <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="index.php">Inicio</a>
+                                    <a class="nav-link" href="index.php"><b>Inicio</b></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="acercaDeNosotros.php">Acerca de nosotros</a>
+                                    <a class="nav-link" href="acercaDeNosotros.php"><b>Acerca de nosotros</b></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="tienda.php">Tienda</a>
+                                    <a class="nav-link" href="tienda.php"><b>Tienda</b></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="contactanos.php">Contáctanos</a>
+                                    <a class="nav-link" href="contactanos.php"><b>Contáctanos</b></a>
                                 </li>
                             </ul>
                         </div>
 
                         <div class="navbar align-self-center d-flex">
+                            
                             <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
                                 <div class="input-group">
                                     <input type="text" class="form-control" id="inputMobileSearch" placeholder="Search ...">
@@ -45,11 +46,11 @@ class menu {
                             </a>
                             <a class="nav-icon position-relative text-decoration-none" href="#">
                                 <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
-                                <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">7</span>
+                                <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
                             </a>
                             <a class="nav-icon position-relative text-decoration-none" href="frmLogin.php">
                                 <i class="fa fa-fw fa-user text-dark mr-3"></i>
-                                <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">+99</span>
+                                <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
                             </a>
                         </div>
                     </div>

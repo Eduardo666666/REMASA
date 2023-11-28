@@ -80,15 +80,13 @@
 
     <!-- Categorias -->
     <section class="container py-5">
-        <div class="row text-center pt-3">
-            <div class="col-lg-6 m-auto">
-                <h1 class="h1">Categorías</h1>
-                <p>
+        <div class="class=col-lg-5 m-auto">
+                <h1  class="h1 col-md-12 text-center">Categorías</h1>
+                <p class="text-center">
                     Busca las piezas por marca de autobus.
                 </p>
             </div>
             
-        </div>
         <div class="row">
             <div class="col-12 col-md-4 p-5 mt-3">
                 <a href="#"><img src="./assets/img/mercedeslogo.png" class="rounded-circle img-fluid border"></a>

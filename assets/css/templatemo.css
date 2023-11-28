@@ -25,14 +25,22 @@ Table of contents
 16. Extra large devices (large desktops, 1200px and up)
 --------------------------------------------- */
 
-
-/* Typography */
-body, ul, li, p, a, label, input, div {
+label, input, div {
   font-family: "myriad-pro", sans-serif;
 font-weight: 300;
 font-style: normal;
 font-size: 18px;
 text-align: justify;
+}
+
+
+body, ul, p, a{
+  font-family: "myriad-pro", sans-serif;
+font-weight: 300;
+font-style: normal;
+font-size: 18px;
+text-align: justify;
+color:#21386C;
 }
 
 .h1 {
@@ -49,10 +57,11 @@ font-style: normal;
 }
 .h3 {
   font-family: "myriad-pro", sans-serif;
-  font-weight: 600;
+  font-weight: 400;
   font-style: normal;
   font-size: 22px;
 }
+
 /* General */
 .logo { font-weight: 500;}
 .text-warning {  color: #ede861;}

@@ -95,5 +95,56 @@
         
         ?>
     </section>
+
+    <!--Metodo consultar productos_____________________________________________________________________________________________________-->
+    <section>
+        <?php
+        //
+        function consultarProductosPorMarca() {
+            // Configuración de la conexión a la base de datos
+            $servername = "localhost";
+            $username = "root";
+            $password = "";
+            $database = "remasa";
+        
+            // Crear conexión
+            $conn = new mysqli($servername, $username, $password, $database);
+        
+            // Verificar la conexión
+            if ($conn->connect_error) {
+                die("Conexión fallida: " . $conn->connect_error);
+            }
+        
+            // Consulta SQL para obtener todos los productos
+            $sql = "SELECT * FROM producto WHERE marca = 'Mercedes-Benz'";
+            $result = $conn->query($sql);
+        
+            // Verificar si se obtuvieron resultados
+            $productos = array();
+            if ($result->num_rows > 0) {
+                // Almacenar los datos de cada producto en un array
+                while ($row = $result->fetch_assoc()) {
+                    $productos[] = array(
+                        'id' => $row["id"],
+                        'nombre' => $row["nombre"],
+                        'descripcion' => $row["descripcion"],
+                        'cantidad' => $row["cantidad"],
+                        'medida' => $row["medida"],
+                        'precio' => $row["precio"],
+                        'marca' => $row["marca"],
+                        'rutaimagen' => $row["rutaimagen"]
+                    );
+                }
+            }
+        
+            // Cerrar la conexión
+            $conn->close();
+        
+            // Devolver el array de productos
+            return $productos;
+        }
+        
+        ?>
+    </section>
 </body>
 </html>

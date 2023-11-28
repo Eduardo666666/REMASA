@@ -118,7 +118,9 @@
 
 
     <!-- Contenido -->
+    
     <div class="container py-5">
+        
         <div class="row">
 
             <div class="col-lg-3">
@@ -183,6 +185,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="row">
                 <?php
 
@@ -210,7 +213,8 @@
                             <div class="card-body">
                                 <a href="shop-single.html" class="h3 text-decoration-none"><?php echo $producto['nombre']; ?></a>
                                 <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
-                                    <li>M/L/X/XL</li>
+                                    <li><?php echo $producto['descripcion']; ?></li>
+                                    
                                     <li class="pt-2">
                                         <span class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
                                         <span class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
@@ -219,27 +223,10 @@
                                         <span class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
                                     </li>
                                 </ul>
-                               <!-- <ul class="list-unstyled d-flex justify-content-center mb-1">
-                                    <li>
-                                        <i class="text-warning fa fa-star"></i>
-                                        <i class="text-warning fa fa-star"></i>
-                                        <i class="text-warning fa fa-star"></i>
-                                        <i class="text-muted fa fa-star"></i>
-                                        <i class="text-muted fa fa-star"></i>
-                                    </li>-->
-                                    <!--<?php
-                        // Mostrar estrellas según la calificación del producto
-                        //$calificacion = $producto['calificacion'];
-                        /*for ($i = 1; $i <= 5; $i++) {
-                            if ($i <= $calificacion) {
-                                echo '<i class="text-warning fa fa-star"></i>';
-                            } else {
-                                echo '<i class="text-muted fa fa-star"></i>';
-                            }
-                        }*/
-                        ?>-->
+                              
                     </li>
                 </ul>
+                <p class="text-center mb-0"><?php echo $producto['medida']; ?></p>
                 <p class="text-center mb-0">$<?php echo $producto['precio']; ?></p>
             </div>
         </div>

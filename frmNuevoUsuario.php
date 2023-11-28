@@ -16,7 +16,7 @@
                     <input id="nombre" type="text" name="nombre" required>
                     <div class="formleyenda"><label>Apellidos:</label></div>
                     <input id="apellidos" type="text" name="apellidos" required>
-                    <div class="formleyenda"><label>Telefono:</label></div>
+                    <div class="formleyenda"><label>Teléfono:</label></div>
                     <input maxlength="10" min="10" id="telefono" type="tel" name="telefono" required>
                     <div class="formleyenda"><label>Código postal:</label></div>
                     <input id="codigopostal" type="number" name="codigopostal" required>

@@ -94,13 +94,13 @@
                 <p class="text-center"><a class="btn btn-success">Ir a la tienda</a></p>
             </div>
             <div class="col-12 col-md-4 p-5 mt-3">
-                <a href="#"><img src="./assets/img/category_img_02.jpg" class="rounded-circle img-fluid border"></a>
+                <a href="#"><img src="./assets/img/volvologo.png" class="rounded-circle img-fluid border"></a>
                 <h2 class="h5 text-center mt-3 mb-3">Volvo</h2>
                 <p class="text-center"><a class="btn btn-success">Ir a la tienda</a></p>
             </div>
             <div class="col-12 col-md-4 p-5 mt-3">
-                <a href="#"><img src="./assets/img/category_img_03.jpg" class="rounded-circle img-fluid border"></a>
-                <h2 class="h5 text-center mt-3 mb-3">MCI</h2>
+                <a href="#"><img src="./assets/img/scanialogo.png" class="rounded-circle img-fluid border"></a>
+                <h2 class="h5 text-center mt-3 mb-3">Scania</h2>
                 <p class="text-center"><a class="btn btn-success">Ir a la tienda</a></p>
             </div>
         </div>

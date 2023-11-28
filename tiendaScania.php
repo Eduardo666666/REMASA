@@ -120,30 +120,34 @@
     <div class="container py-5">
         <div class="row">
 
+
             <div class="col-lg-3">
                 <h1 class="h2 pb-4">Categorías</h1>
                 <ul class="list-unstyled templatemo-accordion">
-                <li class="pb-3">
-                        <a class="nav-link collapsed d-flex justify-content-between h3 text-decoration-none" href="tienda.php">
-                            Volvo
-                        </a>
-                        </li>
-                    <li class="pb-3">
-                        <a class="nav-link collapsed d-flex justify-content-between h3 text-decoration-none" href="tiendaMercedes.php">
-                            Mercedes-Benz
-                        </a>
-                    </li>
-                    <li class="pb-3">
-                        <a class="nav-link collapsed d-flex justify-content-between h3 text-decoration-none" style= "background-color: #D9D9D9; padding: 20px;" href="tiendaScania.php">
-                            Scania
-                        </a>
-                        </li>
-                    <li class="pb-3">
-                        <a class="nav-link collapsed d-flex justify-content-between h3 text-decoration-none" href="tiendaMan.php">
-                            Man
-                        </a>
-                    </li>
-                 
+                    <ul class="list-unstyled text-light footer-link-list">
+                            <li class="pb-3">
+                                    <a class="nav-link collapsed d-flex justify-content-between h3 text-decoration-none" href="tienda.php">
+                                        Volvo
+                                    </a>
+                            </li>
+                            <li class="pb-3">
+                                    <a class="nav-link collapsed d-flex justify-content-between h3 text-decoration-none" href="tiendaMercedes.php">
+                                        Mercedes-Benz
+                                    </a>
+                            </li>
+                            <li class="pb-3">
+                                    <a class="nav-link collapsed d-flex justify-content-between h3 text-decoration-none"  style= "background-color: #D9D9D9; padding: 20px;" href="tiendaScania.php">
+                                        Scania
+                                    </a>
+                            </li>
+                            <li class="pb-3">
+                                    <a class="nav-link collapsed d-flex justify-content-between h3 text-decoration-none" href="tiendaMan.php">
+                                        Man
+                                    </a>
+                            </li>
+                    </ul> 
+                </ul>
+            </div>
 
 
 
@@ -153,9 +157,11 @@
 
 
 
- <!-- Brands-->
-                     
-                <div class="col-lg-9 m-auto tempaltemo-carousel">
+
+
+
+ <!-- Brands--> 
+            <div class="col-lg-9 m-auto tempaltemo-carousel">
                     <div class="row d-flex flex-row">
                         <!--Controles-->
                         <div class="col-1 align-self-center">
@@ -249,7 +255,8 @@
     <!-- Brands-->
 
 
-                        <!-- Footer -->
+
+                <!-- Footer -->
     <footer id="tempaltemo_footer" style="background-color: #1A2B50;">
         <div class="container">
             <div class="row">

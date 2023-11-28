@@ -83,7 +83,7 @@
                             <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal" data-bs-target="#templatemo_search">
                                 <i class="fa fa-fw fa-search mr-2"></i>
                             </a>
-                            <a class="nav-icon position-relative text-decoration-none" href="#">
+                            <a class="nav-icon position-relative text-decoration-none" href="carrito.php">
                                 <i class="fa fa-fw fa-shopping-cart mr-1"></i>
                                 <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light"></span>
                             </a>
@@ -126,27 +126,29 @@
             <div class="col-lg-3">
                 <h1 class="h2 pb-4">Categorías</h1>
                 <ul class="list-unstyled templatemo-accordion">
-                <li class="pb-3">
-                        <a class="nav-link collapsed d-flex justify-content-between h3 text-decoration-none" style= "background-color: #D9D9D9; padding: 20px;" href="tienda.php">
-                            Volvo
-                        </a>
-                        </li>
-                    <li class="pb-3">
-                        <a class="nav-link collapsed d-flex justify-content-between h3 text-decoration-none" href="tiendaMercedes.php">
-                            Mercedes-Benz
-                        </a>
-                    </li>
-                    <li class="pb-3">
-                        <a class="nav-link collapsed d-flex justify-content-between h3 text-decoration-none" href="tiendaScania.php">
-                            Scania
-                        </a>
-                        </li>
-                    <li class="pb-3">
-                        <a class="nav-link collapsed d-flex justify-content-between h3 text-decoration-none" href="tiendaMan.php">
-                            Man
-                        </a>
-                    </li>
-                 
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li class="pb-3">
+                                <a class="nav-link collapsed d-flex justify-content-between h3 text-decoration-none" style= "background-color: #D9D9D9; padding: 20px;" href="tienda.php">
+                                    Volvo
+                                </a>
+                                </li>
+                            <li class="pb-3">
+                                <a class="nav-link collapsed d-flex justify-content-between h3 text-decoration-none" href="tiendaMercedes.php">
+                                    Mercedes-Benz
+                                </a>
+                            </li>
+                            <li class="pb-3">
+                                <a class="nav-link collapsed d-flex justify-content-between h3 text-decoration-none" href="tiendaScania.php">
+                                    Scania
+                                </a>
+                                </li>
+                                
+                            <li class="pb-3">
+                                <a class="nav-link collapsed d-flex justify-content-between h3 text-decoration-none" href="tiendaMan.php">
+                                    Man
+                                </a>
+                            </li>
+                    </ul>
                    
                 </ul>
             </div>
@@ -161,17 +163,10 @@
                           
                         </ul>
                     </div>
-                    <div class="col-md-6 pb-4">
-                        <div class="d-flex">
-                            <select class="form-control">
-                                <option>Featured</option>
-                                <option>A to Z</option>
-                                <option>Item</option>
-                            </select>
-                        </div>
-                    </div>
+                    
                 </div>
-
+                
+<!--------------------------------------------------Funcionalidad consulta productos----------------------------------------------------->
                 <div class="row">
                 <?php
 
@@ -190,9 +185,8 @@
                                 <img class="card-img rounded-0 img-fluid" src="<?php echo $producto['rutaimagen']; ?>">
                                 <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                     <ul class="list-unstyled">
-                                        <li><a class="btn btn-success text-white" href="shop-single.html"><i class="far fa-heart"></i></a></li>
-                                        <li><a class="btn btn-success text-white mt-2" href="shop-single.html"><i class="far fa-eye"></i></a></li>
-                                        <li><a class="btn btn-success text-white mt-2" href="shop-single.html"><i class="fas fa-cart-plus"></i></a></li>
+                                        
+                                        <li><a class="btn btn-success text-white mt-2" href="carrito.php">Agregar <i class="fa fa-fw fa-shopping-cart mr-1"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -210,17 +204,19 @@
                                     </li>
                                 </ul>
                               
-                    </li>
-                </ul>
-                <p class="text-center mb-0"><?php echo $producto['medida']; ?></p>
-                <p class="text-center mb-0">$<?php echo $producto['precio']; ?></p>
-            </div>
+                        </li>
+                    </ul>
+                    <p class="text-center mb-0"><?php echo $producto['medida']; ?></p>
+                    <p class="text-center mb-0">$<?php echo $producto['precio']; ?></p>
+                </div>
         </div>
     </div>
     <?php
 }
 
 ?>
+<!--------------------------------------------------Funcionalidad consulta productos----------------------------------------------------->
+
              </div>
                 <div div="row">
                     <ul class="pagination pagination-lg justify-content-end">

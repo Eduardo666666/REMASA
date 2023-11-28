@@ -81,15 +81,15 @@
                                 </div>
                             </div>
                             <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal" data-bs-target="#templatemo_search">
-                                <i class="fa fa-fw fa-search text-dark mr-2"></i>
+                                <i class="fa fa-fw fa-search mr-2"></i>
                             </a>
                             <a class="nav-icon position-relative text-decoration-none" href="#">
-                                <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
-                                <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">7</span>
+                                <i class="fa fa-fw fa-shopping-cart mr-1"></i>
+                                <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light"></span>
                             </a>
                             <a class="nav-icon position-relative text-decoration-none" href="frmLogin.php">
-                                <i class="fa fa-fw fa-user text-dark mr-3"></i>
-                                <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">+99</span>
+                                <i class="fa fa-fw fa-user mr-3"></i>
+                                <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light"></span>
                             </a>
                         </div>
                     </div>
@@ -126,37 +126,28 @@
             <div class="col-lg-3">
                 <h1 class="h2 pb-4">Categorías</h1>
                 <ul class="list-unstyled templatemo-accordion">
+                <li class="pb-3">
+                        <a class="nav-link collapsed d-flex justify-content-between h3 text-decoration-none" style= "background-color: #D9D9D9; padding: 20px;" href="tienda.php">
+                            Volvo
+                        </a>
+                        </li>
                     <li class="pb-3">
-                        <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">
+                        <a class="nav-link collapsed d-flex justify-content-between h3 text-decoration-none" href="tiendaMercedes.php">
                             Mercedes-Benz
-                            <i class="fa fa-fw fa-chevron-circle-down mt-1"></i>
                         </a>
-                        <ul class="collapse show list-unstyled pl-3">
-                            <li><a class="text-decoration-none" href="#">Men</a></li>
-                            <li><a class="text-decoration-none" href="#">Women</a></li>
-                        </ul>
                     </li>
                     <li class="pb-3">
-                        <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">
-                            BOLVO
-                            <i class="pull-right fa fa-fw fa-chevron-circle-down mt-1"></i>
+                        <a class="nav-link collapsed d-flex justify-content-between h3 text-decoration-none" href="tiendaScania.php">
+                            Scania
                         </a>
-                        <ul id="collapseTwo" class="collapse list-unstyled pl-3">
-                            <li><a class="text-decoration-none" href="#">Sport</a></li>
-                            <li><a class="text-decoration-none" href="#">Luxury</a></li>
-                        </ul>
-                    </li>
+                        </li>
                     <li class="pb-3">
-                        <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">
-                            MCI
-                            <i class="pull-right fa fa-fw fa-chevron-circle-down mt-1"></i>
+                        <a class="nav-link collapsed d-flex justify-content-between h3 text-decoration-none" href="tiendaMan.php">
+                            Man
                         </a>
-                        <ul id="collapseThree" class="collapse list-unstyled pl-3">
-                            <li><a class="text-decoration-none" href="#">Bag</a></li>
-                            <li><a class="text-decoration-none" href="#">Sweather</a></li>
-                            <li><a class="text-decoration-none" href="#">Sunglass</a></li>
-                        </ul>
                     </li>
+                 
+                   
                 </ul>
             </div>
 
@@ -165,14 +156,9 @@
                     <div class="col-md-6">
                         <ul class="list-inline shop-top-menu pb-3 pt-1">
                             <li class="list-inline-item">
-                                <a class="h3 text-dark text-decoration-none mr-3" href="#">All</a>
+                                <a class="h3 text-dark text-decoration-none mr-3" href="#">Volvo</a>
                             </li>
-                            <li class="list-inline-item">
-                                <a class="h3 text-dark text-decoration-none mr-3" href="#">Men's</a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="h3 text-dark text-decoration-none" href="#">Women's</a>
-                            </li>
+                          
                         </ul>
                     </div>
                     <div class="col-md-6 pb-4">
@@ -265,19 +251,24 @@
                     Trabajamos con las piezas de las marcas más solicitadas en el mercado.
                     </p>
                 </div>
+          
+
+
+ <!-- Brands-->
+ 
                 <div class="col-lg-9 m-auto tempaltemo-carousel">
                     <div class="row d-flex flex-row">
                         <!--Controles-->
                         <div class="col-1 align-self-center">
-                            <a class="h1" href="#multi-item-example" role="button" data-bs-slide="prev">
+                            <a class="h1" href="#templatemo-slide-brand" role="button" data-bs-slide="prev">
                                 <i class="text-light fas fa-chevron-left"></i>
                             </a>
                         </div>
                         <!--Controles-->
 
-                        <!--Carrusel-->
+                        <!--Carrusel Wrapper-->
                         <div class="col">
-                            <div class="carousel slide carousel-multi-item pt-2 pt-md-0" id="multi-item-example" data-bs-ride="carousel">
+                            <div class="carousel slide carousel-multi-item pt-2 pt-md-0" id="templatemo-slide-brand" data-bs-ride="carousel">
                                 <!--Slides-->
                                 <div class="carousel-inner product-links-wap" role="listbox">
 
@@ -285,16 +276,16 @@
                                     <div class="carousel-item active">
                                         <div class="row">
                                             <div class="col-3 p-md-5">
-                                                <a href="#"><img class="img-fluid brand-img" src="assets/img/volvologo.png" alt="Brand Logo"></a>
-                                            </div>
-                                            <div class="col-3 p-md-5">
-                                                <a href="#"><img class="img-fluid brand-img" src="assets/img/scanialogo.png" alt="Brand Logo"></a>
+                                                <a href="#"><img class="img-fluid brand-img" src="assets/img/manlogo.png" alt="Brand Logo"></a>
                                             </div>
                                             <div class="col-3 p-md-5">
                                                 <a href="#"><img class="img-fluid brand-img" src="assets/img/mercedeslogo.png" alt="Brand Logo"></a>
                                             </div>
                                             <div class="col-3 p-md-5">
-                                                <a href="#"><img class="img-fluid brand-img" src="assets/img/manlogo.png" alt="Brand Logo"></a>
+                                                <a href="#"><img class="img-fluid brand-img" src="assets/img/volvologo.png" alt="Brand Logo"></a>
+                                            </div>
+                                            <div class="col-3 p-md-5">
+                                                <a href="#"><img class="img-fluid brand-img" src="assets/img/scanialogo.png" alt="Brand Logo"></a>
                                             </div>
                                         </div>
                                     </div>
@@ -304,40 +295,61 @@
                                     <div class="carousel-item">
                                         <div class="row">
                                             <div class="col-3 p-md-5">
-                                                <a href="#"><img class="img-fluid brand-img" src="assets/img/scanialogo.png" alt="Brand Logo"></a>
+                                                <a href="#"><img class="img-fluid brand-img" src="assets/img/proveedores1.png" alt="Brand Logo"></a>
                                             </div>
                                             <div class="col-3 p-md-5">
-                                                <a href="#"><img class="img-fluid brand-img" src="assets/img/manlogo.png" alt="Brand Logo"></a>
+                                                <a href="#"><img class="img-fluid brand-img" src="assets/img/proveedores2.png" alt="Brand Logo"></a>
                                             </div>
                                             <div class="col-3 p-md-5">
-                                                <a href="#"><img class="img-fluid brand-img" src="assets/img/volvologo.png" alt="Brand Logo"></a>
+                                                <a href="#"><img class="img-fluid brand-img" src="assets/img/proveedores3.png" alt="Brand Logo"></a>
                                             </div>
                                             <div class="col-3 p-md-5">
-                                                <a href="#"><img class="img-fluid brand-img" src="assets/img/mercedeslogo.png" alt="Brand Logo"></a>
+                                                <a href="#"><img class="img-fluid brand-img" src="assets/img/proveedores4.png" alt="Brand Logo"></a>
                                             </div>
+                                            <div class="col-3 p-md-5">
+                                                <a href="#"><img class="img-fluid brand-img" src="assets/img/proveedores5.png" alt="Brand Logo"></a>
+                                            </div>
+                                            <div class="col-3 p-md-5">
+                                                <a href="#"><img class="img-fluid brand-img" src="assets/img/proveedores6.png" alt="Brand Logo"></a>
+                                            </div>
+                                            <div class="col-3 p-md-5">
+                                                <a href="#"><img class="img-fluid brand-img" src="assets/img/proveedores7.png" alt="Brand Logo"></a>
+                                            </div>
+                                            <div class="col-3 p-md-5">
+                                                <a href="#"><img class="img-fluid brand-img" src="assets/img/proveedores8.png" alt="Brand Logo"></a>
+                                            </div>
+                                            <div class="col-3 p-md-5">
+                                                <a href="#"><img class="img-fluid brand-img" src="assets/img/proveedores9.png" alt="Brand Logo"></a>
+                                            </div>
+                                            <div class="col-3 p-md-5">
+                                                <a href="#"><img class="img-fluid brand-img" src="assets/img/proveedores10.png" alt="Brand Logo"></a>
+                                            </div>
+                                           
                                         </div>
                                     </div>
-                                    <!--Segundo slide-->
+                                    <!-- Segundo slide-->
 
                                 </div>
-                                <!--Slides-->
+                                <!-- Slides-->
                             </div>
                         </div>
-                        <!--Carrusel-->
+                        <!--Carrusel Wrapper-->
 
                         <!--Controles-->
                         <div class="col-1 align-self-center">
-                            <a class="h1" href="#multi-item-example" role="button" data-bs-slide="next">
+                            <a class="h1" href="#templatemo-slide-brand" role="button" data-bs-slide="next">
                                 <i class="text-light fas fa-chevron-right"></i>
                             </a>
                         </div>
-                        <!--Controles-->
+                        <!-- Controles-->
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!--Brands-->
+    <!-- Brands-->
+
+
 
 
     

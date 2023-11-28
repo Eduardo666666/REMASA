@@ -2,9 +2,10 @@
 <html lang="en">
 
 <head>
-    <title>REMASA - Acerca de nosotros</title>
+    <title>REMASA - Catálogo</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
  
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/icon2.png">
 
@@ -40,19 +41,65 @@
     <!-- Navegación -->
 
 
-    
 
-    <!-- Header -->
-    <?php
-        //Llamada al menú de navegación
-        include 'menu.php';
-        $menu = new menu();
-        $menu ->barraMenu();
-    ?>
-    <!--Header -->
+             <!-- Header -->
+             <nav class="navbar navbar-expand-lg navbar-light shadow">
+                <div class="container d-flex justify-content-between align-items-center">
 
-    <!-- Modal -->
-    <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <img  class="navbar-brand text-success logo h1 align-self-center" src="./assets/img/logo.png" 
+                    alt="Remasa Logo" style="width: 200px; height: auto;">
+
+                    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
+                        <div class="flex-fill">
+                            <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="index.php"><b>Inicio</b></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="acercaDeNosotros.php"><b>Acerca de nosotros</b></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="tienda.php"><b>Tienda</b></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="contactanos.php"><b>Contáctanos</b></a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="navbar align-self-center d-flex">
+                            <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="inputMobileSearch" placeholder="Search ...">
+                                    <div class="input-group-text">
+                                        <i class="fa fa-fw fa-search"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal" data-bs-target="#templatemo_search">
+                                <i class="fa fa-fw fa-search mr-2"></i>
+                            </a>
+                            <a class="nav-icon position-relative text-decoration-none" href="#">
+                                <i class="fa fa-fw fa-shopping-cart mr-1"></i>
+                                <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light"></span>
+                            </a>
+                            <a class="nav-icon position-relative text-decoration-none" href="frmLogin.php">
+                                <i class="fa fa-fw fa-user mr-3"></i>
+                                <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light"></span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </nav>
+    <!-- Header -->  
+
+     <!-- Modal -->
+     <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="w-100 pt-1 mb-5 text-right">
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -68,46 +115,46 @@
         </div>
     </div>
 
- <!--Banner -->
 
- <section style="background-color: #058F71;">
-    <div class="container" style="padding: 20px;">
-        <div class="col-md-12 text-white text-center">
-            <h1 class="h1">Acerca de nosotros</h1>
-            <p class="text-white">Somos una empresa especializada dedicada a la venta de refacciones para autobuses, ofreciendo piezas de alta calidad y un servicio personalizado. Contamos con un equipo experto que garantiza soluciones eficientes para el mantenimiento de flotas, con entregas rápidas y un compromiso constante con la satisfacción del cliente. Confía en nosotros para mantener sus autobuses en óptimas condiciones de funcionamiento.
-            </p>
-        </div>
-        <div class="row align-items-center">
-            <div class="col-md-6 text-center">
-                <h1 class="h1 text-white">Misión</h1>
-                <p class="text-white">Proporcionar a los clientes del sector de autotransportes, refacciones de la más alta calidad, respaldadas por un servicio excepcional, garantizando la seguridad y el rendimiento de sus vehículos, manteniendo al mismo tiempo el compromiso con la calidad y la excelencia en sus servicios.
-                </p>
-            </div>
-            <div class="col-md-6 text-center">
-                <h1 class="h1 text-white">Visión</h1>
-                <p class="text-white">Ser líderes en la industria de refacciones para autobuses y tractocamiones, reconocidos a nivel nacional por la excelencia en sus productos y servicios. Se busca continuar creciendo y expandiendo su presencia en el mercado, manteniendo siempre sus valores como pilares fundamentales de la empresa.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
+    <!-- Contenido -->
+    <div class="container py-5">
+        <div class="row">
+
+            <div class="col-lg-3">
+                <h1 class="h2 pb-4">Categorías</h1>
+                <ul class="list-unstyled templatemo-accordion">
+                <li class="pb-3">
+                        <a class="nav-link collapsed d-flex justify-content-between h3 text-decoration-none" href="tienda.php">
+                            Volvo
+                        </a>
+                        </li>
+                    <li class="pb-3">
+                        <a class="nav-link collapsed d-flex justify-content-between h3 text-decoration-none" href="tiendaMercedes.php">
+                            Mercedes-Benz
+                        </a>
+                    </li>
+                    <li class="pb-3">
+                        <a class="nav-link collapsed d-flex justify-content-between h3 text-decoration-none" style= "background-color: #D9D9D9; padding: 20px;" href="tiendaScania.php">
+                            Scania
+                        </a>
+                        </li>
+                    <li class="pb-3">
+                        <a class="nav-link collapsed d-flex justify-content-between h3 text-decoration-none" href="tiendaMan.php">
+                            Man
+                        </a>
+                    </li>
+                 
 
 
-    </section>
-    <!--Banner -->
 
 
-    <!--Brands -->
-    <section class="bg-light py-5">
-        <div class="container my-4">
-            <div class="row text-center py-3">
-                <div class="col-lg-5 m-auto">
-                    <h1  class="h1 col-md-12 text-center">Distribuidor de las mejores marcas</h1>
-                    <p>
-                        Trabajamos con piezas especiales de importación de las marcas más solicitadas en el mercado.
-                    </p>
-                </div>
-                
+
+
+
+
+
+ <!-- Brands-->
+                     
                 <div class="col-lg-9 m-auto tempaltemo-carousel">
                     <div class="row d-flex flex-row">
                         <!--Controles-->
@@ -201,7 +248,8 @@
     </section>
     <!-- Brands-->
 
-    <!-- Footer -->
+
+                        <!-- Footer -->
     <footer id="tempaltemo_footer" style="background-color: #1A2B50;">
         <div class="container">
             <div class="row">
@@ -274,14 +322,13 @@
                 </div>
             </div>
         </div>
-
-        <div  style="background-color: #058F71;">
+        <div style="background-color: #058F71;">
             <div class="container">
                 <div class="row pt-2">
                     <div class="col-12">
-                        <p class="text-left text-light" style="background-color: #058F71;";>
-                            Copyright &copy; 2023 REMASA 
-                            | Desarrollado por:  <a rel="sponsored" target="_blank">Software Solutions</a>
+                        <p class="text-left text-light">
+                            Copyright &copy; 2023 REMASA
+                            | Desarrolado por: <a rel="sponsored" target="_blank">Software Solutions</a>
                         </p>
                     </div>
                 </div>
@@ -289,14 +336,15 @@
         </div>
 
     </footer>
-    <!--Footer -->
-    <!--Script -->
+    <!-- Footer -->
+
+    <!-- Script -->
     <script src="assets/js/jquery-1.11.0.min.js"></script>
     <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/templatemo.js"></script>
     <script src="assets/js/custom.js"></script>
-    <!--Script -->
+    <!-- Script -->
 </body>
 
 </html>

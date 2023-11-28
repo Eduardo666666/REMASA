@@ -75,9 +75,9 @@
             <h1 class="h1">Contáctanos</h1>
             <p>
                 ¿Alguna duda?
-                sigue este link para conectarte a nuestro WhatsApp, te atenderemos a la brevedad.
+                Sigue este link para conectarte a nuestro WhatsApp, te atenderemos a la brevedad.
             </p>
-            <p><a href="https://wa.me/3339521166" target="_blank">wa.link/29axhg</a></p>
+            <p class="col-md-6 m-auto text-center"><a href="https://wa.me/3339521166" target="_blank">wa.link/29axhg</a></p>
             </p>
         </div>
     </div>
@@ -111,25 +111,24 @@
             <form class="col-md-9 m-auto" method="post" role="form">
                 <div class="row">
                     <div class="form-group col-md-6 mb-3">
-                        <label for="inputname">Nombre</label>
+                        <label for="inputname">Nombre:</label>
                         <input type="text" class="form-control mt-1" id="name" name="name" placeholder="">
                     </div>
                     <div class="form-group col-md-6 mb-3">
-                        <label for="inputemail">Email</label>
+                        <label for="inputemail">Email:</label>
                         <input type="email" class="form-control mt-1" id="email" name="email" placeholder="">
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label for="inputsubject">Asunto</label>
+                    <label for="inputsubject">Asunto:</label>
                     <input type="text" class="form-control mt-1" id="subject" name="subject" placeholder="">
                 </div>
                 <div class="mb-3">
-                    <label for="inputmessage">Comentario</label>
+                    <label for="inputmessage">Comentario:</label>
                     <textarea class="form-control mt-1" id="message" name="message" placeholder="" rows="8"></textarea>
                 </div>
                 <div class="row">
                     <div class="col text-end mt-2">
-                        <button type="submit" class="btn btn-success btn-lg px-3">Enviar</button>
                         <button type="submit" class="btn btn-success btn-lg px-3">Enviar</button>
                     </div>
                 </div>

@@ -14,7 +14,7 @@ html{
   }
   
   /* diseño caja de texto */
-  input[type=text], input[type=password], input[type=number]{
+  input[type=text], input[type=password], input[type=number], select, input[type=tel]{
       width: 100%;
       padding: 12px 15px;
       margin: 5px 0;

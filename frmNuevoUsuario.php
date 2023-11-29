@@ -5,26 +5,93 @@
         <title>REMASA - Registrar usuario</title>
         <link rel="stylesheet" href="assets/css/NuevoUsuario.css" type="text/css">
     </head>
+<style>
+
+      
+
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-NuevoUsuario {
+    justify-content: center;
+        background-color: rgba(255, 255, 255, 0.7);
+         margin: auto;
+         padding-left: 10px;
+         padding-right: 10px;
+}
+
+
+    .form-group {
+    
+    justify-content: center;
+    display: inline-block;
+    width: 100%;
+    max-width: 290px;
+    margin: auto;
+    padding-left: 10px;
+     padding-right: 10px;
+     padding-top: 10px;
+    box-sizing: border-box; 
+    }
+
+    .enviarNvoUsr {
+    
+    justify-content: center;
+    display: inline-block;
+    width: 100%;
+    max-width: 290px;
+    margin: auto;
+    padding-left: 10px;
+     padding-right: 10px;
+     padding-top: 10px;
+    box-sizing: border-box; 
+    }
+
+        </style>
 
     <body>
-        <div style="clear:both;"></div>
+        <div  style="clear:both;"></div>
         <section>
             <div class="login-NuevoUsuario">
                 <h2>Registo de usuario</h2>
+
                 <form method="post" action="Controlador/procesaMovimiento.php">
+
+                <span class="form-group">
                     <div class="formleyenda"><label>Nombre:</label></div>
                     <input id="nombre" type="text" name="nombre" required>
+                    </span>       
+
+                    <span class="form-group">
                     <div class="formleyenda"><label>Apellidos:</label></div>
                     <input id="apellidos" type="text" name="apellidos" required>
+                    </span>
+
+
+
+                    <span class="form-group">
                     <div class="formleyenda"><label>Teléfono:</label></div>
                     <input maxlength="10" min="10" id="telefono" type="tel" name="telefono" required>
-                    <div class="formleyenda"><label>Código postal:</label></div>
-                    <input id="codigopostal" type="number" name="codigopostal" required>
+                    </span>
+                 
+                    <span class="form-group">
                     <div class="formleyenda"><label>Dirección:</label></div>
                     <input id="direccion" type="text" name="direccion" required>
+                    </span>
+
+                    <span class="form-group">
                     <div class="formleyenda"><label>Ciudad:</label></div>
                     <input id="ciudad" type="text" name="ciudad" required>
-                    <div class="formleyenda"><label>Estado:</label></div>
+                    </span>
+
+                    <span class="form-group">
+                  <div class="formleyenda"><label>Estado:</label></div>
                     <select name="estado" id="estado" required>
                         <option value="" disabled selected>Selecciona un estado</option>
                         <option value="Aguascalientes">Aguascalientes</option>
@@ -58,16 +125,35 @@
                         <option value="Yucatán">Yucatán</option>
                         <option value="Zacatecas">Zacatecas</option>
                     </select>
+                    </span>
+                    
+
+
+                    <span class="form-group">
+                    <div class="formleyenda"><label>Código postal:</label></div>
+                    <input id="codigopostal" type="number" name="codigopostal" required></span>
+                    </span>
+                   <br>
+                    <span class="form-group">
                     <div class="formleyenda"><label>Correo:</label></div>
                     <input id="correo" type="text" name="correo" required>
+                    </span>
+
+                    <span class="form-group">
                     <div class="formleyenda"><label>Contraseña:</label></div>
                     <input id="contrasena" type="password" name="contrasena" required>
+                    </span>
+
+
                     <div>
-                        <button id="enviarNvoUsr" name="enviarNvoUsr" type="submit">Registrar</button>
+                        <button class="enviarNvoUsr" id="enviarNvoUsr" name="enviarNvoUsr" type="submit">Registrar</button>
                     </div>
+
                     <div class="regresar">
-                        <p><a href="frmlogin.php">Regresar</a></p>
-                    </div>
+    <button class="botonRegresar" id="botonRegresar" name="botonRegresar" type="button" onclick="window.location.href='frmlogin.php'">Regresar</button>
+</div>
+
+                    
             </form>
                 
             </div>

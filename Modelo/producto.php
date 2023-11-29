@@ -104,8 +104,8 @@ class Producto{
         }
     }//EstableceConexion
     
-    //---------------
-    //Método para BUSCAR usuario por cuenta y contraseña
+    //----------------------------------------------------------------------------------------------------------------------------------
+    //Método para BUSCAR productos Mercedez-Benz
     public function buscarProductosMercedes(){
         //1-Definir la instruccion SQL de consulta
         $consulta = "select id, nombre, descripcion, medida, precio, rutaimagen from producto where marca='Mercedes-Benz'";
@@ -122,7 +122,188 @@ class Producto{
         
         //5-Retorna los datos de la consulta
         return $resultado;
-    }//consultaUsuario
+    }//consulta productos Mercedez-Benz
+
+    //----------------------------------------------------------------------------------------------------------------------------------
+    //Método para BUSCAR productos MAN
+    public function buscarProductosMAN(){
+        //1-Definir la instruccion SQL de consulta
+        $consulta = "select id, nombre, descripcion, medida, precio, rutaimagen from producto where marca='MAN'";
+        //echo $consulta."<br>";
+        
+        //2-Establecer conexión con la BD
+        $this->EstableceConexion();
+        
+        //3-Ejecutar la instrucción SQL en la conexion (BD)
+        $resultado = mysqli_query($this->conexion,$consulta);
+        
+        //4-Cierro la conexión con la BD
+        mysqli_close($this->conexion);
+        
+        //5-Retorna los datos de la consulta
+        return $resultado;
+    }//consulta productos MAN
+
+    //----------------------------------------------------------------------------------------------------------------------------------
+    //Método para BUSCAR productos Scania
+    public function buscarProductosScania(){
+        //1-Definir la instruccion SQL de consulta
+        $consulta = "select id, nombre, descripcion, medida, precio, rutaimagen from producto where marca='Scania'";
+        //echo $consulta."<br>";
+        
+        //2-Establecer conexión con la BD
+        $this->EstableceConexion();
+        
+        //3-Ejecutar la instrucción SQL en la conexion (BD)
+        $resultado = mysqli_query($this->conexion,$consulta);
+        
+        //4-Cierro la conexión con la BD
+        mysqli_close($this->conexion);
+        
+        //5-Retorna los datos de la consulta
+        return $resultado;
+    }//consulta productos Scania
+
+    //----------------------------------------------------------------------------------------------------------------------------------
+    //Método para BUSCAR productos Volvo
+    public function buscarProductosVolvo(){
+        //1-Definir la instruccion SQL de consulta
+        $consulta = "select id, nombre, descripcion, medida, precio, rutaimagen from producto where marca='Volvo'";
+        //echo $consulta."<br>";
+        
+        //2-Establecer conexión con la BD
+        $this->EstableceConexion();
+        
+        //3-Ejecutar la instrucción SQL en la conexion (BD)
+        $resultado = mysqli_query($this->conexion,$consulta);
+        
+        //4-Cierro la conexión con la BD
+        mysqli_close($this->conexion);
+        
+        //5-Retorna los datos de la consulta
+        return $resultado;
+    }//consulta productos Volvo
+
+    //----------------------------------------------------------------------------------------------------------------------------------
+    //Método para BUSCAR categoria conecciones
+    public function buscarProductosCategoriaConecciones(){
+        //1-Definir la instruccion SQL de consulta
+        $consulta = "select id, nombre, descripcion, medida, precio, rutaimagen from producto where categoria='Conecciones'";
+        //echo $consulta."<br>";
+        
+        //2-Establecer conexión con la BD
+        $this->EstableceConexion();
+        
+        //3-Ejecutar la instrucción SQL en la conexion (BD)
+        $resultado = mysqli_query($this->conexion,$consulta);
+        
+        //4-Cierro la conexión con la BD
+        mysqli_close($this->conexion);
+        
+        //5-Retorna los datos de la consulta
+        return $resultado;
+    }//consulta productos categoria conecciones
+
+    //----------------------------------------------------------------------------------------------------------------------------------
+    //Método para BUSCAR categoria lubricantes
+    public function buscarProductosCategoriaLubricantes(){
+        //1-Definir la instruccion SQL de consulta
+        $consulta = "select id, nombre, descripcion, medida, precio, rutaimagen from producto where categoria='Lubricantes'";
+        //echo $consulta."<br>";
+        
+        //2-Establecer conexión con la BD
+        $this->EstableceConexion();
+        
+        //3-Ejecutar la instrucción SQL en la conexion (BD)
+        $resultado = mysqli_query($this->conexion,$consulta);
+        
+        //4-Cierro la conexión con la BD
+        mysqli_close($this->conexion);
+        
+        //5-Retorna los datos de la consulta
+        return $resultado;
+    }//consulta productos categoria lubricantes
+
+    //----------------------------------------------------------------------------------------------------------------------------------
+    //Método para BUSCAR categoria filtracion
+    public function buscarProductosCategoriaFiltracion(){
+        //1-Definir la instruccion SQL de consulta
+        $consulta = "select id, nombre, descripcion, medida, precio, rutaimagen from producto where categoria='Filtracion'";
+        //echo $consulta."<br>";
+        
+        //2-Establecer conexión con la BD
+        $this->EstableceConexion();
+        
+        //3-Ejecutar la instrucción SQL en la conexion (BD)
+        $resultado = mysqli_query($this->conexion,$consulta);
+        
+        //4-Cierro la conexión con la BD
+        mysqli_close($this->conexion);
+        
+        //5-Retorna los datos de la consulta
+        return $resultado;
+    }//consulta productos categoria filtracion
+
+    //----------------------------------------------------------------------------------------------------------------------------------
+    //Método para BUSCAR categoria direccion
+    public function buscarProductosCategoriaDireccion(){
+        //1-Definir la instruccion SQL de consulta
+        $consulta = "select id, nombre, descripcion, medida, precio, rutaimagen from producto where categoria='Direccion'";
+        //echo $consulta."<br>";
+        
+        //2-Establecer conexión con la BD
+        $this->EstableceConexion();
+        
+        //3-Ejecutar la instrucción SQL en la conexion (BD)
+        $resultado = mysqli_query($this->conexion,$consulta);
+        
+        //4-Cierro la conexión con la BD
+        mysqli_close($this->conexion);
+        
+        //5-Retorna los datos de la consulta
+        return $resultado;
+    }//consulta productos categoria direccion
+
+    //----------------------------------------------------------------------------------------------------------------------------------
+    //Método para BUSCAR categoria frenos
+    public function buscarProductosCategoriaFrenos(){
+        //1-Definir la instruccion SQL de consulta
+        $consulta = "select id, nombre, descripcion, medida, precio, rutaimagen from producto where categoria='Frenos'";
+        //echo $consulta."<br>";
+        
+        //2-Establecer conexión con la BD
+        $this->EstableceConexion();
+        
+        //3-Ejecutar la instrucción SQL en la conexion (BD)
+        $resultado = mysqli_query($this->conexion,$consulta);
+        
+        //4-Cierro la conexión con la BD
+        mysqli_close($this->conexion);
+        
+        //5-Retorna los datos de la consulta
+        return $resultado;
+    }//consulta productos categoria frenos
+
+    //----------------------------------------------------------------------------------------------------------------------------------
+    //Método para BUSCAR categoria suspencion
+    public function buscarProductosCategoriaSuspencion(){
+        //1-Definir la instruccion SQL de consulta
+        $consulta = "select id, nombre, descripcion, medida, precio, rutaimagen from producto where categoria='Suspencion'";
+        //echo $consulta."<br>";
+        
+        //2-Establecer conexión con la BD
+        $this->EstableceConexion();
+        
+        //3-Ejecutar la instrucción SQL en la conexion (BD)
+        $resultado = mysqli_query($this->conexion,$consulta);
+        
+        //4-Cierro la conexión con la BD
+        mysqli_close($this->conexion);
+        
+        //5-Retorna los datos de la consulta
+        return $resultado;
+    }//consulta productos categoria suspencion
+
 
 
     //Método para REGISTRAR información en la tabla usuario
@@ -145,3 +326,4 @@ class Producto{
     }//registrarUsuario
     
 }//class
+

@@ -126,7 +126,7 @@
                                 </li>
                                 
                             <li class="pb-3">
-                                <a class="nav-link collapsed d-flex justify-content-between h3 text-decoration-none" style= "background-color: #D9D9D9; padding: 20px;" href="tiendaMan.php">
+                                <a class="nav-link collapsed d-flex justify-content-between h3 text-decoration-none" href="tiendaMan.php">
                                     Man
                                 </a>
                             </li>
@@ -140,7 +140,7 @@
                     <div class="col-md-6">
                         <ul class="list-inline shop-top-menu pb-3 pt-1">
                             <li class="list-inline-item">
-                                <a class="h3 text-dark text-decoration-none mr-3" href="#">MAN</a>
+                                <a class="h3 text-dark text-decoration-none mr-3" href="#">Dirección</a>
                             </li>
                           
                         </ul>
@@ -155,7 +155,7 @@
  include 'Modelo/producto.php';
 // Crear una instancia de la clase Producto
 $producto = new Producto();
-$productos = $producto -> buscarProductosMAN();
+$productos = $producto -> buscarProductosCategoriaDireccion();
 // Obtener la información de los productos
 ?>
     <div class="container py-5">

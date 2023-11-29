@@ -10,5 +10,8 @@ if ($_SESSION['valido'] != '1') {
     //además salgo de este script
     exit();
 }
+if (isset($_SESSION['usuario'])) {
+    $usuario = $_SESSION['usuario'];
+}
 ?>
 

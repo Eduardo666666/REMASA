@@ -163,5 +163,9 @@ class Usuario{
         //5-Mensaje informativo
         echo "Usuario registrado.<br>";
     }//registrarUsuario
+
+    //$registrar = "insert into usuario (apellidos, ciudad, codigopostal, contrasena, correo, direccion, estado, nombre, telefono, tipousuario) values ('".$this->getApellidos()."','".$this->getCiudad()."',".$this->getCodigopostal().",'".$this->getContrasena()."','".$this->getCorreo()."','".$this->getDireccion()."','".$this->getEstado()."','".$this->getNombre()."',".$this->getTelefono().",'cliente')";
+
+
     
 }//class

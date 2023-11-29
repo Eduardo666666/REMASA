@@ -6,8 +6,9 @@
     ?>
 	<meta charset="utf-8">
 	<title>REMASA WEB</title>
-    <link rel="stylesheet" href="../css/menu.css" type="text/css">
-    <link rel="stylesheet" href="../css/formularios.css" type="text/css">
+
+<link rel="stylesheet" href="https://use.typekit.net/nwm6dld.css">
+    <link rel="stylesheet" href="assets/css/NuevoUsuario.css" type="text/css">
 </head>
 <body>
     <header>

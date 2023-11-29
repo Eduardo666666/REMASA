@@ -94,12 +94,12 @@
                 <div class="col-md-4 pt-5">
                     <h2 class="h2 text-light border-bottom pb-3 border-light">Productos</h2>
                     <ul class="list-unstyled text-light footer-link-list">
-                        <li><a class="text-decoration-none" href="#">Suspensión</a></li>
-                        <li><a class="text-decoration-none" href="#">Frenos</a></li>
-                        <li><a class="text-decoration-none" href="#">Dirección</a></li>
-                        <li><a class="text-decoration-none" href="#">Filtración</a></li>
-                        <li><a class="text-decoration-none" href="#">Lubricantes</a></li>
-                        <li><a class="text-decoration-none" href="#">Conecciones</a></li>
+                        <li><a class="text-decoration-none" href="tiendaSuspension.php">Suspensión</a></li>
+                        <li><a class="text-decoration-none" href="tiendaFrenos.php">Frenos</a></li>
+                        <li><a class="text-decoration-none" href="tiendaDireccion.php">Dirección</a></li>
+                        <li><a class="text-decoration-none" href="tiendaFiltracion.php">Filtración</a></li>
+                        <li><a class="text-decoration-none" href="tiendaLubricantes.php">Lubricantes</a></li>
+                        <li><a class="text-decoration-none" href="tiendaConecciones.php">Conecciones</a></li>
                     </ul>
                 </div>
 

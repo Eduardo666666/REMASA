@@ -110,8 +110,8 @@
                 <ul class="list-unstyled templatemo-accordion">
                     <ul class="list-unstyled text-light footer-link-list">
                         <li class="pb-3">
-                                <a class="nav-link collapsed d-flex justify-content-between h3 text-decoration-none"  href="tiendaVolvo.php">
-                                    Volvos
+                                <a class="nav-link collapsed d-flex justify-content-between h3 text-decoration-none" style= "background-color: #D9D9D9; padding: 20px;" href="tienda.php">
+                                    Volvo
                                 </a>
                                 </li>
                             <li class="pb-3">
@@ -126,7 +126,7 @@
                                 </li>
                                 
                             <li class="pb-3">
-                                <a class="nav-link collapsed d-flex justify-content-between h3 text-decoration-none" style= "background-color: #D9D9D9; padding: 20px;" href="tiendaMan.php">
+                                <a class="nav-link collapsed d-flex justify-content-between h3 text-decoration-none" href="tiendaMan.php">
                                     Man
                                 </a>
                             </li>
@@ -140,7 +140,7 @@
                     <div class="col-md-6">
                         <ul class="list-inline shop-top-menu pb-3 pt-1">
                             <li class="list-inline-item">
-                                <a class="h3 text-dark text-decoration-none mr-3" href="#">MAN</a>
+                                <a class="h3 text-dark text-decoration-none mr-3" href="#">Volvo</a>
                             </li>
                           
                         </ul>
@@ -155,7 +155,7 @@
  include 'Modelo/producto.php';
 // Crear una instancia de la clase Producto
 $producto = new Producto();
-$productos = $producto -> buscarProductosMAN();
+$productos = $producto -> buscarProductosScania();
 // Obtener la información de los productos
 ?>
     <div class="container py-5">
@@ -366,12 +366,12 @@ $productos = $producto -> buscarProductosMAN();
                 <div class="col-md-4 pt-5">
                     <h2 class="h2 text-light border-bottom pb-3 border-light">Productos</h2>
                     <ul class="list-unstyled text-light footer-link-list">
-                        <li><a class="text-decoration-none" href="tiendaSuspension.php">Suspensión</a></li>
-                        <li><a class="text-decoration-none" href="tiendaFrenos.php">Frenos</a></li>
-                        <li><a class="text-decoration-none" href="tiendaDireccion.php">Dirección</a></li>
-                        <li><a class="text-decoration-none" href="tiendaFiltracion.php">Filtración</a></li>
-                        <li><a class="text-decoration-none" href="tiendaLubricantes.php">Lubricantes</a></li>
-                        <li><a class="text-decoration-none" href="tiendaConecciones.php">Conecciones</a></li>
+                        <li><a class="text-decoration-none" href="#">Suspensión</a></li>
+                        <li><a class="text-decoration-none" href="#">Frenos</a></li>
+                        <li><a class="text-decoration-none" href="#">Dirección</a></li>
+                        <li><a class="text-decoration-none" href="#">Filtración</a></li>
+                        <li><a class="text-decoration-none" href="#">Lubricantes</a></li>
+                        <li><a class="text-decoration-none" href="#">Conecciones</a></li>
                     </ul>
                 </div>
 

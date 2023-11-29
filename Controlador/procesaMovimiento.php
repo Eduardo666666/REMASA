@@ -45,6 +45,28 @@
         ?>
     </section>
 
+    <!--Funcion para modificar datos de usuario__________________________________________________________-->
+    <section>
+        <?php
+        function modificarUsuario(){
+            //1-Definir la instruccion SQL de consulta
+            $consulta = "select matricula, nombre, apellidos, promedio from alumnos where estatus = 1 and matricula=".$this->getMatricula().";";
+            
+            //2-Establecer conexión con la BD
+            $this->EstableceConexion();
+            
+            //3-Ejecutar la instrucción SQL en la conexion (BD)
+            $resultado = mysqli_query($this->conexion,$consulta);
+            
+            //4-Cierro la conexión con la BD
+            mysqli_close($this->conexion);
+            
+            //5-Retorna los datos de la consulta
+            return $resultado;
+        } 
+        ?>
+    </section>
+
     <!--Metodo consultar productos_________________________________________________________________________-->
     <section>
         <?php
@@ -52,8 +74,8 @@
         function consultarProductos() {
             // Configuración de la conexión a la base de datos
             $servername = "localhost";
-            $username = "root";
-            $password = "";
+            $username = "test";
+            $password = "REMASA";
             $database = "remasa";
         
             // Crear conexión

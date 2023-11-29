@@ -12,10 +12,30 @@ html{
   height: 100vh; /* Establece la altura al 100% de la altura de la ventana */
 }
 
+
+h1{
+  text-align: center;
+  font-size: 24px;
+font-weight: 700;
+font-style: normal;
+}
+
+label, input, div, select {
+font-family: "myriad-pro", sans-serif;
+font-weight: 400;
+font-style: normal;
+font-size: 16px;
+text-align: justify;
+  color: #21386C;
+}
+
+
+
+
 /* diseño caja de texto */
 input[type=text], input[type=password]{
     width: 100%;
-    padding: 12px 15px;
+    padding: 12px 12px;
     margin: 5px 0;
     display: inline-block;
     border: 1px solid #ccc;
@@ -24,11 +44,28 @@ input[type=text], input[type=password]{
   }
   
   /* diseño botón */
+  .registro[type="button"] {
+    width: 50%;
+    background-color: #21386C;
+    color: white;
+    padding: 3px 3px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Cambio de color en botón */
+  .registro[type="button"]:hover {
+    background-color: #008E72;
+  }
+
+
+  /* diseño botón */
   button[type=submit] {
     width: 100%;
     background-color: #21386C;
     color: white;
-    padding: 12px 15px;
+    padding: 12px 12px;
     margin: 5px 0;
     border: none;
     border-radius: 4px;
@@ -44,16 +81,6 @@ input[type=text], input[type=password]{
     text-align: center;
   }
 
-  .login-container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    /* text-align: center; */
-    width: 40%;
-    margin: 0 auto; /* Esto centra el contenedor horizontalmente */
-    margin-top: calc((100vh - 100px) / 2); /* Esto centra el contenedor verticalmente, ajusta el valor según sea necesario */
-}
 
 .login-reg, .regresar{
   font-size: 0.9rem;
@@ -73,13 +100,19 @@ input[type=text], input[type=password]{
 }
 
 .login-container {
-  background-color: #fff;
-  padding: 20px;
+
+  border-radius: 15px;
+  height: 400px;
+  width: 30%;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.7);
   border-radius: 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  /* text-align: center; */
-  width: 40%;
-  margin: 0 auto; /* Esto centra el contenedor horizontalmente */
-  margin-top: calc((100vh - 100px) / 2); /* Esto centra el contenedor verticalmente, ajusta el valor según sea necesario */
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 300px; 
+  overflow-y: auto;
+  margin: 270px auto; 
 }
-

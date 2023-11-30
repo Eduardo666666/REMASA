@@ -55,7 +55,7 @@ class menuLogin {
                         <div class="flex-fill">
                             <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="index.php"><b>Inicio</b></a>
+                                    <a class="nav-link" href="principal.php"><b>Inicio</b></a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="acercaDeNosotros.php"><b>Acerca de nosotros</b></a>
@@ -97,9 +97,13 @@ class menuLogin {
         <span class="fa fa-user" style="padding-right: 10px;"></span>
     </button>
                                 <div class="dropdown-menu">
-                                    <form method="post" action="Controlador/procesaMovimiento.php">
+                                    <form method="post" action="Controlador/modificacionUsuario.php">
                                         <!-- Utiliza un botón en lugar de un enlace -->
                                         <button class="dropdown-item" id="buscarUsuario" name="buscarUsuario" type="submit">Modificar usuario</button>
+                                    </form>
+                                    <form method="post" action="Controlador/modificacionUsuario.php">
+                                        <!-- Utiliza un botón en lugar de un enlace -->
+                                        <button class="dropdown-item" id="buscarUsuario" name="buscarUsuario" type="submit">Mis compras</button>
                                     </form>
                                     <a class="dropdown-item" href="Controlador/cerrarLogin.php">Cerrar Sesión</a>
                                 </div>

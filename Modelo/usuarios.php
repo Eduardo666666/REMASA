@@ -181,8 +181,36 @@ class Usuario{
         echo "Usuario registrado.<br>";
     }//registrarUsuario
 
-    //$registrar = "insert into usuario (apellidos, ciudad, codigopostal, contrasena, correo, direccion, estado, nombre, telefono, tipousuario) values ('".$this->getApellidos()."','".$this->getCiudad()."',".$this->getCodigopostal().",'".$this->getContrasena()."','".$this->getCorreo()."','".$this->getDireccion()."','".$this->getEstado()."','".$this->getNombre()."',".$this->getTelefono().",'cliente')";
+    //Método para EDITAR información en la tabla usuario
+    public function editarUsuario(){
+        //1-instruccion SQL
+        $id = "SELECT idusuario FROM usuario WHERE correo = '".$this->getCorreo()."'";
 
+        //2-Establecer conexión con la BD
+        $this->EstableceConexion();
+        
+        //3-Ejecutar la instrucción SQL en la conexion (BD)
+        $resultado = mysqli_query($this->conexion,$id);
 
-    
+        // 4-Obtener el valor de idusuario
+        $registro = mysqli_fetch_array($resultado);
+        $idusuario = $registro['idusuario'];
+        
+        //1-instruccion SQL
+        $registrar = "UPDATE usuario SET apellidos='".$this->getApellidos()."', 
+               ciudad='".$this->getCiudad()."', codigopostal=".$this->getCodigopostal().",
+               contrasena='".$this->getContrasena()."', correo='".$this->getCorreo()."', 
+               direccion='".$this->getDireccion()."', estado='".$this->getEstado()."',
+               nombre='".$this->getNombre()."', telefono=".$this->getTelefono()."
+               WHERE idusuario = ".$idusuario; 
+        
+        //2-Ejecutar la instrucción SQL en la conexion (BD)
+        mysqli_query($this->conexion,$registrar);
+        
+        //3-Cierro la conexión con la BD
+        mysqli_close($this->conexion);
+        
+        //4-Mensaje informativo
+        echo "Usuario Modificado.<br>";
+    }//registrarUsuario
 }//class

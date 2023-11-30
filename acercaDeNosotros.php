@@ -102,9 +102,9 @@
         <div class="container my-4">
             <div class="row text-center py-3">
                 <div class="col-lg-5 m-auto">
-                    <h1  class="h1 col-md-12 text-center">Distribuidor de las mejores marcas</h1>
+                    <h1  class="h1 col-md-12 text-center">Somos distribuidores de las mejores marcas de importación</h1>
                     <p>
-                        Trabajamos con piezas especiales de importación de las marcas más solicitadas en el mercado.
+                        Trabajamos con piezas y repuestos para autobuses y tractocamiones de las marcas más solicitadas en el mercado.
                     </p>
                 </div>
                 

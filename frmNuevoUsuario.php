@@ -3,65 +3,25 @@
     <head>
         <meta charset="utf-8">
         <title>REMASA - Registrar usuario</title>
+
+        <link rel="stylesheet" href="https://use.typekit.net/nwm6dld.css">
         <link rel="stylesheet" href="assets/css/NuevoUsuario.css" type="text/css">
     </head>
-<style>
 
-      
-
-
-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-}
-
-.login-NuevoUsuario {
-    justify-content: center;
-        background-color: rgba(255, 255, 255, 0.7);
-         margin: auto;
-         padding-left: 10px;
-         padding-right: 10px;
-}
-
-
-    .form-group {
-    
-    justify-content: center;
-    display: inline-block;
-    width: 100%;
-    max-width: 290px;
-    margin: auto;
-    padding-left: 10px;
-     padding-right: 10px;
-     padding-top: 10px;
-    box-sizing: border-box; 
-    }
-
-    .enviarNvoUsr {
-    
-    justify-content: center;
-    display: inline-block;
-    width: 100%;
-    max-width: 290px;
-    margin: auto;
-    padding-left: 10px;
-     padding-right: 10px;
-     padding-top: 10px;
-    box-sizing: border-box; 
-    }
-
-        </style>
 
     <body>
-        <div  style="clear:both;"></div>
+       
         <section>
-            <div class="login-NuevoUsuario">
-                <h2>Registo de usuario</h2>
+ 
+            <div class="container d-flex justify-content-between align-items-center">
 
+          
+
+           
+             
                 <form method="post" action="Controlador/procesaMovimiento.php">
+
+                <h1>Registro de usuario</h1>
 
                 <span class="form-group">
                     <div class="formleyenda"><label>Nombre:</label></div>
@@ -79,7 +39,10 @@ body {
                     <div class="formleyenda"><label>Teléfono:</label></div>
                     <input maxlength="10" min="10" id="telefono" type="tel" name="telefono" required>
                     </span>
-                 
+                    <span class="form-group">
+                    <div class="formleyenda"><label></label></div>
+                    </span>
+             
                     <span class="form-group">
                     <div class="formleyenda"><label>Dirección:</label></div>
                     <input id="direccion" type="text" name="direccion" required>
@@ -133,7 +96,7 @@ body {
                     <div class="formleyenda"><label>Código postal:</label></div>
                     <input id="codigopostal" type="number" name="codigopostal" required></span>
                     </span>
-                   <br>
+                  
                     <span class="form-group">
                     <div class="formleyenda"><label>Correo:</label></div>
                     <input id="correo" type="text" name="correo" required>
@@ -144,19 +107,22 @@ body {
                     <input id="contrasena" type="password" name="contrasena" required>
                     </span>
 
-
+                    <span class="form-group">
                     <div>
                         <button class="enviarNvoUsr" id="enviarNvoUsr" name="enviarNvoUsr" type="submit">Registrar</button>
                     </div>
 
-                    <div class="regresar">
-    <button class="botonRegresar" id="botonRegresar" name="botonRegresar" type="button" onclick="window.location.href='frmlogin.php'">Regresar</button>
-</div>
+                    </span>
 
-                    
+                    <span class="form-group">
+                    <div class="regresar">
+                     <button class="botonRegresar" id="botonRegresar" name="botonRegresar" type="button" onclick="window.location.href='frmlogin.php'">Regresar</button>
+                    </div>
+                    </span>
+
             </form>
-                
             </div>
+           
             
         </section>
     </body>

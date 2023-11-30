@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-//print_r($_POST);
+
 //variables que pasamos del formulario de Login.php
 $correo = $_POST['correo'];
 $password = $_POST['contrasena'];
@@ -10,7 +10,7 @@ $password = $_POST['contrasena'];
 if ($correo == '' || $password == '') {
     // Dirigir a la página principal
     echo '<script>alert("Algun campo está vacío.")</script>';
-    echo '<script>window.location.replace("../frmlogin.php");</script>';
+    //echo '<script>window.location.replace("../frmlogin.php");</script>';
 } else {
     try {
         include_once '../Modelo/usuarios.php';
@@ -28,9 +28,12 @@ if ($correo == '' || $password == '') {
             // Valida contraseña
             if ($password == $registro['contrasena']) {
                 $_SESSION['valido'] = 1;
-                $_SESSION['usuario'] = $correo; // Utiliza $correo en lugar de $registro['correo']
-                // Aquí va el enlace a la página principal después del login
-                //echo '<script>alert("'.$_SESSION['usuario'].' Bienvenido.");</script>';
+                $_SESSION['correo'] = $registro['correo'];
+                echo $_SESSION['correo'];
+
+                // $_SESSION["correo"] = htmlentities($_POST["correo"]);
+                // header("Location: procesaMovimiento.php");
+                
                 echo '<script>location.href="../principal.php"</script>';
             } else {
                 echo '<script>alert("El usuario o contraseña son incorrectos. Intente de nuevo.")</script>';

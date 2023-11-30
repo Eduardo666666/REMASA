@@ -7,21 +7,10 @@
     </head>
 
     <body>
-        <?php
-            $_SESSION['usuario'] = $correo;
-        ?>
-        <script>
-        // Esta función se ejecutará automáticamente cuando la página se cargue completamente
-        window.onload = function() {
-            ejecutarFuncion();
-        };
-
-        // Tu función que deseas ejecutar
-        // function ejecutarFuncion() {
-        //     // Coloca aquí el código que deseas ejecutar automáticamente
-        //     console.log("La función se ha ejecutado automáticamente al cargar la página.");
-        // }
-        </script>
+        <!-- <?php
+        //     $_SESSION['usuario'] = $correo;
+        // ?>
+        $_SESSION['correo']; -->
 
         <?php
 

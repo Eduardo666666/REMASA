@@ -57,11 +57,13 @@ font-style: normal;
   font-size: 22px;
 }
 
+
+
 /* General */
 .logo { font-weight: 500;}
 .text-warning {  color: #ede861;}
 .text-muted { color: #bcbcbc;}
-.text-success { color:#1BB280;}
+.text-success { color:#008E72;}
 .text-light { color: #cfd6e1;}
 .bg-dark { background-color: #21386C;}
 .bg-light { background-color: #e9eef5;}

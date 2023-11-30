@@ -178,8 +178,9 @@
             
                 include 'Controlador/procesaMovimiento.php';
                 include 'Modelo/venta.php';
-
+                include 'Modelo/producto.php';
                 // Obtener la información de los productos
+                $prod = new Producto;
                 $productos = consultarProductos();
                 $detalleVenta = new Venta;
                 // Iterar sobre los productos y mostrarlos
@@ -196,7 +197,9 @@
                                     if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         
                                         //consulta en base al id del producto seleccionado y se llenen los setters de detalle venta
-                                        $producto->obtenerDetallesProducto($producto['id']);
+                                        $prod->obtenerDetallesProducto($producto['id']);
+                                        
+
                                         // Llamar al método insertarProductoDetalleVenta() cuando se haya hecho clic en el botón
                                         $detalleVenta->insertarProductoDetalleVenta();
                                     }

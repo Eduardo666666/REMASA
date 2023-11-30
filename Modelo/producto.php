@@ -334,6 +334,13 @@ class Producto{
                 'precio' => $row["precio"],
                 'cantidad' => 1, // Puedes establecer la cantidad predeterminada
             );
+             // Asignar los valores utilizando los setters
+            $this->setId($producto['id']);
+            $this->setNombre($producto['nombre']);
+            $this->setDescripcion($producto['descripcion']);
+            $this->setMedida($producto['medida']);
+            $this->setPrecio($producto['precio']);
+            $this->setCantidad($producto['cantidad']);
     
             //4-Cierro la conexión con la BD
              mysqli_close($this->conexion);

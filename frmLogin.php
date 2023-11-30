@@ -29,10 +29,9 @@
                     <button id="enviarUsr" name="enviarUsr" type="submit">Ingresar</button>
 
                     <div class="login-reg">
+                      <p class="padding-left: 20px;">No tengo cuenta    <button class="registro" id="registro" name="registro" type="button" onclick="window.location.href='frmNuevoUsuario.php'">Registrarse</button></p> 
+                         </div>
 
-                        <p>No tengo cuenta    <button class="registro" id="registro" name="registro" type="button" onclick="window.location.href='frmNuevoUsuario.php'">Registrarse</button></p> 
-
-                    </div>    
                     <div class="regresar">
                         <p><a href="index.php">Regresar</a></p>
                     </div>

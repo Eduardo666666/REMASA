@@ -8,7 +8,7 @@
 	<title>REMASA WEB</title>
 
 <link rel="stylesheet" href="https://use.typekit.net/nwm6dld.css">
-    <link rel="stylesheet" href="assets/css/NuevoUsuario.css" type="text/css">
+    <!-- PROBLEMA DISENO TIENDA <link rel="stylesheet" href="assets/css/NuevoUsuario.css" type="text/css"> -->
 </head>
 <body>
     <header>

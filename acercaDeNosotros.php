@@ -68,32 +68,58 @@
         </div>
     </div>
 
- <!--Banner -->
+<!-- style="background-color: #058F71; -->
 
- <section style="background-color: #058F71;">
-    <div class="container" style="padding: 20px;">
-        <div class="col-md-12 text-white text-center">
-            <h1 class="h1">Acerca de nosotros</h1>
-            <p class="text-white">Somos una empresa especializada dedicada a la venta de refacciones para autobuses, ofreciendo piezas de alta calidad y un servicio personalizado. Contamos con un equipo experto que garantiza soluciones eficientes para el mantenimiento de flotas, con entregas rápidas y un compromiso constante con la satisfacción del cliente. Confía en nosotros para mantener sus autobuses en óptimas condiciones de funcionamiento.
-            </p>
-        </div>
-        <div class="row align-items-center">
-            <div class="col-md-6 text-center">
-                <h1 class="h1 text-white">Misión</h1>
-                <p class="text-white">Proporcionar a los clientes del sector de autotransportes, refacciones de la más alta calidad, respaldadas por un servicio excepcional, garantizando la seguridad y el rendimiento de sus vehículos, manteniendo al mismo tiempo el compromiso con la calidad y la excelencia en sus servicios.
-                </p>
+   <!-- Banner -->
+   <div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="container">
+                <div style="background-color: #058F71; padding:80px"> <!-- Agregado un div contenedor con la clase bg-green y padding -->
+                    <div class="col-md-12 text-white text-center">
+                        <h1 class="h1">Acerca de nosotros</h1>
+                        <p class="text-white">Somos una empresa especializada dedicada a la venta de refacciones para autobuses, ofreciendo piezas de alta calidad y un servicio personalizado. Contamos con un equipo experto que garantiza soluciones eficientes para el mantenimiento de flotas, con entregas rápidas y un compromiso constante con la satisfacción del cliente. Confía en nosotros para mantener sus autobuses en óptimas condiciones de funcionamiento.</p>
+                    </div>
+                    <br>
+                    <div class="row align-items-center">
+                        <div class="col-md-6 text-center">
+                            <h1 class="h1 text-white">Misión</h1>
+                            <p class="text-white">Proporcionar a los clientes del sector de autotransportes, refacciones de la más alta calidad, respaldadas por un servicio excepcional, garantizando la seguridad y el rendimiento de sus vehículos, manteniendo al mismo tiempo el compromiso con la calidad y la excelencia en sus servicios.</p>
+                        </div>
+                        <div class="col-md-6 text-center">
+                            <h1 class="h1 text-white">Visión</h1>
+                            <p class="text-white">Ser líderes en la industria de refacciones para autobuses y tractocamiones, reconocidos a nivel nacional por la excelencia en sus productos y servicios. Se busca continuar creciendo y expandiendo su presencia en el mercado, manteniendo siempre sus valores como pilares fundamentales de la empresa.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-6 text-center">
-                <h1 class="h1 text-white">Visión</h1>
-                <p class="text-white">Ser líderes en la industria de refacciones para autobuses y tractocamiones, reconocidos a nivel nacional por la excelencia en sus productos y servicios. Se busca continuar creciendo y expandiendo su presencia en el mercado, manteniendo siempre sus valores como pilares fundamentales de la empresa.
-                </p>
+        </div>
+
+        <div class="carousel-item">
+            <div class="container text-center">
+                <img class="img-fluid" src="./assets/img/fachada.jpg" alt="" style="width: 65%;">
             </div>
         </div>
     </div>
-</section>
+    <a class="carousel-control-prev text-decoration-none w-auto ps-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="prev">
+        <i class="fas fa-chevron-left"></i>
+    </a>
+    <a class="carousel-control-next text-decoration-none w-auto pe-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="next">
+        <i class="fas fa-chevron-right"></i>
+    </a>
+</div>
+
+ <!-- Banner -->
 
 
-    </section>
+    
+ <!--Banner -->
+
+   
+
+
+
+    
     <!--Banner -->
 
 
@@ -101,9 +127,9 @@
     <section class="bg-light py-5">
         <div class="container my-4">
             <div class="row text-center py-3">
-                <div class="col-lg-5 m-auto">
+                <div class="text-center">
                     <h1  class="h1 col-md-12 text-center">Somos distribuidores de las mejores marcas de importación</h1>
-                    <p>
+                    <p class="text-center">
                         Trabajamos con piezas y repuestos para autobuses y tractocamiones de las marcas más solicitadas en el mercado.
                     </p>
                 </div>

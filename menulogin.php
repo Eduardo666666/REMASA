@@ -6,26 +6,40 @@ class menuLogin {
             <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+            
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/templatemo.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
 
-            <style>
+    <!-- Cargar fuentes -->
+    <link rel="stylesheet" href="https://use.typekit.net/nwm6dld.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
 
-            /* diseño botón */
-  .btn-primary[type="button"] {
-    width: 70%;
-    background-color: #21386C;
-    color: white;
-    padding: 7px 9px;
-    border: none;
-    border-radius: 4px;
+
+
+<style>
+/* Estilo personalizado para el botón específico */
+.custom-btn {
+    background-color: #21386C !important;
+    color: white !important;
+    border-radius: 4px !important;
     cursor: pointer;
-  }
-  
-  /* Cambio de color en botón */
-  .btn-primary[type="button"]:hover {
-    background-color: #008E72;
-  }
+    width: calc(100% - 24px) !important;
+    max-width: none !important;
+    padding: 10px 15px !important;
+    margin: 5px !important;
+    border: none !important;
+}
 
-  </style>
+
+/* Estilo para el botón específico cuando se pasa el mouse por encima */
+.custom-btn:hover {
+    background-color: #008E72 !important;
+}
+
+
+</style>
+
             <!-- Header -->
             <nav class="navbar navbar-expand-lg navbar-light shadow">
                 <div class="container d-flex justify-content-between align-items-center">
@@ -41,7 +55,7 @@ class menuLogin {
                         <div class="flex-fill">
                             <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="index.php"><b>Inicio</b></a>
+                                    <a class="nav-link" href="principal.php"><b>Inicio</b></a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="acercaDeNosotros.php"><b>Acerca de nosotros</b></a>
@@ -76,18 +90,20 @@ class menuLogin {
                             </a>  -->
 
 
+                           
+                            
                             <div class="btn-group">
-                                <button type="button" class="btn btn-primary">
-                                    <!-- Ícono de despliegue sin texto -->
-                                    <i class="fa fa-user"></i>
-                                </button>
-                                <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
-                                    <span class="sr-only">Toggle Dropdown</span>
-                                </button>
+    <button type="button" class="btn btn-primary custom-btn dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
+        <span class="fa fa-user" style="padding-right: 10px;"></span>
+    </button>
                                 <div class="dropdown-menu">
-                                    <form method="post" action="Controlador/procesaMovimiento.php">
+                                    <form method="post" action="Controlador/modificacionUsuario.php">
                                         <!-- Utiliza un botón en lugar de un enlace -->
                                         <button class="dropdown-item" id="buscarUsuario" name="buscarUsuario" type="submit">Modificar usuario</button>
+                                    </form>
+                                    <form method="post" action="Controlador/modificacionUsuario.php">
+                                        <!-- Utiliza un botón en lugar de un enlace -->
+                                        <button class="dropdown-item" id="buscarUsuario" name="buscarUsuario" type="submit">Mis compras</button>
                                     </form>
                                     <a class="dropdown-item" href="Controlador/cerrarLogin.php">Cerrar Sesión</a>
                                 </div>

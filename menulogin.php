@@ -74,7 +74,8 @@ class menuLogin {
                                 <i class="fa fa-fw fa-user mr-3"></i>
                                 <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">+99</span>
                             </a>  -->
-                            
+
+
                             <div class="btn-group">
                                 <button type="button" class="btn btn-primary">
                                     <!-- Ícono de despliegue sin texto -->
@@ -84,10 +85,14 @@ class menuLogin {
                                     <span class="sr-only">Toggle Dropdown</span>
                                 </button>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="frmModificarUsuario.php">Modificar usuario</a>
+                                    <form method="post" action="Controlador/procesaMovimiento.php">
+                                        <!-- Utiliza un botón en lugar de un enlace -->
+                                        <button class="dropdown-item" id="buscarUsuario" name="buscarUsuario" type="submit">Modificar usuario</button>
+                                    </form>
                                     <a class="dropdown-item" href="Controlador/cerrarLogin.php">Cerrar Sesión</a>
                                 </div>
                             </div>
+
                  </div>
             </nav>
     <!-- Header -->   

@@ -143,7 +143,24 @@ class Usuario{
         //5-Retorna los datos de la consulta
         return $resultado;
     }//consultaUsuario
-
+    
+    public function consultaUsuario(){
+        //1-Definir la instruccion SQL de consulta
+        $consulta = "select apellidos, ciudad, codigopostal, contrasena, correo, direccion, estado, nombre, telefono from usuario where correo='".$this->getCorreo()."';";
+        //echo $consulta."<br>";
+        
+        //2-Establecer conexión con la BD
+        $this->EstableceConexion();
+        
+        //3-Ejecutar la instrucción SQL en la conexion (BD)
+        $resultado = mysqli_query($this->conexion,$consulta);
+        
+        //4-Cierro la conexión con la BD
+        mysqli_close($this->conexion);
+        
+        //5-Retorna los datos de la consulta
+        return $resultado;
+    }//consultaUsuario
 
     //Método para REGISTRAR información en la tabla usuario
     public function registrarUsuario(){

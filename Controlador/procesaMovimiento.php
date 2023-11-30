@@ -46,6 +46,7 @@
         ?>
     </section>
 
+
     <!--Funcion para buscar y modificar datos de usuario__________________________________________________________-->
     <section>
     <?php
@@ -177,6 +178,7 @@
         ?>
     </section>
 
+
     <!--Metodo consultar productos_________________________________________________________________________-->
     <section>
         <?php
@@ -281,58 +283,21 @@
 
     <!--Metodo carrito____________________________________-->
     <?php
+    //<!----------------------------------------------------------------------------------------------------------------------->
     class Carrito {
-    private $productosCarrito = array();
-
-    public function agregarProducto($idproducto, $cantidad, $descripcion, $preciounitario, $idusuario) {
-        $this->productosCarrito[] = array(
-            'idproducto' => $idproducto,
-            'cantidad' => $cantidad,
-            'descripcion' => $descripcion,
-            'preciounitario' => $preciounitario,
-            'idusuario' => $idusuario
-        );
-    }
-    public function obtenerContenido() {
-        return $this->productosCarrito;
-    }
-    // Puedes agregar más métodos según sea necesario (actualizar, eliminar, etc.)
-}
-?>
-
-<?php
-class GuardarEnBD {
-    public static function guardarProductosCarrito($contenidoCarrito) {
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $database = "remasa";
-
-        $conn = new mysqli($servername, $username, $password, $database);
-
-        if ($conn->connect_error) {
-            die("Conexión fallida: " . $conn->connect_error);
+        private $productosCarrito = array();
+    
+        public function agregarProducto($producto) {
+            $this->productosCarrito[] = $producto;
         }
-
-        foreach ($contenidoCarrito as $producto) {
-            $idproducto = $producto['idproducto'];
-            $cantidad = $producto['cantidad'];
-            $descripcion = $producto['descripcion'];
-            $preciounitario = $producto['preciounitario'];
-            $idusuario = $producto['idusuario'];
-
-            $sql = "INSERT INTO detalleventa (idproducto, cantidad, descripcion, preciounitario, idusuario) VALUES ( $idproducto, $cantidad, '$descripcion', $preciounitario, $idusuario)";
-
-
-            if ($conn->query($sql) !== TRUE) {
-                echo "Error al agregar producto al carrito: " . $conn->error;
-            }
+    
+        public function obtenerContenido() {
+            return $this->productosCarrito;
         }
-
-        $conn->close();
+    
+        // Puedes agregar más métodos según sea necesario (actualizar, eliminar, etc.)
     }
-}
-
+    
 ?>
 </body>
 </html>

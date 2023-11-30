@@ -166,11 +166,18 @@
                     
                 </div>
                 
+<!--------------------------------------------------Funcionalidad carrito----------------------------------------------------->
+
+        
+
+<!--------------------------------------------------Funcionalidad carrito----------------------------------------------------->
+                
 <!--------------------------------------------------Funcionalidad consulta productos----------------------------------------------------->
                 <div class="row">
                 <?php
-
+            
                 include 'Controlador/procesaMovimiento.php';
+                
 
                 // Obtener la información de los productos
                 $productos = consultarProductos();
@@ -185,8 +192,15 @@
                                 <img class="card-img rounded-0 img-fluid" src="<?php echo $producto['rutaimagen']; ?>">
                                 <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                     <ul class="list-unstyled">
-                                        
-                                        <li><a class="btn btn-success text-white mt-2" href="carrito.php">Agregar <i class="fa fa-fw fa-shopping-cart mr-1"></i></a></li>
+                                    <form method="post" action="carrito.php">
+                                            <input type="hidden" name="producto_id" value="<?php echo $producto['id']; ?>">
+                                            <button type="submit" class="btn btn-success text-white mt-2">Agregar <i class="fa fa-fw fa-shopping-cart mr-1"></i></button>
+                                            <form method="post" action="carrito.php">
+    <input type="hidden" name="agregarCarrito" value="1">
+    <input type="hidden" name="producto_id" value="<?php echo $producto['id']; ?>">
+    <button type="submit" class="btn btn-success text-white mt-2">Agregar <i class="fa fa-fw fa-shopping-cart mr-1"></i></button>
+</form>
+                                        </form>
                                     </ul>
                                 </div>
                             </div>

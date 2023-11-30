@@ -51,117 +51,115 @@
     ?>
     <!-- Header -->
 
+    <!--   \   ^__^
+            \  (oo)\_______
+               (__)\       )\/\
+                  ||----w |
+                  ||     ||                       -->
 
-    <!-- Carrito -->
-<div class="container py-5">
-    <div class="row">
-        <div class="col-lg-9">
-            <!-- Contenido del carrito (si hay algún contenido específico, puedes ponerlo aquí) -->
-        </div>
-    </div>
-
-    <div class="row">
-        <?php
-        include 'Controlador/procesaMovimiento.php';
-
-        // Obtener la información de los productos
-        $productos = consultarProductos();
-
-        // Iterar sobre los productos y mostrarlos
-        foreach ($productos as $producto) {
-        ?>
-            <div class="col-md-4">
-                <div class="card mb-4 product-wap rounded-0">
-                    <div class="card rounded-0">
-                        <!-- Reemplazar la ruta de la imagen con el atributo rutaImagen del producto -->
-                        <img class="card-img rounded-0 img-fluid" src="<?php echo $producto['rutaimagen']; ?>">
-                        <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
-                            <ul class="list-unstyled">
-                                <li><a class="btn btn-success text-white" href="shop-single.html"><i class="far fa-heart"></i></a></li>
-                                <li><a class="btn btn-success text-white mt-2" href="shop-single.html"><i class="far fa-eye"></i></a></li>
-                                <li><a class="btn btn-success text-white mt-2" href="shop-single.html"><i class="fas fa-cart-plus"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <a href="shop-single.html" class="h3 text-decoration-none"><?php echo $producto['nombre']; ?></a>
-                        <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
-                            <li><?php echo $producto['descripcion']; ?></li>
-                            <li class="pt-2">
-                                <span class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
-                                <span class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
-                                <span class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
-                                <span class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
-                                <span class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
-                            </li>
-                        </ul>
-                        <p class="text-center mb-0"><?php echo $producto['medida']; ?></p>
-                        <p class="text-center mb-0">$<?php echo $producto['precio']; ?></p>
-                    </div>
-                </div>
-            </div>
-        <?php
-        }
-        ?>
-    </div>
-</div>
-
-
-<!-- Carrito -->
+<!---------------------------------------------------Tabla carrito-------------------------------------------------------------------->
 <?php
-include 'Controlador/procesaMovimiento.php';
+// Inicializar la variable de sesión si aún no existe
+if (!isset($_SESSION['carrito'])) {
+    $_SESSION['carrito'] = array();
+}
 
-// Crear instancia del carrito
-$carrito = new Carrito();
+// Verificar si el formulario de agregar al carrito ha sido enviado
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['producto_id'])) {
+    // Obtener el ID del producto desde el formulario
+    $producto_id = $_POST['producto_id'];
 
-// Agregar productos al carrito (simulación)
-$carrito->agregarProducto(1, 1, 'gsfs', 19.99, 2);
-$carrito->agregarProducto(2, 1, 'gggg', 29.99, 3);
+    // Obtener detalles del producto desde la base de datos
+    $producto = obtenerDetallesProducto($producto_id);
 
-// Obtener contenido del carrito
-$contenidoCarrito = $carrito->obtenerContenido();
+    // Agregar el producto al carrito
+    $_SESSION['carrito'][] = $producto;
+}
 
-// Guardar productos del carrito en la base de datos
-GuardarEnBD::guardarProductosCarrito($contenidoCarrito);
+// Resto del código para mostrar la tabla con productos en el carrito
 ?>
 
+<?php
+
+//------Metodo para agregar los productos a la tabla----------------------------------------------------------
+
+function obtenerDetallesProducto($producto_id) {
+    // Configuración de la conexión a la base de datos
+    $servername = "localhost";
+    $username = "root"; // Reemplaza con tu nombre de usuario de la base de datos
+    $password = ""; // Reemplaza con tu contraseña de la base de datos
+    $database = "remasa";
+
+    // Crear conexión
+    $conn = new mysqli($servername, $username, $password, $database);
+
+    // Verificar la conexión
+    if ($conn->connect_error) {
+        die("Conexión fallida: " . $conn->connect_error);
+    }
+
+    // Consulta SQL para obtener detalles del producto por ID
+    $sql = "SELECT id, nombre, descripcion, medida, precio FROM producto WHERE id = $producto_id";
+    $result = $conn->query($sql);
+
+    // Verificar si se obtuvieron resultados
+    if ($result->num_rows > 0) {
+        // Obtener los detalles del producto
+        $row = $result->fetch_assoc();
+
+        // Crear un array con los detalles del producto
+        $producto = array(
+            'id' => $row["id"],
+            'nombre' => $row["nombre"],
+            'descripcion' => $row["descripcion"],
+            'medida' => $row["medida"],
+            'precio' => $row["precio"],
+            'cantidad' => 1, // Puedes establecer la cantidad predeterminada
+        );
+
+        // Cerrar la conexión
+        $conn->close();
+
+        return $producto;
+    } else {
+        // Si no se encuentra el producto, puedes manejarlo como desees (lanzar una excepción, devolver un valor predeterminado, etc.)
+        $conn->close();
+        return null;
+    }
+}
 
 
 
 
-<!------------------------------------------------------------------------------------------------------------------------------->
+?>
 
-<!--tabla de consulta-->
-<div style="overflow-x: auto;">
-        <h1 style="text-align:center">Carrito</h1>
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>Nombre</th>
-                        <th>Cantidad</th>
-                        <th>precio unitario</th>
-                        <th>precio total</th>
-                        
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                        include '../Modelo/alumnos.php';
-                        $alum = new Alumno();
-                        $datos = $alum->consultaAlumnos();
-                    
-                        while($fila = mysqli_fetch_array($datos)){
-                            echo "<tr><td>".$fila['matricula']."</td><td>".$fila['nombre']."</td><td>".$fila['apellidos']."</td><td>".$fila['promedio']."</td>
-                            <td>
-                            <a id=\"borrar\" name=\"borrar\" href='../Controlador/procesaMovimiento.php?matricula=".$fila['matricula']."'>Eliminar</a>
-                            </td>";
-                        }//while
-                    ?>                    
-                </tbody>
-            </table>
-        </div>
-        <!--tabla de consulta-->
+<!------------------------------------------------------------------------------------------------------------------>
+
+<!-- Mostrar la tabla con productos en el carrito -->
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($_SESSION['carrito'] as $producto) : ?>
+            <tr>
+                <td><?php echo $producto['id']; ?></td>
+                <td><?php echo $producto['nombre']; ?></td>
+                <td><?php echo $producto['descripcion']; ?></td>
+                <td><?php echo $producto['cantidad']; ?></td>
+                <td><?php echo $producto['precio']; ?></td>
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>
+
+<!---------------------------------------------------Tabla carrito-------------------------------------------------------------------->
 
 
 

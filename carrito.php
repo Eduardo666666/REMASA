@@ -59,77 +59,27 @@
 
 <!---------------------------------------------------Tabla carrito-------------------------------------------------------------------->
 <?php
+include 'Modelo/venta.php';
+
+// Obtener la información de los productos
+$detalleVenta = new Venta;
 // Inicializar la variable de sesión si aún no existe
 if (!isset($_SESSION['carrito'])) {
     $_SESSION['carrito'] = array();
 }
 
 // Verificar si el formulario de agregar al carrito ha sido enviado
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['producto_id'])) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['idventa'])) {
     // Obtener el ID del producto desde el formulario
-    $producto_id = $_POST['producto_id'];
+    $idventa = $_POST['idventa'];
 
     // Obtener detalles del producto desde la base de datos
-    $producto = obtenerDetallesProducto($producto_id);
+    
+    $detalleVenta-> consultarDetalleVenta();
 
     // Agregar el producto al carrito
-    $_SESSION['carrito'][] = $producto;
+    $_SESSION['carrito'][] = $detalleVenta;
 }
-
-// Resto del código para mostrar la tabla con productos en el carrito
-?>
-
-<?php
-
-//------Metodo para agregar los productos a la tabla----------------------------------------------------------
-
-function obtenerDetallesProducto($producto_id) {
-    // Configuración de la conexión a la base de datos
-    $servername = "localhost";
-    $username = "root"; // Reemplaza con tu nombre de usuario de la base de datos
-    $password = ""; // Reemplaza con tu contraseña de la base de datos
-    $database = "remasa";
-
-    // Crear conexión
-    $conn = new mysqli($servername, $username, $password, $database);
-
-    // Verificar la conexión
-    if ($conn->connect_error) {
-        die("Conexión fallida: " . $conn->connect_error);
-    }
-
-    // Consulta SQL para obtener detalles del producto por ID
-    $sql = "SELECT id, nombre, descripcion, medida, precio FROM producto WHERE id = $producto_id";
-    $result = $conn->query($sql);
-
-    // Verificar si se obtuvieron resultados
-    if ($result->num_rows > 0) {
-        // Obtener los detalles del producto
-        $row = $result->fetch_assoc();
-
-        // Crear un array con los detalles del producto
-        $producto = array(
-            'id' => $row["id"],
-            'nombre' => $row["nombre"],
-            'descripcion' => $row["descripcion"],
-            'medida' => $row["medida"],
-            'precio' => $row["precio"],
-            'cantidad' => 1, // Puedes establecer la cantidad predeterminada
-        );
-
-        // Cerrar la conexión
-        $conn->close();
-
-        return $producto;
-    } else {
-        // Si no se encuentra el producto, puedes manejarlo como desees (lanzar una excepción, devolver un valor predeterminado, etc.)
-        $conn->close();
-        return null;
-    }
-}
-
-
-
 
 ?>
 
@@ -147,17 +97,21 @@ function obtenerDetallesProducto($producto_id) {
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($_SESSION['carrito'] as $producto) : ?>
+        <?php foreach ($_SESSION['carrito'] as $detalleVenta) : ?>
             <tr>
-                <td><?php echo $producto['id']; ?></td>
-                <td><?php echo $producto['nombre']; ?></td>
-                <td><?php echo $producto['descripcion']; ?></td>
-                <td><?php echo $producto['cantidad']; ?></td>
-                <td><?php echo $producto['precio']; ?></td>
+                //idproducto, cantidad, descripcion, preciototal, preciounitario,  idusuario 
+                <td><?php echo $detalleVenta['idproducto']; ?></td>
+                <td><?php echo $detalleVenta['cantidad']; ?></td>
+                <td><?php echo $detalleVenta['descripcion']; ?></td>
+                <td><?php echo $detalleVenta['preciototal']; ?></td>
+                <td><?php echo $detalleVenta['preciounitario']; ?></td>
+                <td><?php echo $detalleVenta['idusuario']; ?></td>
             </tr>
         <?php endforeach; ?>
     </tbody>
 </table>
+
+
 
 <!---------------------------------------------------Tabla carrito-------------------------------------------------------------------->
 

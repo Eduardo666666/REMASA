@@ -177,11 +177,11 @@
                 <?php
             
                 include 'Controlador/procesaMovimiento.php';
-                
+                include 'Modelo/venta.php';
 
                 // Obtener la información de los productos
                 $productos = consultarProductos();
-
+                $detalleVenta = new Venta;
                 // Iterar sobre los productos y mostrarlos
                 foreach ($productos as $producto) {
                     ?>
@@ -192,13 +192,22 @@
                                 <img class="card-img rounded-0 img-fluid" src="<?php echo $producto['rutaimagen']; ?>">
                                 <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                     <ul class="list-unstyled">
+                                    <?php // Verificar si se hizo clic en el botón
+                                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                                        
+                                        //consulta en base al id del producto seleccionado y se llenen los setters de detalle venta
+                                        $producto->obtenerDetallesProducto($producto['id']);
+                                        // Llamar al método insertarProductoDetalleVenta() cuando se haya hecho clic en el botón
+                                        $detalleVenta->insertarProductoDetalleVenta();
+                                    }
+                                    ?>
                                     <form method="post" action="carrito.php">
+                                    <input type="hidden" name="agregarCarrito" value="1">
                                             <input type="hidden" name="producto_id" value="<?php echo $producto['id']; ?>">
-                                            <button type="submit" class="btn btn-success text-white mt-2">Agregar <i class="fa fa-fw fa-shopping-cart mr-1"></i></button>
+                                            <button name="agregarVenta" type="submit" class="btn btn-success text-white mt-2" >Agregar <i class="fa fa-fw fa-shopping-cart mr-1"></i></button>
                                             <form method="post" action="carrito.php">
-    <input type="hidden" name="agregarCarrito" value="1">
-    <input type="hidden" name="producto_id" value="<?php echo $producto['id']; ?>">
-    <button type="submit" class="btn btn-success text-white mt-2">Agregar <i class="fa fa-fw fa-shopping-cart mr-1"></i></button>
+    
+    
 </form>
                                         </form>
                                     </ul>

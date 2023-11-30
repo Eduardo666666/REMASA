@@ -307,27 +307,46 @@ class Producto{
 
 
     //Método para REGISTRAR información en la tabla usuario
-    public function registrarUsuario(){
-        //1-Definir la instruccion SQL de inserción
-        $registrar = "insert into usuario (apellidos, ciudad, codigopostal, contrasena, correo, direccion, estado, nombre, telefono, tipousuario) values ('".$this->getApellidos()."','".$this->getCiudad()."',".$this->getCodigopostal().",'".$this->getContrasena()."','".$this->getCorreo()."','".$this->getDireccion()."','".$this->getEstado()."','".$this->getNombre()."',".$this->getTelefono().",'cliente')";
-        //echo $registrar."<br>";
-        
-        //2-Establecer conexión con la BD
-        $this->EstableceConexion();
-        
-        //3-Ejecutar la instrucción SQL en la conexion (BD)
-        mysqli_query($this->conexion,$registrar);
-        
-        //4-Cierro la conexión con la BD
-        mysqli_close($this->conexion);
-        
-        //5-Mensaje informativo
-        echo "Usuario registrado.<br>";
-    }//registrarUsuario
+    
 
     //-----------------------------------------------------------------------------------------------------------------------------
 
-
+    public function obtenerDetallesProducto($producto_id) {
+      
+    
+        // Consulta SQL para obtener detalles del producto por ID
+        $sql = "SELECT id, nombre, descripcion, medida, precio FROM producto WHERE id = $producto_id";
+    
+         //3-Ejecutar la instrucción SQL en la conexion (BD)
+         $result = mysqli_query($this->conexion,$sql);
+    
+        // Verificar si se obtuvieron resultados
+        if ($result->num_rows > 0) {
+            // Obtener los detalles del producto
+            $row = $result->fetch_assoc();
+    
+            // Crear un array con los detalles del producto
+            $producto = array(
+                'id' => $row["id"],
+                'nombre' => $row["nombre"],
+                'descripcion' => $row["descripcion"],
+                'medida' => $row["medida"],
+                'precio' => $row["precio"],
+                'cantidad' => 1, // Puedes establecer la cantidad predeterminada
+            );
+    
+            //4-Cierro la conexión con la BD
+             mysqli_close($this->conexion);
+    
+            return $producto;
+        } else {
+            // Si no se encuentra el producto, puedes manejarlo como desees (lanzar una excepción, devolver un valor predeterminado, etc.)
+             //4-Cierro la conexión con la BD
+             mysqli_close($this->conexion);
+            return null;
+        }
+    }
+    
 
  
     

@@ -18,7 +18,28 @@
     <link rel="stylesheet" href="https://use.typekit.net/nwm6dld.css">
     <link rel="stylesheet" href="assets/css/fontawesome.min.css">
 </head>
+<style>
 
+
+.tiendabtn[type="button"] {
+  width: 50%;
+  background-color: #21386C;
+  color: white;
+  padding: 6px 3px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+/* Cambio de color en botón */
+.tiendabtn[type="button"]:hover {
+  background-color: #008E72;
+}
+
+</style>
 <body>
     <!-- Navegación -->
     <nav class="navbar navbar-expand-lg navbar-light d-none d-lg-block" id="templatemo_nav_top" style="background-color: #20386B;">
@@ -81,30 +102,37 @@
     <!-- Categorias -->
     <section class="container py-5">
         <div class="class=col-lg-5 m-auto">
-                <h1  class="h1 col-md-12 text-center">Categorías</h1>
-                <p class="text-center">
-                    Busca las piezas por marca de autobus.
+        <h1  class="h1 col-md-12 text-center">Envíos a toda la República</h1>
+                <p class=" text-center">
+                Contamos con una amplia línea de autopartes especializadas, diseñadas para garantizar un rendimiento óptimo para transporte de carga.
                 </p>
             </div>
             
         <div class="row">
             <div class="col-12 col-md-4 p-5 mt-3">
-                <a href="#"><img src="./assets/img/mercedeslogo.png" class="rounded-circle img-fluid border"></a>
-                <h5 class="text-center mt-3 mb-3">Mercedes-Benz</h5>
-                <p class="text-center"><a class="btn btn-success">Ir a la tienda</a></p>
+                <a href="#"><img src="./assets/img/productoVista-05.jpg" class="rounded-circle img-fluid border"></a>
+                <h5 class="text-center mt-3 mb-3">Torno</h5>
             </div>
             <div class="col-12 col-md-4 p-5 mt-3">
-                <a href="#"><img src="./assets/img/volvologo.png" class="rounded-circle img-fluid border"></a>
-                <h2 class="h5 text-center mt-3 mb-3">Volvo</h2>
-                <p class="text-center"><a class="btn btn-success">Ir a la tienda</a></p>
+                <a href="#"><img src="./assets/img/productoVista-06.jpg" class="rounded-circle img-fluid border"></a>
+                <h2 class="h5 text-center mt-3 mb-3">Dirección</h2>
+                <br>
+
+
+                <div class="text-center mt-3 mb-3">
+                <button class="tiendabtn" id="tiendabtn" type="button" onclick="window.location.href='tienda.php'">Ir a tienda</button>
+
+</div>
+              
             </div>
             <div class="col-12 col-md-4 p-5 mt-3">
-                <a href="#"><img src="./assets/img/scanialogo.png" class="rounded-circle img-fluid border"></a>
-                <h2 class="h5 text-center mt-3 mb-3">Scania</h2>
-                <p class="text-center"><a class="btn btn-success">Ir a la tienda</a></p>
+                <a href="#"><img src="./assets/img/productoVista-07.jpg" class="rounded-circle img-fluid border"></a>
+                <h2 class="h5 text-center mt-3 mb-3">Filtros</h2>
+           
             </div>
         </div>
     </section>
+   
     <!-- Categorias -->
 
 

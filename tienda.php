@@ -19,9 +19,9 @@
 </head>
 
 <body>
-    <!-- Navegación -->
-    <nav class="navbar navbar-expand-lg navbar-light d-none d-lg-block" id="templatemo_nav_top" style="background-color: #20386B;">
-        <div class="containerTienda text-light">
+  <!-- Navegación -->
+  <nav class="navbar navbar-expand-lg navbar-light d-none d-lg-block" id="templatemo_nav_top" style="background-color: #20386B;">
+        <div class="container text-light">
             <div class="w-100 d-flex justify-content-between">
                 <div>
                     <i class="fab fa-whatsapp"></i>
@@ -39,6 +39,7 @@
         </div>
     </nav>
     <!-- Navegación -->
+
 
 
 
@@ -251,21 +252,18 @@
     </div>
     <!-- Contenido -->
 
-    <!-- Brands -->
+
+    <!--Brands -->
     <section class="bg-light py-5">
         <div class="container my-4">
             <div class="row text-center py-3">
-                <div class="col-lg-6 m-auto">
-                    <h1 class="h1">Nuestras marcas</h1>
-                    <p>
-                    Trabajamos con las piezas de las marcas más solicitadas en el mercado.
+                <div class="text-center">
+                    <h1  class="h1 col-md-12 text-center">Somos distribuidores de las mejores marcas de importación</h1>
+                    <p class="text-center">
+                        Trabajamos con piezas y repuestos para autobuses y tractocamiones de las marcas más solicitadas en el mercado.
                     </p>
                 </div>
-          
-
-
- <!-- Brands-->
- 
+                
                 <div class="col-lg-9 m-auto tempaltemo-carousel">
                     <div class="row d-flex flex-row">
                         <!--Controles-->

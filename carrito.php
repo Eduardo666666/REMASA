@@ -1,5 +1,7 @@
 <?php
 session_start(); // Agrega esto al principio del script
+include 'menu.php';
+include 'Modelo/venta.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,6 +22,11 @@ session_start(); // Agrega esto al principio del script
     <!-- Cargar fuentes -->
     <link rel="stylesheet" href="https://use.typekit.net/nwm6dld.css">
     <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+<!--------------------------------------------------------------------------------Codigo gabo--------------------------------------------->
+    <!-- Replace the "test" client-id value with your client-id -->
+    <script src="https://www.paypal.com/sdk/js?client-id=AU53wQEsG_cDrwz7ga56YgGlmHRufyOoxYTci0plCtnDKGREBlOxwBhcSAL6tUr9JHz7JJeodj0nyqp1&currency=MXN"></script>
+<!--------------------------------------------------------------------------------Codigo gabo--------------------------------------------->
+
 </head>
 
 <style>
@@ -100,11 +107,14 @@ session_start(); // Agrega esto al principio del script
 
 
     <?php
-include 'menu.php';
-include 'Modelo/venta.php';
+    /////////////////////////////////////////////codigo gabo ///////////////////////////////////////////
+//include 'menu.php';
+//include 'Modelo/venta.php';
 $detalleVenta = new Venta;
+/////////////////////////////////////////////////codigo gabo////////////////////////////////////////////
 $menu = new menu();
 $menu->barraMenu();
+$venta = new Venta;
 
 // Consultar detalles de venta y almacenarlos en la variable de sesión
 $detalleVenta->consultaUltimoIdVenta(); // Puedes considerar si realmente necesitas esta consulta
@@ -141,22 +151,57 @@ if ($detalleVentas !== null) {
             <?php endforeach; ?>
         </tbody>
     </table>
+    <div class="text-center mt-3 mb-3">
+        <button class="tiendabtn" id="tiendabtn" type="button" onclick="window.location.href='tienda.php'"> Pagar </button>
     </div>
     <div class="text-center mt-3 mb-3">
-                <button class="tiendabtn" id="tiendabtn" type="button" onclick="window.location.href='tienda.php'">Tienda</button>
-
-
+        <button class="tiendabtn" id="tiendabtn" type="button" onclick="window.location.href='tienda.php'">Regresar</button>
+    </div>
             </div>
 
     <!-- Mostrar el total a pagar -->
     <th>Total a pagar <?php echo $total ?></th>
+    <!------------------------------------------------------codigo gabo------------------------------------------------------>
+    <div id="paypal-button-container"></div>
+    <p id="result-message"></p>
+
+<script>
+    paypal.Buttons({
+        createOrder: function (data, actions) {
+            return actions.order.create({
+                purchase_units: [{
+                    amount: {
+                        value: <?php echo json_encode($total); ?>
+                    }
+                }]
+            });
+        },
+        onApprove: function (data, actions) {
+            return actions.order.capture().then(function (orderData) {
+                document.getElementById('result-message').innerText = 'Transacción exitosa';
+
+                // Llamada AJAX para procesar la venta en el servidor
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "Controlador/procesar_pago.php", true);
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        // La respuesta del servidor después de procesar el pago
+                        console.log(xhr.responseText);
+                    }
+                };
+                xhr.send();
+            });
+        }
+    }).render('#paypal-button-container');
+</script>
+    <!------------------------------------------------------codigo gabo------------------------------------------------------>
 
     <?php
 } else {
     echo "No se encontraron detalles de venta.";
 }
 ?>
-
 
 
 <!---------------------------------------------------Tabla carrito-------------------------------------------------------------------->

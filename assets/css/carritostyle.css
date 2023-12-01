@@ -6,7 +6,7 @@
     
 }
 
-.table-compras {
+.table-carrito {
     width: 100%;
     margin-bottom: 1rem;
     border-radius: 10px; 
@@ -21,27 +21,27 @@
 }
 
 
-.table-compras th, .table-compras td {
+.table-carrito th, .table-carrito td {
     padding: 12px;
     text-align: center;
     border: 1px solid;
 }
 
-.table-compras th{
+.table-carrito th{
     background-color:#058F71;
     color: #ffffff;
     ;
 }
 
 
-.table-compras td {
+.table-carrito td {
     color: #21386C;
     ;
 }
 
 
 
-.table-compras tbody tr:hover {
+.table-carrito tbody tr:hover {
     background-color:#dbdada;
     ;
 }

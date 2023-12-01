@@ -63,15 +63,11 @@ session_start();
 
         <div class="table-container">
         <div style="overflow-x: auto;">
-
-     
         <h1 class="h1" style="text-align:center">Pedidos completados</h1>
-
         <br>
-      
             <table class="table-compras table-bordered ">
                 <thead>
-                    <tr>
+                    <tr">
                         <th>Número de venta</th>
                         <th>Id producto</th>
                         <th>Cantidad</th>
@@ -81,7 +77,7 @@ session_start();
                         <th>Fecha</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody style="font-weight: 500;">
                     <?php
                         
                         include 'Modelo/venta.php';

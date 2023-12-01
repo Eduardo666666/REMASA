@@ -17,8 +17,7 @@ session_start();
     <link rel="stylesheet" href="https://use.typekit.net/nwm6dld.css">
     <link rel="stylesheet" href="assets/css/fontawesome.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Replace the "test" client-id value with your client-id -->
-    <script src="https://www.paypal.com/sdk/js?client-id=AU53wQEsG_cDrwz7ga56YgGlmHRufyOoxYTci0plCtnDKGREBlOxwBhcSAL6tUr9JHz7JJeodj0nyqp1&currency=MXN"></script>
+    
 </head>
 <body>
 
@@ -62,11 +61,10 @@ session_start();
                 <thead>
                     <tr>
                         <th>Número de venta</th>
-                        <th>Id producto</th>
+                        <th>Código</th>
                         <th>Cantidad</th>
                         <th>Descripción</th>
                         <th>Precio Unitario</th>
-                        <th>Precio total</th>
                         <th>Fecha</th>
                     </tr>
                 </thead>
@@ -79,46 +77,12 @@ session_start();
                 
                         while ($fila = mysqli_fetch_array($datos)) {
                             echo "<tr><td>" . $fila['idventa'] . "</td><td>" . $fila['idproducto'] . "</td><td>" . $fila['cantidad'] . 
-                            "</td><td>" . $fila['descripcion'] . "</td><td>" . $fila['preciounitario'] . "</td><td>" . 
-                            $fila['detalleventa_preciototal'] . "</td><td>" . $fila['venta_fecha'] . "</td></tr>";
+                            "</td><td>" . $fila['descripcion'] . "</td><td>" . $fila['preciounitario'] . "</td><td>" . $fila['venta_fecha'] . "</td></tr>";
                         }
                     ?>                    
                 </tbody>
             </table>
         </div>
-        
-
-        <div id="paypal-button-container"></div>
-        <p id="result-message"></p>
-
-        <script>
-            paypal.Buttons({
-                // Sets up the transaction when a payment button is clicked
-                createOrder: function (data, actions) {
-                    return actions.order.create({
-                        purchase_units: [{
-                            amount: {
-                                value: '500.00' // Monto en pesos mexicanos
-                            }
-                        }]
-                    });
-                },
-                // Finalize the transaction after payer approval
-                onApprove: function (data, actions) {
-                    return actions.order.capture().then(function (orderData) {
-                        // Successful capture! For dev/demo purposes:
-                        // console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
-                        // const transaction = orderData.purchase_units[0].payments.captures[0];
-                        // alert(`Transaction ${transaction.status}: ${transaction.id}\n\nSee console for all available details`);
-                        
-                        // Muestra un mensaje en el elemento con el ID 'result-message'
-                        document.getElementById('result-message').innerText = 'Transacción exitosa';
-                    });
-                }
-            }).render('#paypal-button-container');
-        </script>
-
-
 
     </section>
 

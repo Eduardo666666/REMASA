@@ -23,13 +23,13 @@ if ($correo == '' || $password == '') {
         // Validar si los datos de la BD son vacíos
         if ($registro['correo'] == '' || $registro['contrasena'] == '') {
             echo '<script>alert("Escriba usuario y contraseña válidos. Intente de nuevo.")</script>';
-            echo '<script>location.href="../frmlogin.php"</script>';
+            //echo '<script>location.href="../frmlogin.php"</script>';
         } else {
             // Valida contraseña
             if ($password == $registro['contrasena']) {
                 $_SESSION['valido'] = 1;
                 $_SESSION['correo'] = $registro['correo'];
-                echo $_SESSION['correo'];
+                //echo $_SESSION['correo'];
 
                 // $_SESSION["correo"] = htmlentities($_POST["correo"]);
                 // header("Location: procesaMovimiento.php");

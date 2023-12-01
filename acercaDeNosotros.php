@@ -39,15 +39,10 @@
     </nav>
     <!-- Navegación -->
 
-
-    
-
     <!-- Header -->
     <?php
-        //Llamada al menú de navegación
-        include 'menu.php';
-        $menu = new menu();
-        $menu ->barraMenu();
+        session_start();
+        include 'Controlador/validarMenu.php';
     ?>
     <!--Header -->
 

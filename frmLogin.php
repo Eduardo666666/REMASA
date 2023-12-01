@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>REMASA - Loggin</title>
-
+        <link rel="shortcut icon" type="image/x-icon" href="assets/img/icon2.png">
         <link rel="stylesheet" href="https://use.typekit.net/nwm6dld.css">
         <link rel="stylesheet" href="assets/css/formularios.css" type="text/css">
 

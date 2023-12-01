@@ -112,10 +112,10 @@ if ($detalleVentas !== null) {
         </tbody>
     </table>
     <div class="text-center mt-3 mb-3">
-        <button class="tiendabtn" id="tiendabtn" type="button" onclick="window.location.href='tienda.php'">Regresar</button>
+        <button class="tiendabtn" id="tiendabtn" type="button" onclick="window.location.href='tienda.php'"> Pagar </button>
     </div>
     <div class="text-center mt-3 mb-3">
-        <button class="tiendabtn" id="tiendabtn" type="button" onclick="window.location.href='tienda.php'">Pagar</button>
+        <button class="tiendabtn" id="tiendabtn" type="button" onclick="window.location.href='tienda.php'">Regresar</button>
     </div>
             </div>
 

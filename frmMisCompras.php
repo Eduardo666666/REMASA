@@ -9,7 +9,6 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/icon2.png">
 
-    <link rel="stylesheet" href="assets/css/tablaMisCompras.css" type="text/css">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/templatemo.css">
     <link rel="stylesheet" href="assets/css/custom.css">
@@ -18,11 +17,13 @@ session_start();
     <link rel="stylesheet" href="https://use.typekit.net/nwm6dld.css">
     <link rel="stylesheet" href="assets/css/fontawesome.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Replace the "test" client-id value with your client-id -->
+    <script src="https://www.paypal.com/sdk/js?client-id=AU53wQEsG_cDrwz7ga56YgGlmHRufyOoxYTci0plCtnDKGREBlOxwBhcSAL6tUr9JHz7JJeodj0nyqp1&currency=MXN"></script>
 </head>
 <body>
 
     <!-- Navegación -->
-   <nav class="navbar navbar-expand-lg navbar-light d-none d-lg-block" id="templatemo_nav_top" style="background-color: #21386C;">
+   <nav class="navbar navbar-expand-lg navbar-light d-none d-lg-block" id="templatemo_nav_top" style="background-color: #20386B;">
         <div class="container text-light">
             <div class="w-100 d-flex justify-content-between">
                 <div>
@@ -53,20 +54,13 @@ session_start();
 
     <!-- Separación del menu con el resto de la pagina-->
     <div style="clear:both;"></div>
-
-
-
-    
     <section>
         <!--tabla de consulta-->
-
-        <div class="table-container">
         <div style="overflow-x: auto;">
-        <h1 class="h1" style="text-align:center">Pedidos completados</h1>
-        <br>
-            <table class="table-compras table-bordered ">
+        <h1 style="text-align:center">Compras realizadas</h1>
+            <table class="table table-bordered">
                 <thead>
-                    <tr">
+                    <tr>
                         <th>Número de venta</th>
                         <th>Id producto</th>
                         <th>Cantidad</th>
@@ -76,7 +70,7 @@ session_start();
                         <th>Fecha</th>
                     </tr>
                 </thead>
-                <tbody style="font-weight: 500;">
+                <tbody>
                     <?php
                         
                         include 'Modelo/venta.php';
@@ -92,11 +86,41 @@ session_start();
                 </tbody>
             </table>
         </div>
+        
 
-                    </div>
-        <!--tabla de consulta-->
+        <div id="paypal-button-container"></div>
+        <p id="result-message"></p>
 
-        <!--tabla de consulta-->
+        <script>
+            paypal.Buttons({
+                // Sets up the transaction when a payment button is clicked
+                createOrder: function (data, actions) {
+                    return actions.order.create({
+                        purchase_units: [{
+                            amount: {
+                                value: '500.00' // Monto en pesos mexicanos
+                            }
+                        }]
+                    });
+                },
+                // Finalize the transaction after payer approval
+                onApprove: function (data, actions) {
+                    return actions.order.capture().then(function (orderData) {
+                        // Successful capture! For dev/demo purposes:
+                        // console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                        // const transaction = orderData.purchase_units[0].payments.captures[0];
+                        // alert(`Transaction ${transaction.status}: ${transaction.id}\n\nSee console for all available details`);
+                        
+                        // Muestra un mensaje en el elemento con el ID 'result-message'
+                        document.getElementById('result-message').innerText = 'Transacción exitosa';
+                    });
+                }
+            }).render('#paypal-button-container');
+        </script>
+
+
+
     </section>
+
 </body>
 </html>

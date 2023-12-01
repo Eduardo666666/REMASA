@@ -111,7 +111,7 @@
                     <ul class="list-unstyled text-light footer-link-list">
                         <li class="pb-3">
                                 <a class="nav-link collapsed d-flex justify-content-between h3 text-decoration-none"  href="tiendaVolvo.php">
-                                    Volvos
+                                    Volvo
                                 </a>
                                 </li>
                             <li class="pb-3">

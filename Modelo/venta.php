@@ -110,7 +110,7 @@ class Venta{
 
     //----Métodos------------------------------------------------------------------------------------------------------------
 
-    /*    // Método para conectar a la tabla ventas de la BD
+    // Método para conectar a la tabla ventas de la BD
     private function EstableceConexion(){
         $this->conexion = mysqli_connect('127.0.0.1:3306','test','REMASA');
         
@@ -119,20 +119,7 @@ class Venta{
         } else{
             mysqli_select_db($this->conexion,"remasa");
         }
-    }*/
-    // EstableceConexion
-        private static function EstableceConexion(){
-        $conexion = mysqli_connect('127.0.0.1:3306','test','REMASA');
-        
-        if(!$conexion){
-            echo "La conexion no se ha podido establecer.<br>";
-        } else {
-            mysqli_select_db($conexion, "remasa");
-        }
-
-        return $conexion;
-    }
-
+    }// EstableceConexion
 
 //EstableceConexion
         // Método para CONSULTAR TODOS los registros de la tabla

@@ -29,7 +29,7 @@ if ($correo == '' || $password == '') {
             if ($password == $registro['contrasena']) {
                 $_SESSION['valido'] = 1;
                 $_SESSION['correo'] = $registro['correo'];
-                echo $_SESSION['correo'];
+                //echo $_SESSION['correo'];
 
                 // $_SESSION["correo"] = htmlentities($_POST["correo"]);
                 // header("Location: procesaMovimiento.php");

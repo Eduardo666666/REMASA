@@ -17,6 +17,8 @@ session_start();
     <link rel="stylesheet" href="https://use.typekit.net/nwm6dld.css">
     <link rel="stylesheet" href="assets/css/fontawesome.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Replace the "test" client-id value with your client-id -->
+    <script src="https://www.paypal.com/sdk/js?client-id=AU53wQEsG_cDrwz7ga56YgGlmHRufyOoxYTci0plCtnDKGREBlOxwBhcSAL6tUr9JHz7JJeodj0nyqp1&currency=MXN"></script>
 </head>
 <body>
 
@@ -85,6 +87,83 @@ session_start();
             </table>
         </div>
         <!--tabla de consulta-->
+        <!-- <div id="paypal-button-container"></div>
+        <p id="result-message"></p>
+        
+        <script>
+            paypal.Buttons({
+                // Sets up the transaction when a payment button is clicked
+                createOrder: function (data, actions) {
+                    return actions.order.create({
+                        purchase_units: [{
+                            amount: {
+                                currency_code: 'MXN',
+                                value: '77.44' // Can also reference a variable or function
+                            }
+                        }]
+                    });
+                },
+                // Finalize the transaction after payer approval
+                onApprove: function (data, actions) {
+                    return actions.order.capture().then(function (orderData) {
+                        // Successful capture! For dev/demo purposes:
+
+                        // console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                        // const transaction = orderData.purchase_units[0].payments.captures[0];
+                        // alert(`Transaction ${transaction.status}: ${transaction.id}\n\nsee console for all available details`);
+
+                        alert('Transacción exitosa');
+                        
+                    });
+                }
+            }).render('#paypal-button-container');
+        </script> -->
+
+
+        <!--tabla de consulta-->
+<div id="paypal-button-container"></div>
+<p id="result-message"></p>
+
+<script>
+    paypal.Buttons({
+        // Sets up the transaction when a payment button is clicked
+        createOrder: function (data, actions) {
+            return actions.order.create({
+                purchase_units: [{
+                    amount: {
+                        value: '500.00' // Monto en pesos mexicanos
+                    }
+                }]
+            });
+        },
+        // Finalize the transaction after payer approval
+        onApprove: function (data, actions) {
+            return actions.order.capture().then(function (orderData) {
+                // Successful capture! For dev/demo purposes:
+                // console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                // const transaction = orderData.purchase_units[0].payments.captures[0];
+                // alert(`Transaction ${transaction.status}: ${transaction.id}\n\nSee console for all available details`);
+                
+                // Muestra un mensaje en el elemento con el ID 'result-message'
+                document.getElementById('result-message').innerText = 'Transacción exitosa';
+            });
+        }
+    }).render('#paypal-button-container');
+</script>
+
+
+
     </section>
+     <!-- <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+    //     <input type="hidden" name="cmd" value="_xclick">
+    //     <input type="hidden" name="business" value="tu_correo@tuempresa.com">
+    //     <input type="hidden" name="item_name" value="Producto de prueba">
+    //     <input type="hidden" name="amount" value="10.00">
+    //     <input type="hidden" name="currency_code" value="USD">
+    //     <input type="hidden" name="return" value="http://tu-sitio.com/pago-completado">
+    //     <input type="hidden" name="cancel_return" value="http://tu-sitio.com/pago-cancelado">
+    //     <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+    //     <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+    // </form> -->
 </body>
 </html>

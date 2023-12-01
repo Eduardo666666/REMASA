@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,6 +48,16 @@
              <?php
             // Iniciar la sesión
             session_start();
+                // Incluir archivos necesarios
+            include 'Controlador/procesaMovimiento.php';
+            include 'Modelo/venta.php';
+            include 'Modelo/producto.php';
+
+            // Crear instancias de las clases necesarias
+            $detalleVenta = new Venta; // Instancia para manejar la venta
+            $detalleVenta ->consultaUltimoIdVenta();
+            // Obtener la información de los productos
+            $productos = consultarProductos();
 
             ?>
              <nav class="navbar navbar-expand-lg navbar-light shadow">
@@ -180,16 +191,6 @@
 <!--------------------------------------------------Funcionalidad consulta productos----------------------------------------------------->
 <div class="row">
     <?php
-    // Incluir archivos necesarios
-    include 'Controlador/procesaMovimiento.php';
-    include 'Modelo/venta.php';
-    include 'Modelo/producto.php';
-
-    // Crear instancias de las clases necesarias
-    $detalleVenta = new Venta; // Instancia para manejar la venta
-
-    // Obtener la información de los productos
-    $productos = consultarProductos();
 
     // Iterar sobre los productos y mostrarlos
     foreach ($productos as $producto) {
@@ -247,6 +248,7 @@
         $detalleVenta->setDescripcion($producto->getDescripcion());
         $detalleVenta->setPreciounitario($producto->getPrecio());
         $detalleVenta->setIdusuario(1); 
+        $detalleVenta->setPreciototal($producto->getPrecio() * $producto->getCantidad());
 
         // Insertar el producto en la tabla detalleventa
         $detalleVenta->insertarProductoDetalleVenta();

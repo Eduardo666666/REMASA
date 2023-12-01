@@ -23,7 +23,7 @@ if ($correo == '' || $password == '') {
         // Validar si los datos de la BD son vacíos
         if ($registro['correo'] == '' || $registro['contrasena'] == '') {
             echo '<script>alert("Escriba usuario y contraseña válidos. Intente de nuevo.")</script>';
-            echo '<script>location.href="../frmlogin.php"</script>';
+            //echo '<script>location.href="../frmlogin.php"</script>';
         } else {
             // Valida contraseña
             if ($password == $registro['contrasena']) {

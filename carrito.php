@@ -53,8 +53,8 @@ $menu = new menu();
 $menu->barraMenu();
 
 // Consultar detalles de venta y almacenarlos en la variable de sesión
+$detalleVenta->consultaUltimoIdVenta();
 $detalleVentas = $detalleVenta->consultarDetalleVenta();
-
 // Verificar si se obtuvieron detalles de venta
 if ($detalleVentas !== null) {
     ?>

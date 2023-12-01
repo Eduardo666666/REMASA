@@ -167,7 +167,7 @@ class Venta{
      //Método para REGISTRAR información en la tabla detalleventa-----------------------------------------------------------------
     //-----------------------------------------------------------------------------------------------------------
     public function insertarProductoDetalleVenta() {
-        $registrar = "INSERT INTO detalleventa (idventa, idproducto, cantidad, descripcion, preciototal, preciounitario, idusuario) VALUES (1,".$this->getIdproducto().",".$this->getCantidad().",'".$this->getDescripcion()."',".$this->getPreciototal().",".$this->getPreciounitario().",".$this->getIdusuario().")";
+        $registrar = "INSERT INTO detalleventa (idventa, idproducto, cantidad, descripcion, preciototal, preciounitario, idusuario) VALUES (".$this->getIdventa().",".$this->getIdproducto().",".$this->getCantidad().",'".$this->getDescripcion()."',".$this->getPreciototal().",".$this->getPreciounitario().",".$this->getIdusuario().")";
         
         //2-Establecer conexión con la BD
         $this->EstableceConexion();
@@ -188,7 +188,7 @@ class Venta{
     
     public function consultarDetalleVenta() {
         // Consulta SQL para obtener detalles del producto por ID
-        $sql = "SELECT idproducto, cantidad, descripcion, preciototal, preciounitario FROM detalleventa WHERE idventa = 1"/*. $this->getIdventa()*/;
+        $sql = "SELECT idproducto, cantidad, descripcion, preciototal, preciounitario FROM detalleventa WHERE idventa = ". $this->getIdventa();
         
         // Establecer conexión con la BD
         $this->EstableceConexion();
@@ -225,27 +225,33 @@ class Venta{
     }
     
       // 
-      public function consultaUltimoIdVenta() {
+  
+    
+// Método para obtener el último ID de venta
+public function consultaUltimoIdVenta() {
+    // Consulta SQL para obtener el último ID de venta
+    $sql = "SELECT MAX(idventa) AS idventa FROM venta;";
 
-        // Consulta SQL para obtener el último ID de venta
-        $sql = "SELECT LAST_INSERT_ID() AS idventa;";
-    
-        //2-Establecer conexión con la BD
-        $this->EstableceConexion();
-    
-        //3-Ejecutar la instrucción SQL en la conexión (BD)
-        $result = mysqli_query($this->conexion, $sql);
-    
-        //4-Cierro la conexión con la BD
-        mysqli_close($this->conexion);
-    
-        if ($result) {
-            echo "Producto registrado exitosamente.<br>";
-        } else {
-            echo "Error al registrar el producto: " . mysqli_error($this->conexion) . "<br>";
-        }
-        return $result;
+    // Establecer conexión con la BD
+    $this->EstableceConexion();
+
+    // Ejecutar la instrucción SQL en la conexión (BD)
+    $result = mysqli_query($this->conexion, $sql);
+
+    // Verificar si se obtuvieron resultados
+    if ($result && $row = mysqli_fetch_assoc($result)) {
+        // Almacenar el último ID de venta utilizando el método setNuevoIdVenta
+        $this->setNuevoIdVenta($row['idventa']);
+    } else {
+        echo "Error al obtener el último ID de venta: " . mysqli_error($this->conexion) . "<br>";
     }
+    $this->setIdventa($this->getNuevoIdVenta()+1);
+    echo "num venta " . $this->getIdventa() . "<br>";
+    // Cerrar la conexión con la BD
+    mysqli_close($this->conexion);
+}
+    
+      
     
 
     

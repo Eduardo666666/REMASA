@@ -47,15 +47,15 @@ session_start(); // Agrega esto al principio del script
     <?php
 include 'menu.php';
 include 'Modelo/venta.php';
-
 $detalleVenta = new Venta;
 $menu = new menu();
 $menu->barraMenu();
 
 // Consultar detalles de venta y almacenarlos en la variable de sesión
-$detalleVenta->consultaUltimoIdVenta();
-$detalleVenta->sumaTotalVenta();
+$detalleVenta->consultaUltimoIdVenta(); // Puedes considerar si realmente necesitas esta consulta
+$total = $detalleVenta->sumaTotalVenta();
 $detalleVentas = $detalleVenta->consultarDetalleVenta();
+
 // Verificar si se obtuvieron detalles de venta
 if ($detalleVentas !== null) {
     ?>
@@ -73,29 +73,26 @@ if ($detalleVentas !== null) {
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($detalleVentas as $detalleVenta) : ?>
+            <?php foreach ($detalleVentas as $detalleVentaItem) : ?>
                 <tr>
-                    <td><?php echo $detalleVenta['idproducto']; ?></td>
-                    <td><?php echo $detalleVenta['descripcion']; ?></td>
-                    <td><?php echo $detalleVenta['cantidad']; ?></td>
-                    <td><?php echo $detalleVenta['preciounitario']; ?></td>
-                    <td><?php echo $detalleVenta['preciototal']; ?></td>
-                    <?php 
-                    ?>
-                    <!-- Otros campos -->
+                    <td><?php echo $detalleVentaItem['idproducto']; ?></td>
+                    <td><?php echo $detalleVentaItem['descripcion']; ?></td>
+                    <td><?php echo $detalleVentaItem['cantidad']; ?></td>
+                    <td><?php echo $detalleVentaItem['preciounitario']; ?></td>
+                    <td><?php echo $detalleVentaItem['preciototal']; ?></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>
     </table>
-                <a href="#"></a>
+
+    <!-- Mostrar el total a pagar -->
+    <th>Total a pagar <?php echo $total ?></th>
+
     <?php
 } else {
     echo "No se encontraron detalles de venta.";
 }
-
 ?>
-
-
 <a href="tienda.php">Volver a la tienda</a>
 
 

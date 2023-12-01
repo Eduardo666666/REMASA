@@ -369,6 +369,33 @@ class Producto {
     }
     
     }
+
+    public function borrarProducto(){
+        //1-Definir la instrucción SQL de consulta
+        $borrar = "DELETE FROM detalleventa WHERE idproducto=" . $this->getId();
+    
+        //2-Establecer conexión con la BD
+        $conexion = $this->EstableceConexion();
+    
+        //3-Verificar si la conexión se estableció correctamente
+        if ($conexion) {
+            // Ejecutar la instrucción SQL en la conexión (BD)
+            $resultado = mysqli_query($conexion, $borrar);
+    
+            //4-Cerrar la conexión con la BD
+            mysqli_close($conexion);
+    
+            //5-Verificar si la operación se realizó con éxito
+            if ($resultado) {
+                echo "Producto eliminado";
+            } else {
+                echo "Error al intentar eliminar el producto: " . mysqli_error($conexion);
+            }
+        } else {
+            // Manejar el caso en que no se pudo establecer la conexión
+            echo "No se pudo establecer la conexión.";
+        }
+    }
    
 }//class
 

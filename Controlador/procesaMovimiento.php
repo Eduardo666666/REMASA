@@ -164,6 +164,22 @@
     
         // Puedes agregar más métodos según sea necesario (actualizar, eliminar, etc.)
     }
+
+    //ELIMINAR producto del carrito
+    if(isset($_GET['idproducto'])){
+        //Importamos el archivo php de la clase Profesores
+        include '../Modelo/producto.php';
+        //Generamos una instancia de la clase Profesores
+        $producto = new Producto();
+        //Cambiar valores para actualizar
+        $producto->setId($_GET['idproducto']);
+        //Llamada al método para actualizar valores
+        $producto->borrarProducto();
+        //Mensaje informativo
+        // echo '<script>confirm("Producto eliminado.");</script>';
+        //Dirigir a la página principal
+        echo '<script>window.location.replace("../carrito.php");</script>';
+    }
     
 ?>
 </body>

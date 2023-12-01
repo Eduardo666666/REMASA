@@ -1,7 +1,7 @@
 <?php
 
 
-class Producto{
+class Producto {
     //Atributos(igual que los campos de la tabla)
     private $cantidad;
     private $descripcion;
@@ -11,6 +11,7 @@ class Producto{
     private $precio;
     private $marca;
     private $rutaimagen;
+    private $categoria; 
     //Atributo de conectividad con la BD
     private $conexion;
     
@@ -25,6 +26,7 @@ class Producto{
         $this->precio=1;
         $this->marca="none";
         $this->rutaimagen="none";
+        $this->categoria="none";
     }
     
     //Set's y Get's
@@ -60,6 +62,10 @@ class Producto{
         $this->rutaimagen = $rutaimagen;
     }
 
+    public function setCategoria($categoria){
+        $this->categoria = $categoria;
+    }
+
     
     public function getCantidad(){
         return $this->cantidad;
@@ -92,9 +98,12 @@ class Producto{
     public function getRutaimagen(){
         return $this->rutaimagen;
     }
+    public function getCategoria(){
+        return $this->categoria;
+    }
     
-    //Método para conectar a la tabla alumnos de la BD
-    private function EstableceConexion(){
+    /*Método para conectar a la tabla alumnos de la BD
+    private static function EstableceConexion(){
         $this->conexion = mysqli_connect('127.0.0.1:3306','test','REMASA');
         
         if(!$this->conexion){
@@ -102,7 +111,19 @@ class Producto{
         } else{
             mysqli_select_db($this->conexion,"remasa");
         }
-    }//EstableceConexion
+    }//EstableceConexion*/
+
+    private static function EstableceConexion(){
+        $conexion = mysqli_connect('127.0.0.1:3306','test','REMASA');
+        
+        if(!$conexion){
+            echo "La conexion no se ha podido establecer.<br>";
+        } else {
+            mysqli_select_db($conexion, "remasa");
+        }
+
+        return $conexion;
+    }
     
     //----------------------------------------------------------------------------------------------------------------------------------
     //Método para BUSCAR productos Mercedez-Benz
@@ -305,62 +326,49 @@ class Producto{
     }//consulta productos categoria suspencion
 
 
-
-    //Método para REGISTRAR información en la tabla usuario
-    
-
     //-----------------------------------------------------------------------------------------------------------------------------
-
-    public function obtenerDetallesProducto($producto_id) {
-      
+     // Método para obtener los detalles del producto
+     public function obtenerDetallesProducto($id) {
+        // Verificar si $id es null o no es un número entero positivo
+        if ($id === null || !ctype_digit($id) || $id <= 0) {
+            // Puedes manejar este caso según tus necesidades
+            return false;
+        }
+    
+        // Obtener la conexión llamando al método estático
+        $conexion = self::EstableceConexion();
     
         // Consulta SQL para obtener detalles del producto por ID
-        $sql = "SELECT id, nombre, descripcion, medida, precio FROM producto WHERE id = $producto_id";
-    
-         //3-Ejecutar la instrucción SQL en la conexion (BD)
-         $result = mysqli_query($this->conexion,$sql);
-    
+        $sql = "SELECT * FROM producto WHERE id = $id";
+        try{
+        // Ejecutar la instrucción SQL en la conexión (BD)
+        $result = mysqli_query($conexion, $sql);
+        
         // Verificar si se obtuvieron resultados
-        if ($result->num_rows > 0) {
+        if ($result && $result->num_rows > 0) {
             // Obtener los detalles del producto
             $row = $result->fetch_assoc();
     
-            // Crear un array con los detalles del producto
-            $producto = array(
-                'id' => $row["id"],
-                'nombre' => $row["nombre"],
-                'descripcion' => $row["descripcion"],
-                'medida' => $row["medida"],
-                'precio' => $row["precio"],
-                'cantidad' => 1, // Puedes establecer la cantidad predeterminada
-            );
-             // Asignar los valores utilizando los setters
-            $this->setId($producto['id']);
-            $this->setNombre($producto['nombre']);
-            $this->setDescripcion($producto['descripcion']);
-            $this->setMedida($producto['medida']);
-            $this->setPrecio($producto['precio']);
-            $this->setCantidad($producto['cantidad']);
+            // Asignar los valores a los atributos directamente
+            $this->setCantidad(1);
+            $this->setDescripcion($row["descripcion"]);
+            $this->setId($row["id"]);
+            $this->setMedida($row["medida"]);
+            $this->setNombre($row["nombre"]);
+            $this->setPrecio($row["precio"]);
+            $this->setMarca($row["marca"]);
+            $this->setRutaimagen($row["rutaimagen"]);
+            $this->setCategoria($row["categoria"]);
     
-            //4-Cierro la conexión con la BD
-             mysqli_close($this->conexion);
-    
-            return $producto;
+            return true;
         } else {
-            // Si no se encuentra el producto, puedes manejarlo como desees (lanzar una excepción, devolver un valor predeterminado, etc.)
-             //4-Cierro la conexión con la BD
-             mysqli_close($this->conexion);
-            return null;
+            return false;
         }
+    } catch (Exception $e) {
+        die('Error en la consulta: ' . $e->getMessage());
     }
     
-
- 
-    
-
-    //-----------------------------------------------------------------------------------------------------------------------------
-     // Método para obtener los detalles del producto
-    
-    
+    }
+   
 }//class
 

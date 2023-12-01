@@ -60,15 +60,17 @@
 <!---------------------------------------------------Tabla carrito-------------------------------------------------------------------->
 <?php
 include 'Modelo/venta.php';
+include 'Modelo/producto.php';
+$detalleVenta = new Producto;
 
 // Obtener la información de los productos
-$detalleVenta = new Venta;
+$detalleVentas = new Venta;
 // Inicializar la variable de sesión si aún no existe
 if (!isset($_SESSION['carrito'])) {
     $_SESSION['carrito'] = array();
 }
 
-// Verificar si el formulario de agregar al carrito ha sido enviado
+/* Verificar si el formulario de agregar al carrito ha sido enviado
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['idventa'])) {
     // Obtener el ID del producto desde el formulario
     $idventa = $_POST['idventa'];
@@ -79,13 +81,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['idventa'])) {
 
     // Agregar el producto al carrito
     $_SESSION['carrito'][] = $detalleVenta;
-}
+}*/
+
+/*if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['agregarCarrito'])) {
+    $detalleVenta = $_POST['producto_id'];
+    // Obtener detalles del producto desde la base de datos y agregar al carrito
+    $detalleVenta->obtenerDetallesProducto($producto_id);
+    $_SESSION['carrito'][] = $detalleVenta;
+    // Insertar el producto en la tabla detalleventa
+    $detalleVentas->insertarProductoDetalleVenta();
+}*/
 
 ?>
 
 <!------------------------------------------------------------------------------------------------------------------>
 
-<!-- Mostrar la tabla con productos en el carrito -->
+<!-- Mostrar la tabla con productos en el carrito 
 <table>
     <thead>
         <tr>
@@ -109,8 +120,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['idventa'])) {
             </tr>
         <?php endforeach; ?>
     </tbody>
+</table>-->
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+            <!-- Otros campos -->
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($_SESSION['carrito'] as $detalleVenta) : ?>
+            <tr>
+                <td><?php echo $detalleVenta->getId(); ?></td>
+                <!-- Otros campos -->
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
 </table>
 
+<a href="tienda.php">Volver a la tienda</a>
 
 
 <!---------------------------------------------------Tabla carrito-------------------------------------------------------------------->

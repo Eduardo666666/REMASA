@@ -31,6 +31,21 @@ include 'Modelo/venta.php';
 
 <style>
 
+.paypal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+
+ #total-container th {
+        display: inline-block; /* Para que el elemento sea centrado por text-align: center */
+ }
+
+ #total-container {
+        text-align: center;
+        font-size: 24px;
+    }
+
 .tiendabtn[type="button"] {
 
   background-color: #21386C;
@@ -48,9 +63,6 @@ include 'Modelo/venta.php';
 .tiendabtn[type="button"]:hover {
   background-color: #008E72;
 }
-
-
-
 
 
 #customers {
@@ -136,6 +148,7 @@ if ($detalleVentas !== null) {
                 <th>Cantidad</th>
                 <th>Precio unitario</th>
                 <th>Precio Total</th>
+                <th></th>
                 <!-- Otros campos -->
             </tr>
         </thead>
@@ -147,23 +160,28 @@ if ($detalleVentas !== null) {
                     <td><?php echo $detalleVentaItem['cantidad']; ?></td>
                     <td><?php echo $detalleVentaItem['preciounitario']; ?></td>
                     <td><?php echo $detalleVentaItem['preciototal']; ?></td>
+                    <td>
+                        <a  href='Controlador/procesaMovimiento.php?idproducto=<?php echo $detalleVentaItem['idproducto']; ?>'>Eliminar</a>
+                    </td>
                 </tr>
             <?php endforeach; ?>
         </tbody>
     </table>
-    <div class="text-center mt-3 mb-3">
-        <button class="tiendabtn" id="tiendabtn" type="button" onclick="window.location.href='tienda.php'"> Pagar </button>
-    </div>
+
     <div class="text-center mt-3 mb-3">
         <button class="tiendabtn" id="tiendabtn" type="button" onclick="window.location.href='tienda.php'">Regresar</button>
     </div>
             </div>
 
     <!-- Mostrar el total a pagar -->
-    <th>Total a pagar <?php echo $total ?></th>
+    <div id="total-container">
+        <th>Total a pagar <?php echo $total ?></th>
+    </div>
     <!------------------------------------------------------codigo gabo------------------------------------------------------>
-    <div id="paypal-button-container"></div>
-    <p id="result-message"></p>
+    <div class="paypal">
+        <div id="paypal-button-container" ></div>
+        <p id="result-message"></p>
+    </div>
 
 <script>
     paypal.Buttons({
@@ -189,12 +207,17 @@ if ($detalleVentas !== null) {
                         // La respuesta del servidor después de procesar el pago
                         console.log(xhr.responseText);
                     }
+
                 };
                 xhr.send();
+                
+
             });
         }
     }).render('#paypal-button-container');
 </script>
+
+
     <!------------------------------------------------------codigo gabo------------------------------------------------------>
 
     <?php

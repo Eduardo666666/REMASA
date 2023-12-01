@@ -17,28 +17,28 @@ class menuLogin {
 
 
 
-<style>
-/* Estilo personalizado para el botón específico */
-.custom-btn {
-    background-color: #21386C !important;
-    color: white !important;
-    border-radius: 4px !important;
-    cursor: pointer;
-    width: calc(100% - 24px) !important;
-    max-width: none !important;
-    padding: 10px 15px !important;
-    margin: 5px !important;
-    border: none !important;
-}
+    <style>
+    /* Estilo personalizado para el botón específico */
+    .custom-btn {
+        background-color: #21386C !important;
+        color: white !important;
+        border-radius: 4px !important;
+        cursor: pointer;
+        width: calc(100% - 24px) !important;
+        max-width: none !important;
+        padding: 10px 15px !important;
+        margin: 5px !important;
+        border: none !important;
+    }
 
 
-/* Estilo para el botón específico cuando se pasa el mouse por encima */
-.custom-btn:hover {
-    background-color: #008E72 !important;
-}
+    /* Estilo para el botón específico cuando se pasa el mouse por encima */
+    .custom-btn:hover {
+        background-color: #008E72 !important;
+    }
 
 
-</style>
+    </style>
 
             <!-- Header -->
             <nav class="navbar navbar-expand-lg navbar-light shadow">
@@ -101,10 +101,7 @@ class menuLogin {
                                         <!-- Utiliza un botón en lugar de un enlace -->
                                         <button class="dropdown-item" id="buscarUsuario" name="buscarUsuario" type="submit">Modificar usuario</button>
                                     </form>
-                                    <form method="post" action="Controlador/modificacionUsuario.php">
-                                        <!-- Utiliza un botón en lugar de un enlace -->
-                                        <button class="dropdown-item" id="buscarUsuario" name="buscarUsuario" type="submit">Mis compras</button>
-                                    </form>
+                                    <a class="dropdown-item" href="frmMisCompras.php">Mis compras</a>
                                     <a class="dropdown-item" href="Controlador/cerrarLogin.php">Cerrar Sesión</a>
                                 </div>
                             </div>

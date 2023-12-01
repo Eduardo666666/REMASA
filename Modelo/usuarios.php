@@ -113,7 +113,7 @@ class Usuario{
         return $this->tipodeusuario;
     }
     
-    //Método para conectar a la tabla alumnos de la BD
+    //Método para conectar a la tabla usuarios de la BD
     private function EstableceConexion(){
         $this->conexion = mysqli_connect('127.0.0.1:3306','test','REMASA');
         

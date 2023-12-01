@@ -1,0 +1,106 @@
+body{ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-image: url('../img/FondoNvoUser.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  
+  h1{
+    text-align: center;
+    font-size: 24px;
+  font-weight: 700;
+  font-style: normal;
+  }
+  
+  input, div, select {
+  font-family: "myriad-pro", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  text-align: center;
+    color: #21386C;
+  }
+  
+  
+  .container {
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.7);
+    margin: auto;
+  
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: calc(60% - 24px);
+    height: 90%;
+    padding: 10px;
+    padding-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 300px; 
+    overflow-y: auto; 
+   box-sizing: border-box;
+  
+  }
+  
+  
+  .form-group {
+    align-items: center;
+    justify-content: center;
+    display: inline-block;
+    width: calc(60% - 24px);
+    max-width: 45%;
+    margin: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    box-sizing: border-box;
+  }
+  
+  input[type="text"],
+  input[type="password"],
+  input[type="number"],
+  select,
+  input[type="tel"] {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: calc(100% - 24px);
+    padding: 10px;
+    margin: 5px;
+    display: inline-block;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  button[type="submit"],
+  button[type="button"] {
+    background-color: #21386C;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    width: calc(100% - 24px);
+    max-width: none;
+    padding: 10px;
+    margin: 5px;
+    border: none;
+  }
+  
+  button[type="submit"]:hover,
+  button[type="button"]:hover {
+    background-color: #008E72;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .container {
+      width: 90%;
+      padding: 10px;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+  }

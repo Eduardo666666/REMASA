@@ -8,7 +8,7 @@
 	<title>REMASA WEB</title>
 
 <link rel="stylesheet" href="https://use.typekit.net/nwm6dld.css">
-<link rel="stylesheet" href="../assets/css/NuevoUsuario.css" type="text/css">
+<link rel="stylesheet" href="../assets/css/modificarUsuario.css" type="text/css">
 </head>
 <body>
     <header>
@@ -58,7 +58,7 @@
 
         // Resto del código
         if (isset($_POST['buscarUsuario'])) {
-            // Importamos el archivo php de la clase Usuario
+            // Importamos el archivo php d  e la clase Usuario
             include '../Modelo/usuarios.php';
 
             // Generamos una instancia de la clase Usuario
@@ -76,20 +76,48 @@
             if ($registro['nombre'] != '') {
                 // Mostrar los datos obtenidos
                 ?>
-                <h1>Busqueda de Usuario</h1>
+
+
+
+<div class="container d-flex justify-content-between align-items-center">
+             
+
                 <form method="post" onsubmit="return confirm('¿Actualizar datos?');" action="modificacionUsuario.php">
+
+                
+                <h1>Actualizar usuario</h1>
+                <span class="form-group">
                     <div class="formleyenda"><label>Nombre:</label></div>
                     <input id="nombre" type="text" name="nombre" value="<?php echo $registro['nombre']?>" required>
+                    </span>       
+
+<span class="form-group">
                     <div class="formleyenda"><label>Apellidos:</label></div>
                     <input id="apellidos" type="text" name="apellidos" value="<?php echo $registro['apellidos']?>" required>
+                    </span>       
+
+                    <span class="form-group">
                     <div class="formleyenda"><label>Teléfono:</label></div>
                     <input maxlength="10" min="10" id="telefono" type="tel" name="telefono" value="<?php echo $registro['telefono']?>" required>
-                    <div class="formleyenda"><label>Código postal:</label></div>
-                    <input id="codigopostal" type="number" name="codigopostal" value="<?php echo $registro['codigopostal']?>" required>
+
+                    </span>
+                    <span class="form-group">
+                    <div class="formleyenda"><label></label></div>
+                    </span>
+
+                     
+
+<span class="form-group">
                     <div class="formleyenda"><label>Dirección:</label></div>
                     <input id="direccion" type="text" name="direccion" value="<?php echo $registro['direccion']?>" required>
+                    </span>       
+
+<span class="form-group">
                     <div class="formleyenda"><label>Ciudad:</label></div>
                     <input id="ciudad" type="text" name="ciudad" value="<?php echo $registro['ciudad']?>" required>
+                    </span>       
+
+<span class="form-group">
                     <div class="formleyenda"><label>Estado:</label></div>
                     <select name="estado" id="estado" required>
                         <option value="" disabled selected>Selecciona un estado</option>
@@ -124,15 +152,42 @@
                         <option value="Yucatán" <?php echo ($registro['estado'] == 'Yucatán') ? 'selected' : ''; ?>>Yucatán</option>
                         <option value="Zacatecas" <?php echo ($registro['estado'] == 'Zacatecas') ? 'selected' : ''; ?>>Zacatecas</option>
                     </select>
+                    </span>    
+                    
+                    
+                    <span class="form-group">
+                    <div class="formleyenda"><label>Código postal:</label></div>
+                    <input id="codigopostal" type="number" name="codigopostal" value="<?php echo $registro['codigopostal']?>" required>
+                    </span>   
+
+<span class="form-group">
                     <div class="formleyenda"><label>Correo:</label></div>
                     <input id="correo" type="text" name="correo" value="<?php echo $registro['correo']?>" readonly required>
+                    </span>       
+
+<span class="form-group">
                     <div class="formleyenda"><label>Contraseña:</label></div>
                     <input id="contrasena" type="text" name="contrasena" value="<?php echo $registro['contrasena']?>" required>
+                    </span>       
+
+<span class="form-group">
                     <div>
-                        <button id="editarUsr" name="editarUsr" type="submit">Editar</button>
+                        <button id="editarUsr" name="editarUsr" type="submit">Actualizar</button>
                     </div>
+                    </span>  
+
+                    <span class="form-group">
+                    <div class="regresar">
+                     <button class="botonRegresar" id="botonRegresar" name="botonRegresar" type="button" onclick="window.location.href='../principal.php'">Regresar</button>
+                    </div>
+                    </span>
+
                 </form>
         
+            </div>
+
+
+
                 <?php
                 } else {
                     // Mensaje informativo

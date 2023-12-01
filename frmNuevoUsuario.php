@@ -15,9 +15,6 @@
  
             <div class="container d-flex justify-content-between align-items-center">
 
-          
-
-           
              
                 <form method="post" action="Controlador/procesaMovimiento.php">
 
@@ -109,12 +106,15 @@
 
                     <span class="form-group">
                     <div>
+
                         <button class="enviarNvoUsr" id="enviarNvoUsr" name="enviarNvoUsr" type="submit">Registrar</button>
                     </div>
 
-                    </span>
 
-                    <span class="form-group">
+                    </span>       
+
+<span class="form-group">
+
                     <div class="regresar">
                      <button class="botonRegresar" id="botonRegresar" name="botonRegresar" type="button" onclick="window.location.href='frmlogin.php'">Regresar</button>
                     </div>

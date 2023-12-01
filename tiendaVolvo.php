@@ -110,7 +110,7 @@
                 <ul class="list-unstyled templatemo-accordion">
                     <ul class="list-unstyled text-light footer-link-list">
                         <li class="pb-3">
-                                <a class="nav-link collapsed d-flex justify-content-between h3 text-decoration-none" style= "background-color: #D9D9D9; padding: 20px;" href="tienda.php">
+                                <a class="nav-link collapsed d-flex justify-content-between h3 text-decoration-none" style= "background-color: #D9D9D9; padding: 20px;" href="tiendaVolvo.php">
                                     Volvo
                                 </a>
                                 </li>
@@ -155,7 +155,7 @@
  include 'Modelo/producto.php';
 // Crear una instancia de la clase Producto
 $producto = new Producto();
-$productos = $producto -> buscarProductosScania();
+$productos = $producto -> buscarProductosVolvo();
 // Obtener la información de los productos
 ?>
     <div class="container py-5">
@@ -366,12 +366,12 @@ $productos = $producto -> buscarProductosScania();
                 <div class="col-md-4 pt-5">
                     <h2 class="h2 text-light border-bottom pb-3 border-light">Productos</h2>
                     <ul class="list-unstyled text-light footer-link-list">
-                        <li><a class="text-decoration-none" href="#">Suspensión</a></li>
-                        <li><a class="text-decoration-none" href="#">Frenos</a></li>
-                        <li><a class="text-decoration-none" href="#">Dirección</a></li>
-                        <li><a class="text-decoration-none" href="#">Filtración</a></li>
-                        <li><a class="text-decoration-none" href="#">Lubricantes</a></li>
-                        <li><a class="text-decoration-none" href="#">Conecciones</a></li>
+                        <li><a class="text-decoration-none" href="tiendaSuspension.php">Suspensión</a></li>
+                        <li><a class="text-decoration-none" href="tiendaFrenos.php">Frenos</a></li>
+                        <li><a class="text-decoration-none" href="tiendaDireccion.php">Dirección</a></li>
+                        <li><a class="text-decoration-none" href="tiendaFiltracion.php">Filtración</a></li>
+                        <li><a class="text-decoration-none" href="tiendaLubricantes.php">Lubricantes</a></li>
+                        <li><a class="text-decoration-none" href="tiendaConecciones.php">Conecciones</a></li>
                     </ul>
                 </div>
 

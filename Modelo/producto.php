@@ -127,23 +127,23 @@ class Producto {
     
     //----------------------------------------------------------------------------------------------------------------------------------
     //Método para BUSCAR productos Mercedez-Benz
-    public function buscarProductosMercedes(){
-        //1-Definir la instruccion SQL de consulta
-        $consulta = "select id, nombre, descripcion, medida, precio, rutaimagen from producto where marca='Mercedes-Benz'";
-        //echo $consulta."<br>";
-        
-        //2-Establecer conexión con la BD
-        $this->EstableceConexion();
-        
-        //3-Ejecutar la instrucción SQL en la conexion (BD)
-        $resultado = mysqli_query($this->conexion,$consulta);
-        
-        //4-Cierro la conexión con la BD
-        mysqli_close($this->conexion);
-        
-        //5-Retorna los datos de la consulta
+    public function buscarProductosMercedes() {
+        // 1-Definir la instruccion SQL de consulta
+        $consulta = "SELECT id, nombre, descripcion, medida, precio, rutaimagen FROM producto WHERE marca='Mercedes-Benz'";
+        // echo $consulta."<br>";
+    
+        // 2-Establecer conexión con la BD
+        $conexion = self::EstableceConexion();
+    
+        // 3-Ejecutar la instrucción SQL en la conexion (BD)
+        $resultado = mysqli_query($conexion, $consulta);
+    
+        // 4-Cierro la conexión con la BD
+        mysqli_close($conexion);
+    
+        // 5-Retorna los datos de la consulta
         return $resultado;
-    }//consulta productos Mercedez-Benz
+    }
 
     //----------------------------------------------------------------------------------------------------------------------------------
     //Método para BUSCAR productos MAN
@@ -152,16 +152,16 @@ class Producto {
         $consulta = "select id, nombre, descripcion, medida, precio, rutaimagen from producto where marca='MAN'";
         //echo $consulta."<br>";
         
-        //2-Establecer conexión con la BD
-        $this->EstableceConexion();
-        
-        //3-Ejecutar la instrucción SQL en la conexion (BD)
-        $resultado = mysqli_query($this->conexion,$consulta);
-        
-        //4-Cierro la conexión con la BD
-        mysqli_close($this->conexion);
-        
-        //5-Retorna los datos de la consulta
+        // 2-Establecer conexión con la BD
+        $conexion = self::EstableceConexion();
+    
+        // 3-Ejecutar la instrucción SQL en la conexion (BD)
+        $resultado = mysqli_query($conexion, $consulta);
+    
+        // 4-Cierro la conexión con la BD
+        mysqli_close($conexion);
+    
+        // 5-Retorna los datos de la consulta
         return $resultado;
     }//consulta productos MAN
 
@@ -172,16 +172,16 @@ class Producto {
         $consulta = "select id, nombre, descripcion, medida, precio, rutaimagen from producto where marca='Scania'";
         //echo $consulta."<br>";
         
-        //2-Establecer conexión con la BD
-        $this->EstableceConexion();
-        
-        //3-Ejecutar la instrucción SQL en la conexion (BD)
-        $resultado = mysqli_query($this->conexion,$consulta);
-        
-        //4-Cierro la conexión con la BD
-        mysqli_close($this->conexion);
-        
-        //5-Retorna los datos de la consulta
+        // 2-Establecer conexión con la BD
+        $conexion = self::EstableceConexion();
+    
+        // 3-Ejecutar la instrucción SQL en la conexion (BD)
+        $resultado = mysqli_query($conexion, $consulta);
+    
+        // 4-Cierro la conexión con la BD
+        mysqli_close($conexion);
+    
+        // 5-Retorna los datos de la consulta
         return $resultado;
     }//consulta productos Scania
 
@@ -192,16 +192,16 @@ class Producto {
         $consulta = "select id, nombre, descripcion, medida, precio, rutaimagen from producto where marca='Volvo'";
         //echo $consulta."<br>";
         
-        //2-Establecer conexión con la BD
-        $this->EstableceConexion();
-        
-        //3-Ejecutar la instrucción SQL en la conexion (BD)
-        $resultado = mysqli_query($this->conexion,$consulta);
-        
-        //4-Cierro la conexión con la BD
-        mysqli_close($this->conexion);
-        
-        //5-Retorna los datos de la consulta
+        // 2-Establecer conexión con la BD
+        $conexion = self::EstableceConexion();
+    
+        // 3-Ejecutar la instrucción SQL en la conexion (BD)
+        $resultado = mysqli_query($conexion, $consulta);
+    
+        // 4-Cierro la conexión con la BD
+        mysqli_close($conexion);
+    
+        // 5-Retorna los datos de la consulta
         return $resultado;
     }//consulta productos Volvo
 
@@ -212,16 +212,16 @@ class Producto {
         $consulta = "select id, nombre, descripcion, medida, precio, rutaimagen from producto where categoria='Conecciones'";
         //echo $consulta."<br>";
         
-        //2-Establecer conexión con la BD
-        $this->EstableceConexion();
-        
-        //3-Ejecutar la instrucción SQL en la conexion (BD)
-        $resultado = mysqli_query($this->conexion,$consulta);
-        
-        //4-Cierro la conexión con la BD
-        mysqli_close($this->conexion);
-        
-        //5-Retorna los datos de la consulta
+        // 2-Establecer conexión con la BD
+        $conexion = self::EstableceConexion();
+    
+        // 3-Ejecutar la instrucción SQL en la conexion (BD)
+        $resultado = mysqli_query($conexion, $consulta);
+    
+        // 4-Cierro la conexión con la BD
+        mysqli_close($conexion);
+    
+        // 5-Retorna los datos de la consulta
         return $resultado;
     }//consulta productos categoria conecciones
 
@@ -232,16 +232,16 @@ class Producto {
         $consulta = "select id, nombre, descripcion, medida, precio, rutaimagen from producto where categoria='Lubricantes'";
         //echo $consulta."<br>";
         
-        //2-Establecer conexión con la BD
-        $this->EstableceConexion();
-        
-        //3-Ejecutar la instrucción SQL en la conexion (BD)
-        $resultado = mysqli_query($this->conexion,$consulta);
-        
-        //4-Cierro la conexión con la BD
-        mysqli_close($this->conexion);
-        
-        //5-Retorna los datos de la consulta
+        // 2-Establecer conexión con la BD
+        $conexion = self::EstableceConexion();
+    
+        // 3-Ejecutar la instrucción SQL en la conexion (BD)
+        $resultado = mysqli_query($conexion, $consulta);
+    
+        // 4-Cierro la conexión con la BD
+        mysqli_close($conexion);
+    
+        // 5-Retorna los datos de la consulta
         return $resultado;
     }//consulta productos categoria lubricantes
 
@@ -252,16 +252,16 @@ class Producto {
         $consulta = "select id, nombre, descripcion, medida, precio, rutaimagen from producto where categoria='Filtracion'";
         //echo $consulta."<br>";
         
-        //2-Establecer conexión con la BD
-        $this->EstableceConexion();
-        
-        //3-Ejecutar la instrucción SQL en la conexion (BD)
-        $resultado = mysqli_query($this->conexion,$consulta);
-        
-        //4-Cierro la conexión con la BD
-        mysqli_close($this->conexion);
-        
-        //5-Retorna los datos de la consulta
+        // 2-Establecer conexión con la BD
+        $conexion = self::EstableceConexion();
+    
+        // 3-Ejecutar la instrucción SQL en la conexion (BD)
+        $resultado = mysqli_query($conexion, $consulta);
+    
+        // 4-Cierro la conexión con la BD
+        mysqli_close($conexion);
+    
+        // 5-Retorna los datos de la consulta
         return $resultado;
     }//consulta productos categoria filtracion
 
@@ -272,16 +272,16 @@ class Producto {
         $consulta = "select id, nombre, descripcion, medida, precio, rutaimagen from producto where categoria='Direccion'";
         //echo $consulta."<br>";
         
-        //2-Establecer conexión con la BD
-        $this->EstableceConexion();
-        
-        //3-Ejecutar la instrucción SQL en la conexion (BD)
-        $resultado = mysqli_query($this->conexion,$consulta);
-        
-        //4-Cierro la conexión con la BD
-        mysqli_close($this->conexion);
-        
-        //5-Retorna los datos de la consulta
+        // 2-Establecer conexión con la BD
+        $conexion = self::EstableceConexion();
+    
+        // 3-Ejecutar la instrucción SQL en la conexion (BD)
+        $resultado = mysqli_query($conexion, $consulta);
+    
+        // 4-Cierro la conexión con la BD
+        mysqli_close($conexion);
+    
+        // 5-Retorna los datos de la consulta
         return $resultado;
     }//consulta productos categoria direccion
 
@@ -292,16 +292,16 @@ class Producto {
         $consulta = "select id, nombre, descripcion, medida, precio, rutaimagen from producto where categoria='Frenos'";
         //echo $consulta."<br>";
         
-        //2-Establecer conexión con la BD
-        $this->EstableceConexion();
-        
-        //3-Ejecutar la instrucción SQL en la conexion (BD)
-        $resultado = mysqli_query($this->conexion,$consulta);
-        
-        //4-Cierro la conexión con la BD
-        mysqli_close($this->conexion);
-        
-        //5-Retorna los datos de la consulta
+        // 2-Establecer conexión con la BD
+        $conexion = self::EstableceConexion();
+    
+        // 3-Ejecutar la instrucción SQL en la conexion (BD)
+        $resultado = mysqli_query($conexion, $consulta);
+    
+        // 4-Cierro la conexión con la BD
+        mysqli_close($conexion);
+    
+        // 5-Retorna los datos de la consulta
         return $resultado;
     }//consulta productos categoria frenos
 
@@ -312,16 +312,16 @@ class Producto {
         $consulta = "select id, nombre, descripcion, medida, precio, rutaimagen from producto where categoria='Suspencion'";
         //echo $consulta."<br>";
         
-        //2-Establecer conexión con la BD
-        $this->EstableceConexion();
-        
-        //3-Ejecutar la instrucción SQL en la conexion (BD)
-        $resultado = mysqli_query($this->conexion,$consulta);
-        
-        //4-Cierro la conexión con la BD
-        mysqli_close($this->conexion);
-        
-        //5-Retorna los datos de la consulta
+        // 2-Establecer conexión con la BD
+        $conexion = self::EstableceConexion();
+    
+        // 3-Ejecutar la instrucción SQL en la conexion (BD)
+        $resultado = mysqli_query($conexion, $consulta);
+    
+        // 4-Cierro la conexión con la BD
+        mysqli_close($conexion);
+    
+        // 5-Retorna los datos de la consulta
         return $resultado;
     }//consulta productos categoria suspencion
 

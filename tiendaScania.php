@@ -110,7 +110,7 @@
                 <ul class="list-unstyled templatemo-accordion">
                     <ul class="list-unstyled text-light footer-link-list">
                         <li class="pb-3">
-                                <a class="nav-link collapsed d-flex justify-content-between h3 text-decoration-none" href="tienda.php">
+                                <a class="nav-link collapsed d-flex justify-content-between h3 text-decoration-none" href="tiendaVolvo.php">
                                     Volvo
                                 </a>
                                 </li>

@@ -110,7 +110,7 @@ class Venta{
 
     //----Métodos------------------------------------------------------------------------------------------------------------
 
-    /*    // Método para conectar a la tabla ventas de la BD
+   // Método para conectar a la tabla ventas de la BD
     private function EstableceConexion(){
         $this->conexion = mysqli_connect('127.0.0.1:3306','test','REMASA');
         
@@ -119,22 +119,8 @@ class Venta{
         } else{
             mysqli_select_db($this->conexion,"remasa");
         }
-    }*/
-    // EstableceConexion
-        private static function EstableceConexion(){
-        $conexion = mysqli_connect('127.0.0.1:3306','test','REMASA');
-        
-        if(!$conexion){
-            echo "La conexion no se ha podido establecer.<br>";
-        } else {
-            mysqli_select_db($conexion, "remasa");
-        }
-
-        return $conexion;
     }
 
-
-//EstableceConexion
         // Método para CONSULTAR TODOS los registros de la tabla
         public function consultaVenta(){
             if (isset($_SESSION['correo'])) {
@@ -179,41 +165,18 @@ class Venta{
         }// consultaVenta
 
      //Método para REGISTRAR información en la tabla detalleventa-----------------------------------------------------------------
-     public function insertarProductoDetalleVentas(){
-        //1-Definir la instruccion SQL de inserción
-        $this->setIdventa(1);
-        $registrar = "insert into detalleventa (idventa,idProducto, cantidad, descripcion, preciototal, preciounitario, idusuario) values ('".$this->getIdventa()."','".$this->getIdproducto()."',".$this->getCantidad().",'".$this->getDescripcion()."','".$this->getPreciototal()."','".$this->getPreciounitario()."','".$this->getIdusuario()."')";
-        //echo $registrar."<br>";
+    //-----------------------------------------------------------------------------------------------------------
+    public function insertarProductoDetalleVenta() {
+        $registrar = "INSERT INTO detalleventa (idventa, idproducto, cantidad, descripcion, preciototal, preciounitario, idusuario) VALUES (1,".$this->getIdproducto().",".$this->getCantidad().",'".$this->getDescripcion()."',".$this->getPreciototal().",".$this->getPreciounitario().",".$this->getIdusuario().")";
         
         //2-Establecer conexión con la BD
         $this->EstableceConexion();
-        
-        //3-Ejecutar la instrucción SQL en la conexion (BD)
-        mysqli_query($this->conexion,$registrar);
-        
-        //4-Cierro la conexión con la BD
-        mysqli_close($this->conexion);
-
-        if (mysqli_query($this->conexion, $registrar)) {
-            echo "Producto registrado exitosamente.<br>";
-        } else {
-            echo "Error al registrar el producto: " . mysqli_error($this->conexion) . "<br>";
-        }
-    }//registrar 
-    //-----------------------------------------------------------------------------------------------------------
-    public function insertarProductoDetalleVenta() {
-        $variable = "('1',".$this->getIdproducto()."',".$this->getCantidad().",'".$this->getDescripcion()."','".$this->getPreciototal()."','".$this->getPreciounitario()."','".$this->getIdusuario()."')";
-echo "Este es un mensaje con una variable: $variable\n";
-        $registrar = "INSERT INTO detalleventa (idventa, idproducto, cantidad, descripcion, preciototal, preciounitario, idusuario) VALUES ('1',".$this->getIdproducto()."',".$this->getCantidad().",'".$this->getDescripcion()."','".$this->getPreciototal()."','".$this->getPreciounitario()."','".$this->getIdusuario()."')";
-        
-        //2-Establecer conexión con la BD
-        $conexion = $this->EstableceConexion();
     
         //3-Ejecutar la instrucción SQL en la conexión (BD)
-        $result = mysqli_query($conexion, $registrar);
+        $result = mysqli_query($this->conexion, $registrar);
     
         //4-Cierro la conexión con la BD
-        mysqli_close($conexion);
+        mysqli_close($this->conexion);
     
         if ($result) {
             echo "Producto registrado exitosamente.<br>";
@@ -224,65 +187,63 @@ echo "Este es un mensaje con una variable: $variable\n";
     
     
     public function consultarDetalleVenta() {
-        
-    
         // Consulta SQL para obtener detalles del producto por ID
-        $sql = "SELECT  idproducto, cantidad, descripcion, preciototal, preciounitario,  idusuario FROM detalleventa WHERE idventa = 15"/*. $this->getIdventa()*/;
-        //2-Establecer conexión con la BD
+        $sql = "SELECT idproducto, cantidad, descripcion, preciototal, preciounitario FROM detalleventa WHERE idventa = 1"/*. $this->getIdventa()*/;
+        
+        // Establecer conexión con la BD
         $this->EstableceConexion();
         
-        //3-Ejecutar la instrucción SQL en la conexion (BD)
-        $result = mysqli_query($this->conexion,$sql);
+        // Ejecutar la instrucción SQL en la conexión (BD)
+        $result = mysqli_query($this->conexion, $sql);
     
         // Verificar si se obtuvieron resultados
-        /*if ($result->num_rows > 0) {
-            // Obtener los detalles del producto
-            $row = $result->fetch_assoc();
+        if ($result->num_rows > 0) {
+            // Inicializar un array para almacenar detalles de venta
+            $detallesVenta = array();
     
-            // Crear un array con los detalles del producto
-            $producto = array(
-                'id' => $row["id"],
-                'nombre' => $row["nombre"],
-                'descripcion' => $row["descripcion"],
-                'medida' => $row["medida"],
-                'precio' => $row["precio"],
-                'cantidad' => 1, // Puedes establecer la cantidad predeterminada
-            );
+            // Iterar sobre los resultados y almacenar en el array
+            while ($row = $result->fetch_assoc()) {
+                $producto = array(
+                    'idproducto' => $row["idproducto"],
+                    'cantidad' => $row["cantidad"],
+                    'descripcion' => $row["descripcion"],
+                    'preciototal' => $row["preciototal"],
+                    'preciounitario' => $row["preciounitario"]
+                );
+                $detallesVenta[] = $producto;
+            }
     
-             
-            //4-Cierro la conexión con la BD
+            // Cerrar la conexión con la BD
             mysqli_close($this->conexion);
-            return $producto;
+    
+            return $detallesVenta;
         } else {
-            //4-Cierro la conexión con la BD
+            // Cerrar la conexión con la BD
             mysqli_close($this->conexion);
             return null;
-        }*/
-        return $result;
+        }
     }
+    
       // 
       public function consultaUltimoIdVenta() {
-        // Obtener la conexión llamando al método estático
-        $conexion = self::EstableceConexion();
-    
+
         // Consulta SQL para obtener el último ID de venta
         $sql = "SELECT LAST_INSERT_ID() AS idventa;";
     
-        // Ejecutar la instrucción SQL en la conexión (BD)
-        $result = mysqli_query($conexion, $sql);
+        //2-Establecer conexión con la BD
+        $this->EstableceConexion();
     
-        // Verificar si la consulta fue exitosa
+        //3-Ejecutar la instrucción SQL en la conexión (BD)
+        $result = mysqli_query($this->conexion, $sql);
+    
+        //4-Cierro la conexión con la BD
+        mysqli_close($this->conexion);
+    
         if ($result) {
-            // Obtener el resultado como un array asociativo
-            $fila = mysqli_fetch_assoc($result);
-    
-            // Obtener el ID de venta desde el resultado
-            $nuevoIdVenta = $fila['idventa'];
-    
-            // Llamar al setter para asignar el ID de venta
-            $this->setIdVenta($nuevoIdVenta+1);
+            echo "Producto registrado exitosamente.<br>";
+        } else {
+            echo "Error al registrar el producto: " . mysqli_error($this->conexion) . "<br>";
         }
-    
         return $result;
     }
     

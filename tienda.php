@@ -248,6 +248,7 @@
         $detalleVenta->setDescripcion($producto->getDescripcion());
         $detalleVenta->setPreciounitario($producto->getPrecio());
         $detalleVenta->setIdusuario(1); 
+        $detalleVenta->setPreciototal($producto->getPrecio() * $producto->getCantidad());
 
         // Insertar el producto en la tabla detalleventa
         $detalleVenta->insertarProductoDetalleVenta();

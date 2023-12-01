@@ -54,6 +54,7 @@ $menu->barraMenu();
 
 // Consultar detalles de venta y almacenarlos en la variable de sesión
 $detalleVenta->consultaUltimoIdVenta();
+$detalleVenta->sumaTotalVenta();
 $detalleVentas = $detalleVenta->consultarDetalleVenta();
 // Verificar si se obtuvieron detalles de venta
 if ($detalleVentas !== null) {
@@ -63,11 +64,11 @@ if ($detalleVentas !== null) {
     <table>
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Nombre</th>
+                <th>Código</th>
                 <th>Descripción</th>
                 <th>Cantidad</th>
-                <th>Precio</th>
+                <th>Precio unitario</th>
+                <th>Precio Total</th>
                 <!-- Otros campos -->
             </tr>
         </thead>
@@ -75,20 +76,23 @@ if ($detalleVentas !== null) {
             <?php foreach ($detalleVentas as $detalleVenta) : ?>
                 <tr>
                     <td><?php echo $detalleVenta['idproducto']; ?></td>
-                    <td><?php echo $detalleVenta['cantidad']; ?></td>
                     <td><?php echo $detalleVenta['descripcion']; ?></td>
-                    <td><?php echo $detalleVenta['preciototal']; ?></td>
+                    <td><?php echo $detalleVenta['cantidad']; ?></td>
                     <td><?php echo $detalleVenta['preciounitario']; ?></td>
+                    <td><?php echo $detalleVenta['preciototal']; ?></td>
+                    <?php 
+                    ?>
                     <!-- Otros campos -->
                 </tr>
             <?php endforeach; ?>
         </tbody>
     </table>
-
+                <a href="#"></a>
     <?php
 } else {
     echo "No se encontraron detalles de venta.";
 }
+
 ?>
 
 

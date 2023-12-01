@@ -13,6 +13,7 @@ class Venta{
     private $idusuario;
     private $fecha;
     private $iva;
+    private $totalVenta;
     //Atributo de conectividad con la BD
     private $conexion;
     
@@ -27,6 +28,7 @@ class Venta{
         $this->idusuario=1;
         $this->fecha=1;
         $this->iva=1;
+        $this->totalVenta=1;
     }
     
     //Set's y Get's
@@ -67,6 +69,9 @@ class Venta{
     public function setNuevoIdVenta($nuevoIdVenta){
         $this->nuevoIdVenta = $nuevoIdVenta;
     }
+    public function setTotalVenta($totalVenta){
+        $this->totalVenta = $totalVenta;
+    }
 
     
     public function getIdventa(){
@@ -106,6 +111,9 @@ class Venta{
     }
     public function getNuevoIdVenta(){
         return $this->nuevoIdVenta;
+    }
+    public function getTotalVenta(){
+        return $this->totalVenta;
     }
 
     //----Métodos------------------------------------------------------------------------------------------------------------
@@ -212,7 +220,7 @@ class Venta{
                 );
                 $detallesVenta[] = $producto;
             }
-    
+
             // Cerrar la conexión con la BD
             mysqli_close($this->conexion);
     
@@ -249,6 +257,32 @@ public function consultaUltimoIdVenta() {
     // Cerrar la conexión con la BD
     mysqli_close($this->conexion);
 }
+    
+// Método para sumar total de la venta
+public function sumaTotalVenta() {
+    // Consulta SQL para obtener la suma de preciototal
+   
+    $sql = "SELECT SUM(preciototal) as totalventa FROM detalleventa WHERE idventa = " . $this->getIdventa();
+
+    // Establecer conexión con la BD
+    $this->EstableceConexion();
+
+    // Ejecutar la instrucción SQL en la conexión (BD)
+    $result = mysqli_query($this->conexion, $sql);
+
+    // Verificar si se obtuvieron resultados
+    if ($result && $row = mysqli_fetch_assoc($result)) {
+        // Obtener el total de ventas y establecerlo en el objeto Venta
+        $totalVentas = $row['totalventa'];
+        $this->setTotalVenta($totalVentas);
+    } else {
+        echo "Error al obtener el total de la venta: " . mysqli_error($this->conexion) . "<br>";
+    }
+
+    // Cerrar la conexión con la BD
+    mysqli_close($this->conexion);
+}
+
     
       
     

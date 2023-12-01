@@ -44,6 +44,11 @@
 
 
              <!-- Header -->
+             <?php
+            // Iniciar la sesión
+            session_start();
+
+            ?>
              <nav class="navbar navbar-expand-lg navbar-light shadow">
                 <div class="container d-flex justify-content-between align-items-center">
 
@@ -166,70 +171,93 @@
                     </div>
                     
                 </div>
-                
-<!--------------------------------------------------Funcionalidad carrito----------------------------------------------------->
+ <!--------------------------------------------------Funcionalidad carrito----------------------------------------------------->
 
-        
+<!-- Incluye tus estilos y scripts aquí si es necesario -->
 
 <!--------------------------------------------------Funcionalidad carrito----------------------------------------------------->
                 
 <!--------------------------------------------------Funcionalidad consulta productos----------------------------------------------------->
-                <div class="row">
-                <?php
-            
-                include 'Controlador/procesaMovimiento.php';
-                
+<div class="row">
+    <?php
+    // Incluir archivos necesarios
+    include 'Controlador/procesaMovimiento.php';
+    include 'Modelo/venta.php';
+    include 'Modelo/producto.php';
 
-                // Obtener la información de los productos
-                $productos = consultarProductos();
+    // Crear instancias de las clases necesarias
+    $detalleVenta = new Venta; // Instancia para manejar la venta
 
-                // Iterar sobre los productos y mostrarlos
-                foreach ($productos as $producto) {
-                    ?>
-                    <div class="col-md-4">
-                        <div class="card mb-4 product-wap rounded-0">
-                            <div class="card rounded-0">
-                                <!-- Reemplazar la ruta de la imagen con el atributo rutaImagen del producto -->
-                                <img class="card-img rounded-0 img-fluid" src="<?php echo $producto['rutaimagen']; ?>">
-                                <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
-                                    <ul class="list-unstyled">
-                                    <form method="post" action="carrito.php">
-                                            <input type="hidden" name="producto_id" value="<?php echo $producto['id']; ?>">
-                                            <button type="submit" class="btn btn-success text-white mt-2">Agregar <i class="fa fa-fw fa-shopping-cart mr-1"></i></button>
-                                            <form method="post" action="carrito.php">
-    <input type="hidden" name="agregarCarrito" value="1">
-    <input type="hidden" name="producto_id" value="<?php echo $producto['id']; ?>">
-    <button type="submit" class="btn btn-success text-white mt-2">Agregar <i class="fa fa-fw fa-shopping-cart mr-1"></i></button>
-</form>
-                                        </form>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <a href="shop-single.html" class="h3 text-decoration-none"><?php echo $producto['nombre']; ?></a>
-                                <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
-                                    <li><?php echo $producto['descripcion']; ?></li>
-                                    
-                                    <li class="pt-2">
-                                        <span class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
-                                        <span class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
-                                        <span class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
-                                        <span class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
-                                        <span class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
-                                    </li>
-                                </ul>
-                              
+    // Obtener la información de los productos
+    $productos = consultarProductos();
+
+    // Iterar sobre los productos y mostrarlos
+    foreach ($productos as $producto) {
+        ?>
+        <div class="col-md-4">
+            <div class="card mb-4 product-wap rounded-0">
+                <div class="card rounded-0">
+                    <img class="card-img rounded-0 img-fluid" src="<?php echo $producto['rutaimagen']; ?>">
+                    <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                        <ul class="list-unstyled">
+                            <form method="post" action="tienda.php">
+                                <input type="hidden" name="agregarVenta" value="1">
+                                <input type="hidden" name="producto_id" value="<?php echo $producto['id']; ?>">
+                                <button type="submit" class="btn btn-success text-white mt-2">Agregar <i class="fa fa-fw fa-shopping-cart mr-1"></i></button>
+                            </form>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <a href="shop-single.html" class="h3 text-decoration-none"><?php echo $producto['nombre']; ?></a>
+                    <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
+                        <li><?php echo $producto['descripcion']; ?></li>
+                        <li class="pt-2">
+                            <span class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
+                            <span class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
+                            <span class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
+                            <span class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
+                            <span class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
                         </li>
                     </ul>
                     <p class="text-center mb-0"><?php echo $producto['medida']; ?></p>
                     <p class="text-center mb-0">$<?php echo $producto['precio']; ?></p>
                 </div>
+            </div>
         </div>
-    </div>
-    <?php
-}
+        <script>console.log('<?php echo $producto['id'];?>');</script>
+        <?php
+    }
 
-?>
+    // Verificar si el formulario de agregar al carrito ha sido enviado
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['agregarVenta'])) {
+        // Obtener el ID del producto desde el formulario
+        $id = $_POST['producto_id'];
+
+        // Crear instancia de la clase Producto
+        $producto = new Producto;
+
+        // Obtener detalles del producto desde la base de datos
+        $producto->obtenerDetallesProducto($id);
+  
+        // Configurar los valores del objeto Venta
+        //,1,'Lubricante','1','777','1'
+        $detalleVenta->setIdproducto($id);
+        $detalleVenta->setCantidad(1);
+        $detalleVenta->setDescripcion($producto->getDescripcion());
+        $detalleVenta->setPreciounitario($producto->getPrecio());
+        $detalleVenta->setIdusuario(1); 
+
+        // Insertar el producto en la tabla detalleventa
+        $detalleVenta->insertarProductoDetalleVenta();
+
+        // Agregar el producto al carrito (opcional)
+        $_SESSION['carrito'][] = $detalleVenta;
+    }
+    ?>
+</div>
+<script>console.log('<?php echo $producto['Descipcion'];?>');</script>
+
 <!--------------------------------------------------Funcionalidad consulta productos----------------------------------------------------->
 
              </div>

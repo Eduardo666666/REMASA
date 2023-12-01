@@ -1,0 +1,57 @@
+/* Estilo del contenedor de la tabla */
+.table-container {
+    max-width: 80%;
+    margin: 50px auto;
+    border-radius: 10px; 
+    
+}
+
+.table-compras {
+    width: 100%;
+    margin-bottom: 1rem;
+    border-radius: 10px; 
+   
+}
+
+
+.thead {
+    padding: 12px;
+    text-align: center;
+  
+}
+
+
+.table-compras th, .table-compras td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid;
+}
+
+.table-compras th{
+    background-color:#058F71;
+    color: #ffffff;
+    ;
+}
+
+
+.table-compras td {
+    color: #21386C;
+    ;
+}
+
+
+
+.table-compras tbody tr:hover {
+    background-color:#dbdada;
+    ;
+}
+
+
+/* Ajustar el ancho de la tabla en dispositivos pequeños */
+@media (max-width: 767px) {
+    .Table-container {
+        max-width: 100%;
+    }
+}
+
+

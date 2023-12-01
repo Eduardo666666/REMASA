@@ -12,6 +12,7 @@ session_start(); // Agrega esto al principio del script
 
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/icon2.png">
 
+    <link rel="stylesheet" href="assets/css/carritostyle.css" type="text/css">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/templatemo.css">
     <link rel="stylesheet" href="assets/css/custom.css">
@@ -21,9 +22,32 @@ session_start(); // Agrega esto al principio del script
     <link rel="stylesheet" href="assets/css/fontawesome.min.css">
 </head>
 
+<style>
+
+.tiendabtn[type="button"] {
+
+  background-color: #21386C;
+  color: white;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+/* Cambio de color en botón */
+.tiendabtn[type="button"]:hover {
+  background-color: #008E72;
+}
+
+</style>
+
+
 <body>
     <!-- Navegación -->
-    <nav class="navbar navbar-expand-lg navbar-light d-none d-lg-block" id="templatemo_nav_top" style="background-color: #20386B;">
+    <nav class="navbar navbar-expand-lg navbar-light d-none d-lg-block" id="templatemo_nav_top" style="background-color: #21386C;">
         <div class="container text-light">
             <div class="w-100 d-flex justify-content-between">
                 <div>
@@ -61,7 +85,9 @@ if ($detalleVentas !== null) {
     ?>
 
     <!-- Mostrar la tabla con productos en el carrito -->
-    <table>
+    
+    <div class="table-container">
+    <table class="table-carrito table-bordered ">
         <thead>
             <tr>
                 <th>Código</th>
@@ -85,6 +111,12 @@ if ($detalleVentas !== null) {
         </tbody>
     </table>
 
+    <div class="text-center mt-3 mb-3">
+                <button class="tiendabtn" id="tiendabtn" type="button" onclick="window.location.href='tienda.php'">Tienda</button>
+
+</div>
+            </div>
+
     <!-- Mostrar el total a pagar -->
     <th>Total a pagar <?php echo $total ?></th>
 
@@ -93,7 +125,7 @@ if ($detalleVentas !== null) {
     echo "No se encontraron detalles de venta.";
 }
 ?>
-<a href="tienda.php">Volver a la tienda</a>
+
 
 
 <!---------------------------------------------------Tabla carrito-------------------------------------------------------------------->

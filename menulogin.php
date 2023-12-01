@@ -37,6 +37,24 @@ class menuLogin {
         background-color: #008E72 !important;
     }
 
+    .navbar-nav .nav-link.active,
+.navbar-nav .nav-link:active {
+  background-color: transparent !important;
+  color: #000 !important; /* Puedes ajustar el color del texto según tus necesidades */
+}
+
+.dropdown-menu a:active,
+.dropdown-menu a.active {
+  background-color: transparent !important;
+  color: #000 !important; /* Puedes ajustar el color del texto según tus necesidades */
+}
+
+/* Estilo para quitar el color azul en el clic del botón dentro del formulario */
+.dropdown-menu button:active,
+.dropdown-menu button.active {
+  background-color: transparent !important;
+  color: #000 !important; /* Puedes ajustar el color del texto según tus necesidades */
+}
 
     </style>
 
@@ -99,10 +117,12 @@ class menuLogin {
                                 <div class="dropdown-menu">
                                     <form method="post" action="Controlador/modificacionUsuario.php">
                                         <!-- Utiliza un botón en lugar de un enlace -->
-                                        <button class="dropdown-item" id="buscarUsuario" name="buscarUsuario" type="submit">Modificar usuario</button>
+                                        <button class="dropdown-item" id="buscarUsuario" name="buscarUsuario" type="submit"><a class="dropdown-item">Modificar usuario</a></button>
+
                                     </form>
-                                    <a class="dropdown-item" href="frmMisCompras.php">Mis compras</a>
-                                    <a class="dropdown-item" href="Controlador/cerrarLogin.php">Cerrar Sesión</a>
+                                    
+                                    <a class="dropdown-item" style="padding-left: 32px" href="frmMisCompras.php">Mis compras</a>
+                                    <a class="dropdown-item" style="padding-left: 32px" href="Controlador/cerrarLogin.php">Cerrar Sesión</a>
                                 </div>
                             </div>
 

@@ -19,7 +19,7 @@
 
 <body>
     <!-- Navegación -->
-    <nav class="navbar navbar-expand-lg navbar-light d-none d-lg-block" id="templatemo_nav_top" style="background-color: #20386B;">
+    <nav class="navbar navbar-expand-lg navbar-light d-none d-lg-block" id="templatemo_nav_top" style="background-color: #21386C;">
         <div class="container text-light">
             <div class="w-100 d-flex justify-content-between">
                 <div>
@@ -78,7 +78,7 @@
                 <div style="background-color: #058F71; padding:80px"> <!-- Agregado un div contenedor con la clase bg-green y padding -->
                     <div class="col-md-12 text-white text-center">
                         <h1 class="h1">Acerca de nosotros</h1>
-                        <p class="text-white">Somos una empresa especializada dedicada a la venta de refacciones para autobuses, ofreciendo piezas de alta calidad y un servicio personalizado. Contamos con un equipo experto que garantiza soluciones eficientes para el mantenimiento de flotas, con entregas rápidas y un compromiso constante con la satisfacción del cliente. Confía en nosotros para mantener sus autobuses en óptimas condiciones de funcionamiento.</p>
+                        <p class="text-white">Somos una empresa dedicada a la venta de refacciones para autobuses, ofreciendo piezas de alta calidad. Contamos con un equipo experto que garantiza un servicio de excelencia, entregas rápidas y un compromiso constante con la satisfacción del cliente. Nos encontramos al día con amplio catálogo de repuestos para mantener sus autobuses en óptimas condiciones de funcionamiento.</p>
                     </div>
                     <br>
                     <div class="row align-items-center">

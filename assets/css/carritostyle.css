@@ -1,0 +1,57 @@
+/* Estilo del contenedor de la tabla */
+.table-container {
+    max-width: 80%;
+    margin: 50px auto;
+    border-radius: 10px; 
+    
+}
+
+.table-carrito {
+    width: 100%;
+    margin-bottom: 1rem;
+    border-radius: 10px; 
+   
+}
+
+
+.thead {
+    padding: 12px;
+    text-align: center;
+  
+}
+
+
+.table-carrito th, .table-carrito td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid;
+}
+
+.table-carrito th{
+    background-color:#058F71;
+    color: #ffffff;
+    ;
+}
+
+
+.table-carrito td {
+    color: #21386C;
+    ;
+}
+
+
+
+.table-carrito tbody tr:hover {
+    background-color:#dbdada;
+    ;
+}
+
+
+/* Ajustar el ancho de la tabla en dispositivos pequeños */
+@media (max-width: 767px) {
+    .Table-container {
+        max-width: 100%;
+    }
+}
+
+

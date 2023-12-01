@@ -371,7 +371,7 @@ $productos = $producto -> buscarProductosMAN();
                         <li><a class="text-decoration-none" href="tiendaDireccion.php">Dirección</a></li>
                         <li><a class="text-decoration-none" href="tiendaFiltracion.php">Filtración</a></li>
                         <li><a class="text-decoration-none" href="tiendaLubricantes.php">Lubricantes</a></li>
-                        <li><a class="text-decoration-none" href="tiendaConecciones.php">Conecciones</a></li>
+                        <li><a class="text-decoration-none" href="tiendaConecciones.php">Conexiones</a></li>
                     </ul>
                 </div>
 

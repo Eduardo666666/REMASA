@@ -156,7 +156,8 @@ class Venta{
                 detalleventa.preciototal AS detalleventa_preciototal, detalleventa.preciounitario,
                 venta.preciototal AS venta_preciototal, venta.fecha AS venta_fecha
                 FROM detalleventa
-                JOIN venta ON detalleventa.idventa = venta.idventa";
+                JOIN venta ON detalleventa.idventa = venta.idventa
+                WHERE detalleventa.idusuario = $idusuario";
                 
                 
                 // 3- Ejecutar la instrucción SQL en la conexión (BD)

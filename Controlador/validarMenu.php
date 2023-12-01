@@ -1,15 +1,13 @@
 <?php
-//COMPRUEBA QUE EL USUARIO ESTA AUTENTIFICADO
+// COMPRUEBA QUE EL USUARIO ESTÁ AUTENTIFICADO
 if ($_SESSION['valido'] != '1') {
-    //Llamada al menú de navegación
+    // Llamada al menú de navegación
     include 'menu.php';
     $menu = new menu();
-    $menu ->barraMenu();
-}else{
-    //Llamada al menú de navegación
+    $menu->barraMenu();
+} elseif ($_SESSION['valido'] == '1') {
+    // Llamada al menú de navegación
     include 'menulogin.php';
     $menu = new menuLogin();
-    $menu ->barraMenuLogin();
+    $menu->barraMenuLogin();
 }
-
-?>

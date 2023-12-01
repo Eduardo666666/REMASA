@@ -262,7 +262,7 @@ public function consultaUltimoIdVenta() {
 public function sumaTotalVenta() {
     // Consulta SQL para obtener la suma de preciototal
    
-    $sql = "SELECT SUM(preciototal) as totalventa FROM detalleventa WHERE idventa = " . $this->getIdventa();
+    $sql = "SELECT SUM(preciototal) as total FROM detalleventa WHERE idventa = " . $this->getIdventa();
 
     // Establecer conexión con la BD
     $this->EstableceConexion();
@@ -273,14 +273,15 @@ public function sumaTotalVenta() {
     // Verificar si se obtuvieron resultados
     if ($result && $row = mysqli_fetch_assoc($result)) {
         // Obtener el total de ventas y establecerlo en el objeto Venta
-        $totalVentas = $row['totalventa'];
-        $this->setTotalVenta($totalVentas);
+        $totalVentas = $row['total'];
     } else {
         echo "Error al obtener el total de la venta: " . mysqli_error($this->conexion) . "<br>";
     }
+    $this->setTotalVenta($totalVentas);
 
     // Cerrar la conexión con la BD
     mysqli_close($this->conexion);
+    return $totalVentas;
 }
 
     

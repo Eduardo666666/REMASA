@@ -111,6 +111,12 @@ if ($detalleVentas !== null) {
         </tbody>
     </table>
 
+    <div class="text-center mt-3 mb-3">
+                <button class="tiendabtn" id="tiendabtn" type="button" onclick="window.location.href='tienda.php'">Tienda</button>
+
+</div>
+            </div>
+
     <!-- Mostrar el total a pagar -->
     <th>Total a pagar <?php echo $total ?></th>
 
@@ -119,7 +125,7 @@ if ($detalleVentas !== null) {
     echo "No se encontraron detalles de venta.";
 }
 ?>
-<a href="tienda.php">Volver a la tienda</a>
+
 
 
 <!---------------------------------------------------Tabla carrito-------------------------------------------------------------------->

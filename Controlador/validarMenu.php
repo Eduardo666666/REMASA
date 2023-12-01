@@ -1,5 +1,7 @@
+
 <?php
-// COMPRUEBA QUE EL USUARIO ESTÁ AUTENTIFICADO
+
+//COMPRUEBA QUE EL USUARIO ESTA AUTENTIFICADO
 if ($_SESSION['valido'] != '1') {
     // Llamada al menú de navegación
     include 'menu.php';
@@ -11,3 +13,8 @@ if ($_SESSION['valido'] != '1') {
     $menu = new menuLogin();
     $menu->barraMenuLogin();
 }
+
+?>
+
+
+

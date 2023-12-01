@@ -9,6 +9,8 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/icon2.png">
 
+
+    <link rel="stylesheet" href="assets/css/tablaMisCompras.css" type="text/css">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/templatemo.css">
     <link rel="stylesheet" href="assets/css/custom.css">
@@ -17,9 +19,54 @@ session_start();
     <link rel="stylesheet" href="https://use.typekit.net/nwm6dld.css">
     <link rel="stylesheet" href="assets/css/fontawesome.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Replace the "test" client-id value with your client-id -->
-    <script src="https://www.paypal.com/sdk/js?client-id=AU53wQEsG_cDrwz7ga56YgGlmHRufyOoxYTci0plCtnDKGREBlOxwBhcSAL6tUr9JHz7JJeodj0nyqp1&currency=MXN"></script>
+    
 </head>
+<style>
+
+.tiendabtn[type="button"] {
+
+  background-color: #21386C;
+  color: white;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+/* Cambio de color en botón */
+.tiendabtn[type="button"]:hover {
+  background-color: #008E72;
+}
+
+#customers {
+  border-collapse: collapse;
+  width: 100%;
+  border-radius: 10px; 
+    
+}
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #008E72;
+  color: white;
+
+}
+</style>
+
 <body>
 
     <!-- Navegación -->
@@ -56,17 +103,19 @@ session_start();
     <div style="clear:both;"></div>
     <section>
         <!--tabla de consulta-->
+
+        <div class="table-container">
         <div style="overflow-x: auto;">
-        <h1 style="text-align:center">Compras realizadas</h1>
-            <table class="table table-bordered">
+        <h1 class="h1" style="text-align:center">Compras realizadas</h1>
+        <br>
+        <table id="customers" id="customers" class="table-compras">
                 <thead>
                     <tr>
                         <th>Número de venta</th>
-                        <th>Id producto</th>
+                        <th>Código</th>
                         <th>Cantidad</th>
                         <th>Descripción</th>
                         <th>Precio Unitario</th>
-                        <th>Precio total</th>
                         <th>Fecha</th>
                     </tr>
                 </thead>
@@ -79,46 +128,12 @@ session_start();
                 
                         while ($fila = mysqli_fetch_array($datos)) {
                             echo "<tr><td>" . $fila['idventa'] . "</td><td>" . $fila['idproducto'] . "</td><td>" . $fila['cantidad'] . 
-                            "</td><td>" . $fila['descripcion'] . "</td><td>" . $fila['preciounitario'] . "</td><td>" . 
-                            $fila['detalleventa_preciototal'] . "</td><td>" . $fila['venta_fecha'] . "</td></tr>";
+                            "</td><td>" . $fila['descripcion'] . "</td><td>" . $fila['preciounitario'] . "</td><td>" . $fila['venta_fecha'] . "</td></tr>";
                         }
                     ?>                    
                 </tbody>
             </table>
         </div>
-        
-
-        <div id="paypal-button-container"></div>
-        <p id="result-message"></p>
-
-        <script>
-            paypal.Buttons({
-                // Sets up the transaction when a payment button is clicked
-                createOrder: function (data, actions) {
-                    return actions.order.create({
-                        purchase_units: [{
-                            amount: {
-                                value: '500.00' // Monto en pesos mexicanos
-                            }
-                        }]
-                    });
-                },
-                // Finalize the transaction after payer approval
-                onApprove: function (data, actions) {
-                    return actions.order.capture().then(function (orderData) {
-                        // Successful capture! For dev/demo purposes:
-                        // console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
-                        // const transaction = orderData.purchase_units[0].payments.captures[0];
-                        // alert(`Transaction ${transaction.status}: ${transaction.id}\n\nSee console for all available details`);
-                        
-                        // Muestra un mensaje en el elemento con el ID 'result-message'
-                        document.getElementById('result-message').innerText = 'Transacción exitosa';
-                    });
-                }
-            }).render('#paypal-button-container');
-        </script>
-
-
 
     </section>
 

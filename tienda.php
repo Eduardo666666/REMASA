@@ -20,7 +20,7 @@
 
 <body>
   <!-- Navegación -->
-  <nav class="navbar navbar-expand-lg navbar-light d-none d-lg-block" id="templatemo_nav_top" style="background-color: #20386B;">
+  <nav class="navbar navbar-expand-lg navbar-light d-none d-lg-block" id="templatemo_nav_top" style="background-color: #21386C;">
         <div class="container text-light">
             <div class="w-100 d-flex justify-content-between">
                 <div>

@@ -7,7 +7,7 @@
 
 /* items del menu */
 #menu ul li {
- background-color:#2e518b;
+ background-color:#21386C;
 }
 
 /* enlaces del menu */
@@ -33,7 +33,7 @@
 
 /* efecto al pasar el ratón por los items del menu */
 #menu ul li:hover {
- background:#5b78a7;
+ background:#21386C;
 }
 
 /* menu desplegable */

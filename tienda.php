@@ -48,6 +48,16 @@
              <?php
             // Iniciar la sesión
             session_start();
+                // Incluir archivos necesarios
+            include 'Controlador/procesaMovimiento.php';
+            include 'Modelo/venta.php';
+            include 'Modelo/producto.php';
+
+            // Crear instancias de las clases necesarias
+            $detalleVenta = new Venta; // Instancia para manejar la venta
+            $detalleVenta ->consultaUltimoIdVenta();
+            // Obtener la información de los productos
+            $productos = consultarProductos();
 
             ?>
              <nav class="navbar navbar-expand-lg navbar-light shadow">
@@ -181,16 +191,6 @@
 <!--------------------------------------------------Funcionalidad consulta productos----------------------------------------------------->
 <div class="row">
     <?php
-    // Incluir archivos necesarios
-    include 'Controlador/procesaMovimiento.php';
-    include 'Modelo/venta.php';
-    include 'Modelo/producto.php';
-
-    // Crear instancias de las clases necesarias
-    $detalleVenta = new Venta; // Instancia para manejar la venta
-
-    // Obtener la información de los productos
-    $productos = consultarProductos();
 
     // Iterar sobre los productos y mostrarlos
     foreach ($productos as $producto) {

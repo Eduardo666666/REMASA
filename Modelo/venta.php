@@ -246,7 +246,6 @@ public function consultaUltimoIdVenta() {
         echo "Error al obtener el último ID de venta: " . mysqli_error($this->conexion) . "<br>";
     }
     $this->setIdventa($this->getNuevoIdVenta()+1);
-    echo "num venta " . $this->getIdventa() . "<br>";
     // Cerrar la conexión con la BD
     mysqli_close($this->conexion);
 }

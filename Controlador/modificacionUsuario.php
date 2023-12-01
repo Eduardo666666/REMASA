@@ -58,7 +58,7 @@
 
         // Resto del código
         if (isset($_POST['buscarUsuario'])) {
-            // Importamos el archivo php de la clase Usuario
+            // Importamos el archivo php d  e la clase Usuario
             include '../Modelo/usuarios.php';
 
             // Generamos una instancia de la clase Usuario

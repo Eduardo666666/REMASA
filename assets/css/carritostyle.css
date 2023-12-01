@@ -2,7 +2,10 @@
 .table-container {
     max-width: 80%;
     margin: 50px auto;
-    border-radius: 10px; 
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
     
 }
 

@@ -42,6 +42,37 @@ session_start(); // Agrega esto al principio del script
   background-color: #008E72;
 }
 
+
+
+
+
+#customers {
+  border-collapse: collapse;
+  width: 100%;
+  border-radius: 10px; 
+    
+}
+
+ 
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #008E72;
+  color: white;
+
+}
 </style>
 
 
@@ -87,9 +118,9 @@ if ($detalleVentas !== null) {
     <!-- Mostrar la tabla con productos en el carrito -->
     
     <div class="table-container">
-    <table class="table-carrito table-bordered ">
+    <table id="customers" id="customers" class="table">
         <thead>
-            <tr>
+            <tr class="table text-center">
                 <th>Código</th>
                 <th>Descripción</th>
                 <th>Cantidad</th>
@@ -110,11 +141,11 @@ if ($detalleVentas !== null) {
             <?php endforeach; ?>
         </tbody>
     </table>
-
+    </div>
     <div class="text-center mt-3 mb-3">
                 <button class="tiendabtn" id="tiendabtn" type="button" onclick="window.location.href='tienda.php'">Tienda</button>
 
-</div>
+
             </div>
 
     <!-- Mostrar el total a pagar -->

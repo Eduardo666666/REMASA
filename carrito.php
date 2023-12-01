@@ -49,6 +49,37 @@ include 'Modelo/venta.php';
   background-color: #008E72;
 }
 
+
+
+
+
+#customers {
+  border-collapse: collapse;
+  width: 100%;
+  border-radius: 10px; 
+    
+}
+
+ 
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #008E72;
+  color: white;
+
+}
 </style>
 
 
@@ -97,9 +128,9 @@ if ($detalleVentas !== null) {
     <!-- Mostrar la tabla con productos en el carrito -->
     
     <div class="table-container">
-    <table class="table-carrito table-bordered ">
+    <table id="customers" id="customers" class="table">
         <thead>
-            <tr>
+            <tr class="table text-center">
                 <th>Código</th>
                 <th>Descripción</th>
                 <th>Cantidad</th>

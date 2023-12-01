@@ -26,7 +26,7 @@ class Venta{
         $this->preciototal=1;
         $this->preciounitario=1;
         $this->idusuario=1;
-        $this->fecha=1;
+        $this->fecha=date("Y-m-d H:i:s");
         $this->iva=1;
         $this->totalVenta=1;
     }
@@ -284,6 +284,26 @@ public function sumaTotalVenta() {
     mysqli_close($this->conexion);
     return $totalVentas;
 }
+//-----------------------------------------------------------------------------------------------------------------------
+public function insertarVenta() {
+    $registrar = "INSERT INTO venta ( preciototal, fecha, iva) VALUES (".$this->getTotalVenta().",'".$this->getFecha()."',".$this->getTotalVenta()*.16.")";
+    
+    echo "La fecha es: " .$this->fecha;
+    //2-Establecer conexión con la BD
+    $this->EstableceConexion();
+
+    //3-Ejecutar la instrucción SQL en la conexión (BD)
+    $result = mysqli_query($this->conexion, $registrar);
+
+    //4-Cierro la conexión con la BD
+    mysqli_close($this->conexion);
+
+    if ($result) {
+        echo "Venta registrada exitosamente.<br>";
+    } else {
+        echo "Error al registrar la venta: " . mysqli_error($this->conexion) . "<br>";
+    }
+} //---------------------------------------------------------------------------------------------
 
     
       

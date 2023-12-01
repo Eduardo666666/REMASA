@@ -111,11 +111,12 @@ if ($detalleVentas !== null) {
             <?php endforeach; ?>
         </tbody>
     </table>
-    <button onclick="<?php $venta->insertarVenta();?>">Pagar</button>
     <div class="text-center mt-3 mb-3">
-                <button class="tiendabtn" id="tiendabtn" type="button" onclick="window.location.href='tienda.php'">Tienda</button>
-
-</div>
+        <button class="tiendabtn" id="tiendabtn" type="button" onclick="window.location.href='tienda.php'">Regresar</button>
+    </div>
+    <div class="text-center mt-3 mb-3">
+        <button class="tiendabtn" id="tiendabtn" type="button" onclick="window.location.href='tienda.php'">Pagar</button>
+    </div>
             </div>
 
     <!-- Mostrar el total a pagar -->
@@ -126,8 +127,6 @@ if ($detalleVentas !== null) {
     echo "No se encontraron detalles de venta.";
 }
 ?>
-
-
 
 
 <!---------------------------------------------------Tabla carrito-------------------------------------------------------------------->

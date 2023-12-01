@@ -110,7 +110,7 @@ class Venta{
 
     //----Métodos------------------------------------------------------------------------------------------------------------
 
-    /*Método para conectar a la tabla venta y detalleventa de la BD
+    /*    // Método para conectar a la tabla ventas de la BD
     private function EstableceConexion(){
         $this->conexion = mysqli_connect('127.0.0.1:3306','test','REMASA');
         
@@ -119,8 +119,9 @@ class Venta{
         } else{
             mysqli_select_db($this->conexion,"remasa");
         }
-    }//EstableceConexion*/
-    private static function EstableceConexion(){
+    }*/
+    // EstableceConexion
+        private static function EstableceConexion(){
         $conexion = mysqli_connect('127.0.0.1:3306','test','REMASA');
         
         if(!$conexion){
@@ -133,6 +134,49 @@ class Venta{
     }
 
 
+//EstableceConexion
+        // Método para CONSULTAR TODOS los registros de la tabla
+        public function consultaVenta(){
+            if (isset($_SESSION['correo'])) {
+                //A la variable correo le asignamos el correo del usuario que inicio sesión
+                $correo = $_SESSION['correo'];
+    
+                //1-Se hace la instrucción SQL para obtener el id del usuario, pasando el correo 
+                $id = "SELECT idusuario FROM usuario WHERE correo = '$correo'";
+    
+                //2-Establecer conexión con la BD
+                $this->EstableceConexion();   
+    
+                //3-Ejecutar la instrucción SQL en la conexion (BD)
+                $res = mysqli_query($this->conexion,$id);
+                if (!$res) {
+                    die('Error en la consulta SQL: ' . mysqli_error($this->conexion));
+                }
+    
+                // 4-Obtener el valor de idusuario
+                $registro = mysqli_fetch_array($res);
+                $idusuario = $registro['idusuario'];
+                //echo $idusuario;
+    
+                $consulta = "SELECT detalleventa.idventa, detalleventa.idproducto, detalleventa.cantidad, detalleventa.descripcion, 
+                detalleventa.preciototal AS detalleventa_preciototal, detalleventa.preciounitario,
+                venta.preciototal AS venta_preciototal, venta.fecha AS venta_fecha
+                FROM detalleventa
+                JOIN venta ON detalleventa.idventa = venta.idventa";
+                
+                
+                // 3- Ejecutar la instrucción SQL en la conexión (BD)
+                $resultado = mysqli_query($this->conexion, $consulta);
+                
+                // 4- Cerrar la conexión con la BD
+                mysqli_close($this->conexion);
+                
+                // 5- Retornar los datos de la consulta
+                return $resultado;
+            } else {
+                echo "La variable de sesión 'correo' no está definida.";
+            }
+        }// consultaVenta
 
      //Método para REGISTRAR información en la tabla detalleventa-----------------------------------------------------------------
      public function insertarProductoDetalleVentas(){
@@ -160,7 +204,7 @@ class Venta{
     public function insertarProductoDetalleVenta() {
         $variable = "('1',".$this->getIdproducto()."',".$this->getCantidad().",'".$this->getDescripcion()."','".$this->getPreciototal()."','".$this->getPreciounitario()."','".$this->getIdusuario()."')";
 echo "Este es un mensaje con una variable: $variable\n";
-        $registrar = "INSERT INTO detalleventa (idventa, idproducto, cantidad, descripcion, preciototal, preciounitario, idusuario) VALUES ('1',".$this->getIdproducto()."',".$this->getCantidad().",'.$this->getDescripcion().','".$this->getPreciototal()."','".$this->getPreciounitario()."','".$this->getIdusuario()."')";
+        $registrar = "INSERT INTO detalleventa (idventa, idproducto, cantidad, descripcion, preciototal, preciounitario, idusuario) VALUES ('1',".$this->getIdproducto()."',".$this->getCantidad().",'".$this->getDescripcion()."','".$this->getPreciototal()."','".$this->getPreciounitario()."','".$this->getIdusuario()."')";
         
         //2-Establecer conexión con la BD
         $conexion = $this->EstableceConexion();

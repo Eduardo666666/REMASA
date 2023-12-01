@@ -74,6 +74,7 @@ include 'Modelo/venta.php';
 $detalleVenta = new Venta;
 $menu = new menu();
 $menu->barraMenu();
+$venta = new Venta;
 
 // Consultar detalles de venta y almacenarlos en la variable de sesión
 $detalleVenta->consultaUltimoIdVenta(); // Puedes considerar si realmente necesitas esta consulta
@@ -110,7 +111,7 @@ if ($detalleVentas !== null) {
             <?php endforeach; ?>
         </tbody>
     </table>
-
+    <button onclick="<?php $venta->insertarVenta();?>">Pagar</button>
     <div class="text-center mt-3 mb-3">
                 <button class="tiendabtn" id="tiendabtn" type="button" onclick="window.location.href='tienda.php'">Tienda</button>
 
@@ -125,6 +126,7 @@ if ($detalleVentas !== null) {
     echo "No se encontraron detalles de venta.";
 }
 ?>
+
 
 
 

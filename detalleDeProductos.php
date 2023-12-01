@@ -25,7 +25,7 @@
             <div class="w-100 d-flex justify-content-between">
                 <div>
                     <i class="fab fa-whatsapp"></i>
-                    <a class="navbar-sm-brand text-light text-decoration-none" href=""> 33 39 52 11 66</a>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="https://wa.me/3339521166"> 33 39 52 11 66</a>
                     <i class="fa fa-phone mx-2"></i>
                     <a class="navbar-sm-brand text-light text-decoration-none" href="tel:010-020-0340"> 33 36 00 15 49 / 33 36 00 15 70</a>
                     <i class="fa fa-envelope mx-2"></i>
@@ -819,7 +819,7 @@
                         <li><a class="text-decoration-none" href="#">Dirección</a></li>
                         <li><a class="text-decoration-none" href="#">Filtración</a></li>
                         <li><a class="text-decoration-none" href="#">Lubricantes</a></li>
-                        <li><a class="text-decoration-none" href="#">Conecciones</a></li>
+                        <li><a class="text-decoration-none" href="#">Conexiones</a></li>
                     </ul>
                 </div>
 

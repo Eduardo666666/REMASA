@@ -1,4 +1,6 @@
-
+<?php
+session_start(); // Agrega esto al principio del script
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -42,106 +44,57 @@
     <!-- Navegación -->
 
 
-    <!-- Header -->
     <?php
-        //Llamada al menú de navegación
-        include 'menu.php';
-        $menu = new menu();
-        $menu ->barraMenu();
-    ?>
-    <!-- Header -->
-
-    <!--   \   ^__^
-            \  (oo)\_______
-               (__)\       )\/\
-                  ||----w |
-                  ||     ||                       -->
-
-<!---------------------------------------------------Tabla carrito-------------------------------------------------------------------->
-<?php
+include 'menu.php';
 include 'Modelo/venta.php';
-include 'Modelo/producto.php';
-$detalleVenta = new Producto;
 
-// Obtener la información de los productos
-$detalleVentas = new Venta;
-// Inicializar la variable de sesión si aún no existe
-if (!isset($_SESSION['carrito'])) {
-    $_SESSION['carrito'] = array();
+$detalleVenta = new Venta;
+$menu = new menu();
+$menu->barraMenu();
+
+// Consultar detalles de venta y almacenarlos en la variable de sesión
+$detalleVenta->consultaUltimoIdVenta();
+$detalleVenta->sumaTotalVenta();
+$detalleVentas = $detalleVenta->consultarDetalleVenta();
+// Verificar si se obtuvieron detalles de venta
+if ($detalleVentas !== null) {
+    ?>
+
+    <!-- Mostrar la tabla con productos en el carrito -->
+    <table>
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Descripción</th>
+                <th>Cantidad</th>
+                <th>Precio unitario</th>
+                <th>Precio Total</th>
+                <!-- Otros campos -->
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($detalleVentas as $detalleVenta) : ?>
+                <tr>
+                    <td><?php echo $detalleVenta['idproducto']; ?></td>
+                    <td><?php echo $detalleVenta['descripcion']; ?></td>
+                    <td><?php echo $detalleVenta['cantidad']; ?></td>
+                    <td><?php echo $detalleVenta['preciounitario']; ?></td>
+                    <td><?php echo $detalleVenta['preciototal']; ?></td>
+                    <?php 
+                    ?>
+                    <!-- Otros campos -->
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+                <a href="#"></a>
+    <?php
+} else {
+    echo "No se encontraron detalles de venta.";
 }
-
-/* Verificar si el formulario de agregar al carrito ha sido enviado
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['idventa'])) {
-    // Obtener el ID del producto desde el formulario
-    $idventa = $_POST['idventa'];
-
-    // Obtener detalles del producto desde la base de datos
-    
-    $detalleVenta-> consultarDetalleVenta();
-
-    // Agregar el producto al carrito
-    $_SESSION['carrito'][] = $detalleVenta;
-}*/
-
-/*if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['agregarCarrito'])) {
-    $detalleVenta = $_POST['producto_id'];
-    // Obtener detalles del producto desde la base de datos y agregar al carrito
-    $detalleVenta->obtenerDetallesProducto($producto_id);
-    $_SESSION['carrito'][] = $detalleVenta;
-    // Insertar el producto en la tabla detalleventa
-    $detalleVentas->insertarProductoDetalleVenta();
-}*/
 
 ?>
 
-<!------------------------------------------------------------------------------------------------------------------>
-
-<!-- Mostrar la tabla con productos en el carrito 
-<table>
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Descripción</th>
-            <th>Cantidad</th>
-            <th>Precio</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php foreach ($_SESSION['carrito'] as $detalleVenta) : ?>
-            <tr>
-                //idproducto, cantidad, descripcion, preciototal, preciounitario,  idusuario 
-                <td><?php echo $detalleVenta['idproducto']; ?></td>
-                <td><?php echo $detalleVenta['cantidad']; ?></td>
-                <td><?php echo $detalleVenta['descripcion']; ?></td>
-                <td><?php echo $detalleVenta['preciototal']; ?></td>
-                <td><?php echo $detalleVenta['preciounitario']; ?></td>
-                <td><?php echo $detalleVenta['idusuario']; ?></td>
-            </tr>
-        <?php endforeach; ?>
-    </tbody>
-</table>-->
-
-<table>
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Descripción</th>
-            <th>Cantidad</th>
-            <th>Precio</th>
-            <!-- Otros campos -->
-        </tr>
-    </thead>
-    <tbody>
-        <?php foreach ($_SESSION['carrito'] as $detalleVenta) : ?>
-            <tr>
-                <td><?php echo $detalleVenta->getId(); ?></td>
-                <!-- Otros campos -->
-            </tr>
-        <?php endforeach; ?>
-    </tbody>
-</table>
 
 <a href="tienda.php">Volver a la tienda</a>
 

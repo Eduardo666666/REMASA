@@ -102,11 +102,11 @@ include 'Modelo/venta.php';
             <div class="w-100 d-flex justify-content-between">
                 <div>
                     <i class="fab fa-whatsapp"></i>
-                    <a class="navbar-sm-brand text-light text-decoration-none" href="https://wa.me/3339521166"> 33 39 52 11 66</a>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="https://wa.me/3339521166" target="_blank"> 33 39 52 11 66</a>
                     <i class="fa fa-phone mx-2"></i>
-                    <a class="navbar-sm-brand text-light text-decoration-none" href="tel:010-020-0340"> 33 36 00 15 49 / 33 36 00 15 70</a>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="tel:010-020-0340" target="_blank"> 33 36 00 15 49 / 33 36 00 15 70</a>
                     <i class="fa fa-envelope mx-2"></i>
-                    <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:info@company.com"> remasamg@hotmail.com</a>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:info@company.com" target="_blank"> remasamg@hotmail.com</a>
                 </div>
                 <div>
                     <a class="text-light" href="https://www.facebook.com/p/Refaccionaria-Miguel-De-Autobuses-Sa-De-Cv-100054638641322/" target="_blank" rel="sponsored"><i class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
@@ -138,7 +138,7 @@ if ($detalleVentas !== null) {
     ?>
 
     <!-- Mostrar la tabla con productos en el carrito -->
-    
+
     <div class="table-container">
     <table id="customers" id="customers" class="table">
         <thead>
@@ -215,17 +215,16 @@ if ($detalleVentas !== null) {
             });
         }
     }).render('#paypal-button-container');
+    
 </script>
 
-
     <!------------------------------------------------------codigo gabo------------------------------------------------------>
-
-    <?php
-} else {
-    echo "No se encontraron detalles de venta.";
-}
-?>
-
+        <?php
+            } else {
+                echo '<div style="text-align: center; margin-right: 700px; font-size: 22px; font-weight: bold;">El carrito está vacío.</div>';
+            }
+        ?>
+    <br>
 
 <!---------------------------------------------------Tabla carrito-------------------------------------------------------------------->
 
@@ -242,21 +241,21 @@ if ($detalleVentas !== null) {
 
                         <li>
                             <i class="fas fa-map-marker-alt fa-fw"></i>
-                            <a class="text-decoration-none" href="https://www.google.com.mx/maps/place/REMASA/@20.620459,-103.2890316,19.38z/data=!4m6!3m5!1s0x8428b36cc0d9c15b:0x59f89a6ff9183a46!8m2!3d20.6203304!4d-103.2883587!16s%2Fg%2F1vljgn9n?entry=ttu"> Carretera a Los Altos No. 1776 <br> San Pedrito, Tlaquepaque, Jalisco.</a>
+                            <a class="text-decoration-none" target="_blank" href="https://www.google.com.mx/maps/place/REMASA/@20.620459,-103.2890316,19.38z/data=!4m6!3m5!1s0x8428b36cc0d9c15b:0x59f89a6ff9183a46!8m2!3d20.6203304!4d-103.2883587!16s%2Fg%2F1vljgn9n?entry=ttu"> Carretera a Los Altos No. 1776 <br> San Pedrito, Tlaquepaque, Jalisco.</a>
                         </li>
 
                         <li>
                         <i class="fab fa-whatsapp fa-fw"></i>
-                        <a class="text-decoration-none" href="https://wa.me/3339521166"> 33 39 52 11 66</a>
+                        <a class="text-decoration-none" href="https://wa.me/3339521166" target="_blank"> 33 39 52 11 66</a>
                         </li>
 
                         <li>
                             <i class="fa fa-phone fa-fw"></i>
-                            <a class="text-decoration-none" href="tel:010-020-0340">33 36 00 15 49 / 33 36 00 15 70</a>
+                            <a class="text-decoration-none" href="tel:010-020-0340" target="_blank">33 36 00 15 49 / 33 36 00 15 70</a>
                         </li>
                         <li>
                             <i class="fa fa-envelope fa-fw"></i>
-                            <a class="text-decoration-none" href="mailto:info@company.com">remasamg@hotmail.com</a>
+                            <a class="text-decoration-none" href="mailto:info@company.com" target="_blank">remasamg@hotmail.com</a>
                         </li>
                     </ul>
                 </div>
@@ -264,12 +263,12 @@ if ($detalleVentas !== null) {
                 <div class="col-md-4 pt-5">
                     <h2 class="h2 text-light border-bottom pb-3 border-light">Productos</h2>
                     <ul class="list-unstyled text-light footer-link-list">
-                        <li><a class="text-decoration-none" href="#">Suspensión</a></li>
-                        <li><a class="text-decoration-none" href="#">Frenos</a></li>
-                        <li><a class="text-decoration-none" href="#">Dirección</a></li>
-                        <li><a class="text-decoration-none" href="#">Filtración</a></li>
-                        <li><a class="text-decoration-none" href="#">Lubricantes</a></li>
-                        <li><a class="text-decoration-none" href="#">Conexiones</a></li>
+                        <li><a class="text-decoration-none" href="tiendaSuspension.php">Suspensión</a></li>
+                        <li><a class="text-decoration-none" href="tiendaFrenos.php">Frenos</a></li>
+                        <li><a class="text-decoration-none" href="tiendaDireccion.php">Dirección</a></li>
+                        <li><a class="text-decoration-none" href="tiendaFiltracion.php">Filtración</a></li>
+                        <li><a class="text-decoration-none" href="tiendaLubricantes.php">Lubricantes</a></li>
+                        <li><a class="text-decoration-none" href="tiendaConecciones.php">Conexiones</a></li>
                     </ul>
                 </div>
 
@@ -311,7 +310,7 @@ if ($detalleVentas !== null) {
                     <div class="col-12">
                         <p class="text-left text-light">
                             Copyright &copy; 2023 REMASA 
-                            | Desarrollado por: <a rel="sponsored" target="_blank">Software Solutions</a>
+                            | Desarrollado por Software Solutions
                         </p>
                     </div>
                 </div>

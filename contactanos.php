@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,11 +25,11 @@
             <div class="w-100 d-flex justify-content-between">
                 <div>
                     <i class="fab fa-whatsapp"></i>
-                    <a class="navbar-sm-brand text-light text-decoration-none" href="https://wa.me/3339521166"> 33 39 52 11 66</a>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="https://wa.me/3339521166" target="_blank"> 33 39 52 11 66</a>
                     <i class="fa fa-phone mx-2"></i>
-                    <a class="navbar-sm-brand text-light text-decoration-none" href="tel:010-020-0340"> 33 36 00 15 49 / 33 36 00 15 70</a>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="tel:010-020-0340" target="_blank"> 33 36 00 15 49 / 33 36 00 15 70</a>
                     <i class="fa fa-envelope mx-2"></i>
-                    <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:info@company.com"> remasamg@hotmail.com</a>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:info@company.com" target="_blank"> remasamg@hotmail.com</a>
                 </div>
                 <div>
                     <a class="text-light" href="https://www.facebook.com/p/Refaccionaria-Miguel-De-Autobuses-Sa-De-Cv-100054638641322/" target="_blank" rel="sponsored"><i class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
@@ -76,35 +77,15 @@
 
             <i class="fab fa-whatsapp fa-fw"style="font-size: 32px"></i>
             <br>
-            <p class="col-md-6 m-auto text-center"><a href="https://wa.me/3339521166" target="_blank" style="font-size: 24px">wa.link/29axhg</a></p>
+            <p class="col-md-6 m-auto text-center"><a href="https://wa.me/3339521166" target="_blank" style="font-size: 32px">wa.link/29axhg</a></p>
             </p>
         </div>
     </div>
 
     <!-- Mapa -->
-    <div id="mapid" style="width: 100%; height: 300px;"></div>
-    <script src="https://maps.googleapis.com/maps/api/js?AIzaSyBe6oyst_7TvX1nOshAKW881TGlK2em2Qg"></script>
-    <script>
-        var map;
-        function initMap() {
-            map = new google.maps.Map(document.getElementById('mapid'), {
-                center: {lat: 20.62035, lng: -103.28836},
-                zoom: 13
-            });
-
-            var marker = new google.maps.Marker({
-                position: {lat: 20.62035, lng: -103.28836},
-                map: map,
-                title: 'REMASA ubicación.'
-            });
-        }
-    </script>
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?AIzaSyBe6oyst_7TvX1nOshAKW881TGlK2em2Qg&callback=initMap">
-    </script>
-
-</div>
-    
+    <div class="row align-items-center">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7640394.048980586!2d-107.57978944261912!3d20.7645236022926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428b36cc0d9c15b%3A0x59f89a6ff9183a46!2sREMASA!5e0!3m2!1ses!2smx!4v1702530670759&z=10" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
     <!--Mapa -->
 
     <br>
@@ -131,42 +112,75 @@
                 </div>
      </div>
 
-    <!-- Contáctanos -->
-    <div class="container py-5">
-    <p class="h2 text-center">Envíanos tus comentarios</p>
-    <br>
-        <div class="row py-5">
+        <!-- Contáctanos -->
+            <div class="container py-5">
+                <p class="h2 text-center">Envíanos tus comentarios</p>
+                <br>
+                <div class="row py-5">
+                    <form class="col-md-9 m-auto" id="comentariosForm" method="post" role="form">
+                        <div class="row">
+                            <div class="form-group col-md-6 mb-3">
+                                <label for="inputname" style="font-weight: 600;">Nombre:</label>
+                                <input type="text" class="form-control mt-1" id="name" name="name" placeholder="">
+                            </div>
+                            <div class="form-group col-md-6 mb-3">
+                                <label for="inputemail" style="font-weight: 600;">Email:</label>
+                                <input type="email" class="form-control mt-1" id="email" name="email" placeholder="">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputsubject" style="font-weight: 600;">Asunto:</label>
+                            <input type="text" class="form-control mt-1" id="subject" name="subject" placeholder="">
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputmessage" style="font-weight: 600;">Comentario:</label>
+                            <textarea class="form-control mt-1" id="message" name="message" placeholder="" rows="8"></textarea>
+                        </div>
+                        <div class="row">
+                            <div class="col text-end mt-2">
+                                <button type="submit" id="enviarBtn" class="btn btn-success btn-lg px-3">Enviar</button>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mensajeEnvio" class="mt-3"></div>
+                </div>
+            </div>
 
-            <form class="col-md-9 m-auto" method="post" role="form">
-                <div class="row">
-                    <div class="form-group col-md-6 mb-3">
-                   
-                  
-                        <label for="inputname" style="font-weight: 600;">Nombre:</label>
-                        <input type="text" class="form-control mt-1" id="name" name="name" placeholder="">
-                    </div>
-                    <div class="form-group col-md-6 mb-3">
-                        <label for="inputemail"style="font-weight: 600;">Email:</label>
-                        <input type="email" class="form-control mt-1" id="email" name="email" placeholder="">
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label for="inputsubject"style="font-weight: 600;">Asunto:</label>
-                    <input type="text" class="form-control mt-1" id="subject" name="subject" placeholder="">
-                </div>
-                <div class="mb-3">
-                    <label for="inputmessage"style="font-weight: 600;">Comentario:</label>
-                    <textarea class="form-control mt-1" id="message" name="message" placeholder="" rows="8"></textarea>
-                </div>
-                <div class="row">
-                    <div class="col text-end mt-2">
-                        <button type="submit" class="btn btn-success btn-lg px-3">Enviar</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-    <!--Contáctanos -->
+            <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                // Manejar clic en el botón de enviar usando AJAX
+                document.getElementById('enviarBtn').addEventListener('click', function (event) {
+                    event.preventDefault();  // Evitar la recarga de la página al hacer clic en el botón de enviar
+
+                    // Obtener datos del formulario
+                    var formData = new FormData(document.getElementById('comentariosForm'));
+
+                    // Realizar la solicitud AJAX
+                    var xhr = new XMLHttpRequest();
+                    xhr.open('POST', 'Controlador/procesaFormuario.php', true);
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState === XMLHttpRequest.DONE) {
+                            if (xhr.status === 200) {
+                                // Mostrar mensaje de éxito
+                                document.getElementById('mensajeEnvio').innerHTML = '<div class="alert alert-success" role="alert">Comentario enviado correctamente.</div>';
+                                
+                                // Limpiar campos del formulario después de enviar
+                                document.getElementById('name').value = '';
+                                document.getElementById('email').value = '';
+                                document.getElementById('subject').value = '';
+                                document.getElementById('message').value = '';
+                            } else {
+                                // Mostrar mensaje de error si la solicitud falla
+                                document.getElementById('mensajeEnvio').innerHTML = '<div class="alert alert-danger" role="alert">Error al enviar el comentario.</div>';
+                            }
+                        }
+                    };
+                    xhr.send(formData);
+                });
+            });
+            </script>
+<!-- Contáctanos -->
+
 
 
 
@@ -181,21 +195,21 @@
 
                         <li>
                             <i class="fas fa-map-marker-alt fa-fw"></i>
-                            <a class="text-decoration-none" href="https://www.google.com.mx/maps/place/REMASA/@20.620459,-103.2890316,19.38z/data=!4m6!3m5!1s0x8428b36cc0d9c15b:0x59f89a6ff9183a46!8m2!3d20.6203304!4d-103.2883587!16s%2Fg%2F1vljgn9n?entry=ttu"> Carretera a Los Altos No. 1776 <br> San Pedrito, Tlaquepaque, Jalisco.</a>
+                            <a class="text-decoration-none" href="https://www.google.com.mx/maps/place/REMASA/@20.620459,-103.2890316,19.38z/data=!4m6!3m5!1s0x8428b36cc0d9c15b:0x59f89a6ff9183a46!8m2!3d20.6203304!4d-103.2883587!16s%2Fg%2F1vljgn9n?entry=ttu" target="_blank"> Carretera a Los Altos No. 1776 <br> San Pedrito, Tlaquepaque, Jalisco.</a>
                         </li>
 
                         <li>
                         <i class="fab fa-whatsapp fa-fw"></i>
-                        <a class="text-decoration-none" href="https://wa.me/3339521166"> 33 39 52 11 66</a>
+                        <a class="text-decoration-none" href="https://wa.me/3339521166" target="_blank"> 33 39 52 11 66</a>
                         </li>
 
                         <li>
                             <i class="fa fa-phone fa-fw"></i>
-                            <a class="text-decoration-none" href="tel:010-020-0340">33 36 00 15 49 / 33 36 00 15 70</a>
+                            <a class="text-decoration-none" href="tel:010-020-0340" target="_blank">33 36 00 15 49 / 33 36 00 15 70</a>
                         </li>
                         <li>
                             <i class="fa fa-envelope fa-fw"></i>
-                            <a class="text-decoration-none" href="mailto:info@company.com">remasamg@hotmail.com</a>
+                            <a class="text-decoration-none" href="mailto:info@company.com" target="_blank">remasamg@hotmail.com</a>
                         </li>
                     </ul>
                 </div>
@@ -203,12 +217,12 @@
                 <div class="col-md-4 pt-5">
                     <h2 class="h2 text-light border-bottom pb-3 border-light">Productos</h2>
                     <ul class="list-unstyled text-light footer-link-list">
-                        <li><a class="text-decoration-none" href="#">Suspensión</a></li>
-                        <li><a class="text-decoration-none" href="#">Frenos</a></li>
-                        <li><a class="text-decoration-none" href="#">Dirección</a></li>
-                        <li><a class="text-decoration-none" href="#">Filtración</a></li>
-                        <li><a class="text-decoration-none" href="#">Lubricantes</a></li>
-                        <li><a class="text-decoration-none" href="#">Conexiones</a></li>
+                        <li><a class="text-decoration-none" href="tiendaSuspension.php">Suspensión</a></li>
+                        <li><a class="text-decoration-none" href="tiendaFrenos.php">Frenos</a></li>
+                        <li><a class="text-decoration-none" href="tiendaDireccion.php">Dirección</a></li>
+                        <li><a class="text-decoration-none" href="tiendaFiltracion.php">Filtración</a></li>
+                        <li><a class="text-decoration-none" href="tiendaLubricantes.php">Lubricantes</a></li>
+                        <li><a class="text-decoration-none" href="tiendaConecciones.php">Conexiones</a></li>
                     </ul>
                 </div>
 
@@ -250,7 +264,7 @@
                     <div class="col-12">
                         <p class="text-left text-light">
                             Copyright &copy; 2023 REMASA
-                            | Desarrollado por: <a rel="sponsored" target="_blank">Software Solutions</a>
+                            | Desarrollado por Software Solutions
                         </p>
                     </div>
                 </div>

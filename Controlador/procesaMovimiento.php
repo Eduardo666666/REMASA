@@ -104,8 +104,8 @@
         function consultarProductosPorMarca() {
             // Configuración de la conexión a la base de datos
             $servername = "localhost";
-            $username = "root";
-            $password = "";
+            $username = "test";
+            $password = "REMASA";
             $database = "remasa";
         
             // Crear conexión

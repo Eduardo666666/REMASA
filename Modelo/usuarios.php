@@ -28,7 +28,7 @@ class Usuario{
         $this->direccion="none";
         $this->ciudad="none";
         $this->estado="none";
-        $this->tipodeusuario="none";
+        $this->tipousuario="none";
     }
     
     //Set's y Get's
@@ -68,8 +68,8 @@ class Usuario{
         $this->estado = $estado;
     }
 
-    public function setTipodeusuario($tipodeusuario){
-        $this->tipodeusuario = $tipodeusuario;
+    public function setTipousuario($tipousuario){
+        $this->tipousuario = $tipousuario;
     }
 
     
@@ -109,8 +109,8 @@ class Usuario{
         return $this->estado;
     }
 
-    public function getTipodeusuario(){
-        return $this->tipodeusuario;
+    public function getTipousuario(){
+        return $this->tipousuario;
     }
     
     //Método para conectar a la tabla usuarios de la BD
